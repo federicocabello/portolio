@@ -1,0 +1,14 @@
+{
+  "name": "TS Network CRM",
+  "category": "CRM / Field Service & Operations",
+  "year": "2026",
+  "summary": "A multi-role CRM for coordinating internet repeater and security camera visits, customer calls, appointments, payments, inventory, and field work.",
+  "functions": "Schedules calls and technical visits, assigns field tasks, tracks monthly payments and stock, and generates operational PDFs across four permission levels.",
+  "problem": "Calls, visits, collections, inventory, and technician assignments were difficult to coordinate across separate workflows and roles.",
+  "solution": "I centralized operations in one role-based system with an agenda, field visit management, payment tracking, stock control, tasks, and PDF reports.",
+  "impacts": ["Centralized field operations", "Clear role permissions", "Better payment tracking", "Stock and task control"],
+  "technologies": ["React", "Python", "Node.js", "Tailwind CSS", "Next.js", "Express.js", "SQL", "AWS"],
+  "links": { "repository": "https://github.com/federicocabello/crm_tsnetwork", "website": null },
+  "media": { "type": "gallery" },
+  "demo": { "status": "private", "title": "Private system", "description": "Public access is unavailable because the platform belongs to the company and contains sensitive customer and operational data." }
+}

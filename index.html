@@ -20,7 +20,7 @@
         <link rel="stylesheet" href="css/fontAwesome.css">
         <link rel="stylesheet" href="css/light-box.css">
         <link rel="stylesheet" href="css/owl-carousel.css">
-        <link rel="stylesheet" href="css/templatemo-style.css">
+        <link rel="stylesheet" href="css/templatemo-style.css?v=20260904-up-control">
 
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
 
@@ -47,55 +47,54 @@
                 <span>ES</span>
             </button>
         </div>
-        <div class="sidebar-navigation hidde-sm hidden-xs" style="background: none;">
+        <div class="sidebar-navigation hidden-sm hidden-xs">
             <div class="logo">
-                <img src="img/portada.JPG" alt="Federico Cabello" style="height: 100%; max-width: 100%; border-radius: 5px;" class="imagen-portada">
-                <p class="texto-portada"><img src="img/codificacion.png" alt="" style="height: 20px; margin-right: 5px; vertical-align: middle;">Federico Cabello</p>
-                <div class="opentowork">
-                    <i class="fas fa-user-check" style="margin-right: 5px;"></i>Open to work
+                <div id="sidebar-profile-slot" class="profile-slot sidebar-profile-slot">
+                    <div class="sidebar-profile-placeholder">
+                        <img src="img/codificacion.png" alt="">
+                        <span>federicocabello.net</span>
+                    </div>
                 </div>
             </div>
-            <nav style="margin-top: 19%;">
+            <nav>
                 <ul>
                     <li>
-                        <a href="#top">
+                        <a href="#top" data-i18n="nav.about">
                             <span class="rect"></span>
                             <span class="circle"></span>
                             About me
                         </a>
                     </li>
                     <li>
-                        <a href="#experience">
+                        <a href="#projects" data-i18n="nav.projects">
+                            <span class="rect"></span>
+                            <span class="circle"></span>
+                            Projects
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#experience" data-i18n="nav.experience">
                             <span class="rect"></span>
                             <span class="circle"></span>
                             Work experience
                         </a>
                     </li>
                     <li>
-                        <a href="#projects">
+                        <a href="#skills" data-i18n="nav.skills">
                             <span class="rect"></span>
                             <span class="circle"></span>
-                            Projects
+                            Tech Stack
                         </a>
                     </li>
-                    <!--
                     <li>
-                        <a href="#blog">
-                            <span class="rect"></span>
-                            <span class="circle"></span>
-                            Technologies
-                        </a>
-                    </li>
-                    -->
-                    <li>
-                        <a href="#education">
+                        <a href="#education" data-i18n="nav.education">
                             <span class="rect"></span>
                             <span class="circle"></span>
                             Education
                         </a>
                     </li>
                     <li>
-                        <a href="#contact">
+                        <a href="#contact" data-i18n="nav.contact">
                             <span class="rect"></span>
                             <span class="circle"></span>
                             Contact
@@ -103,34 +102,16 @@
                     </li>
                 </ul>
             </nav>
-            <ul class="social-icons">
-                <div class="icon-container">
-                <li><a href="Federico_Cabello_Full_Stack_Software_Engineer_CV.pdf" target="_blank" rel="noopener noreferrer"><i class="far fa-file-pdf"></i></a></li>
-                <div class="tooltip">View CV</div></div>
-                <div class="icon-container">
-                <li><a href="https://www.linkedin.com/in/federicocabello" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin-in"></i></a></li>
-                <div class="tooltip">LinkedIn profile</div></div>
-                <div class="icon-container">
-                <li><a href="https://github.com/federicocabello" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a></li>
-                <div class="tooltip">GitHub repository</div></div>
-            <!--
-                <div class="icon-container">
-                <li><a href="#"><i class="fab fa-whatsapp"></i></a></li>
-                <div class="tooltip">Contact via message</div></div>
-            -->
-                <div class="icon-container">
-                <li><a onclick="copyEmail()" style="cursor: pointer"><i class="far fa-envelope"></i></a></li>
-                <div class="tooltip">Copy email</div></div>
-            </ul>
+            <div id="sidebar-actions-slot" class="contact-actions-slot sidebar-actions-slot"></div>
         </div>
-        <nav class="mobile-navigation hidden-sm hidden-md hidden-lg">
-            <a href="#top">About</a>
-            <a href="#experience">Experience</a>
-            <a href="#projects">Projects</a>
-            <a href="#education">Education</a>
-            <a href="#contact">Contact</a>
+        <nav class="mobile-navigation hidden-md hidden-lg">
+            <a href="#top" data-i18n="nav.aboutShort">About</a>
+            <a href="#projects" data-i18n="nav.projects">Projects</a>
+            <a href="#experience" data-i18n="nav.experienceShort">Experience</a>
+            <a href="#skills" data-i18n="nav.skills">Tech Stack</a>
+            <a href="#education" data-i18n="nav.education">Education</a>
+            <a href="#contact" data-i18n="nav.contact">Contact</a>
         </nav>
-<!--ENCABEZADO IMAGENES-->
         <div class="slider">
             <div class="Modern-Slider content-section" id="top" style="margin-bottom: 2%;">
                 <div class="item">
@@ -138,60 +119,92 @@
                     <div class="image"></div>
                     <div class="info">
                         <div>
-                            <h1>Hello! I'm Federico.</h1>
-                            
-                            <div class="location-button" onclick="window.open('https://www.google.com/maps/place/San+Rafael,Mendoza,+Argentina', '_blank')">
-                                <span class="tooltip-left" id="location-tooltip"><i class="fas fa-plane" style="margin-right: 3px; vertical-align: bottom;"></i>Go to location</span>
-                                <i class="fas fa-map-marker-alt"></i> Argentina <img src="https://upload.wikimedia.org/wikipedia/commons/1/1a/Flag_of_Argentina.svg" alt="Argentina Flag" class="flag">
+                            <div class="hero-intro-row">
+                                <div class="hero-copy">
+                                    <h1 data-i18n="hero.title">Hello! I'm Federico.</h1>
+                                    <div id="hero-actions-slot" class="contact-actions-slot hero-actions-slot is-initializing">
+                                        <div id="moving-contact-actions" class="moving-contact-actions">
+                                            <a class="contact-action" href="Federico_Cabello_Full_Stack_Software_Engineer_CV.pdf" target="_blank" rel="noopener noreferrer" aria-label="View CV">
+                                                <i class="far fa-file-pdf" aria-hidden="true"></i>
+                                                <span class="contact-action-tooltip" aria-hidden="true">View CV</span>
+                                            </a>
+                                            <button type="button" class="contact-action" id="email-button" aria-label="Copy email address">
+                                                <i class="far fa-envelope" aria-hidden="true"></i>
+                                                <span class="contact-action-tooltip" id="email-action-tooltip" aria-hidden="true">Copy</span>
+                                                <span class="action-status" id="email-status" aria-live="polite"></span>
+                                            </button>
+                                            <a class="contact-action" href="https://www.linkedin.com/in/federicocabello" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile">
+                                                <i class="fab fa-linkedin-in" aria-hidden="true"></i>
+                                            </a>
+                                            <a class="contact-action" href="https://github.com/federicocabello" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile">
+                                                <i class="fab fa-github" aria-hidden="true"></i>
+                                            </a>
+                                        </div>
+                                        <a class="hero-location-button" href="https://www.google.com/maps/place/San+Rafael,Mendoza,+Argentina" target="_blank" rel="noopener noreferrer" aria-label="Open Argentina location in Google Maps">
+                                            <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+                                            <span>Argentina</span>
+                                            <img src="https://upload.wikimedia.org/wikipedia/commons/1/1a/Flag_of_Argentina.svg" alt="Argentina flag">
+                                            <span class="location-action-tooltip"><i class="fas fa-plane" aria-hidden="true"></i>Go to location</span>
+                                        </a>
+                                    </div>
+                                    <div class="hero-description" data-i18n="hero.description">
+                                        <p>As a <span class="hero-role-highlight">Software Engineer</span>, I specialize in building <strong class="hero-key-highlight">full-stack systems</strong> with <span class="hero-tech-inline" style="--inline-tech-color:#61DAFB"><i class="iconify" data-icon="simple-icons:react" aria-hidden="true"></i>React</span>, <span class="hero-tech-inline" style="--inline-tech-color:#66B2FF"><i class="iconify" data-icon="simple-icons:python" aria-hidden="true"></i>Python</span>, <span class="hero-tech-inline" style="--inline-tech-color:#68A063"><i class="iconify" data-icon="fontisto:nodejs" aria-hidden="true"></i>Node.js</span>, and <span class="hero-tech-inline" style="--inline-tech-color:#D5D9E0"><i class="iconify" data-icon="simple-icons:flask" aria-hidden="true"></i>Flask</span>, as well as <span class="hero-tech-inline" style="--inline-tech-color:#73B6E6"><i class="fas fa-database" aria-hidden="true"></i>database design and administration</span>. I have hands-on experience creating <strong class="hero-key-highlight">solutions for businesses</strong> and providing <strong class="hero-key-highlight">commercial guidance</strong> on how technology can improve operations, such as <strong class="hero-key-highlight">AI agents</strong> and <strong class="hero-key-highlight">management platforms</strong> for analyzing <strong class="hero-key-highlight">financial data</strong>, products, customers, and employees, with several of these systems currently being used in <strong class="hero-key-highlight">real-world environments</strong>.</p>
+                                        <p>My skills are complemented by <span class="hero-tech-inline" style="--inline-tech-color:#4C9CEB"><i class="iconify" data-icon="simple-icons:typescript" aria-hidden="true"></i>TypeScript</span>, <span class="hero-tech-inline" style="--inline-tech-color:#59B86A"><i class="iconify" data-icon="simple-icons:django" aria-hidden="true"></i>Django</span>, and <span class="hero-tech-inline" style="--inline-tech-color:#FFB33B"><i class="iconify" data-icon="simple-icons:amazonaws" aria-hidden="true"></i>AWS</span>, which I've used across different projects to expand and support the solutions I build.</p>
+                                    </div>
+                                </div>
+                                <div id="hero-profile-slot" class="profile-slot hero-profile-slot">
+                                    <div id="moving-profile" class="moving-profile">
+                                        <div class="profile-photo-frame">
+                                            <img src="img/portada.JPG" alt="Federico Cabello" class="imagen-portada">
+                                            <div class="opentowork">
+                                                <span class="availability-dot" aria-hidden="true"></span>
+                                                <span>Open to new opportunities</span>
+                                            </div>
+                                        </div>
+                                        <p class="texto-portada"><img src="img/codificacion.png" alt="" class="profile-name-icon">Federico Cabello</p>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="email-button" id="email-button">
-                                <i class="fas fa-envelope"></i> fede.cabello@hotmail.com
-                                <span class="tooltip-right" id="email-tooltip"><i class="fas fa-paperclip" style="margin-right: 3px; vertical-align: bottom;"></i>Copy</span>
-                            </div>
-                            <p style="width: 80%; text-align: center; color: #fff; margin: 0 auto; margin-top: 15px; font-size: 16px;">As a Software Engineer, I develop websites, applications, and RESTful APIs. I manage both relational and non-relational databases. I lead teams and plan projects.</p>
-                            <!-- Divs para experiencia en lenguajes -->
-                            <hr style="width: 50%; animation: fadeInUp 1s ease forwards; margin: 0 auto; margin-top: 3%; margin-bottom: 3%;">
-                            <p style="animation: fadeInUp 1s ease forwards; text-align: center; font-size: 15px; color: #2fc4b1; font-weight: 700; font-size: 14px;"><i class="fas fa-stream"></i> Technical Stack</p>
-                            <div class="experience-section">
-                                <!-- Columna de Lenguajes -->
-                                <div class="experience-column">
-                                    <h3><i class="fas fa-laptop-code"></i> Languages</h3>
-                                    <div class="experience-item" style="color: #66B2FF; border: 1px solid #66B2FF;"><i class="iconify" data-icon="simple-icons:python"></i> Python 5+ years</div>
-                                    <div class="experience-item" style="color: #F7DF1E; border: 1px solid #F7DF1E;"><i class="iconify" data-icon="simple-icons:javascript"></i> JavaScript 5+ years</div>
-                                    <div class="experience-item" style="color: #3178C6; border: 1px solid #3178C6;"><i class="iconify" data-icon="simple-icons:typescript"></i> TypeScript 5+ years</div>
-                                    <div class="experience-item" style="color: #E34F26; border: 1px solid #E34F26;"><i class="iconify" data-icon="simple-icons:html5"></i> HTML5 5+ years</div>
-                                    <div class="experience-item" style="color: #1572B6; border: 1px solid #1572B6;"><i class="iconify" data-icon="simple-icons:css3"></i> CSS3 5+ years</div>
-                                    <div class="experience-item" style="color: #76B4E0; border: 1px solid #76B4E0;"><i class="iconify" data-icon="fontisto:mysql"></i> SQL 5+ years</div>
-                                    <div class="experience-item" style="color: #659AD2; border: 1px solid #659AD2;"><i class="iconify" data-icon="simple-icons:cplusplus"></i> C++ 2+ years</div>
-                                    <div class="experience-item" style="color: #8892BF; border: 1px solid #8892BF;"><i class="iconify" data-icon="simple-icons:php"></i> PHP 2+ years</div>
+                            <div class="hero-capabilities" aria-label="Main services">
+                                <div class="hero-capability">
+                                    <i class="fas fa-robot"></i>
+                                    <span data-i18n="hero.capabilities.aiTools">AI Tools</span>
                                 </div>
-                                
-                                <!-- Columna de Frameworks -->
-                                <div class="experience-column">
-                                    <h3><i class="fas fa-layer-group"></i> Frontend & Libraries</h3>
-                                    <div class="experience-item" style="color: #61DAFB; border: 1px solid #61DAFB;"><i class="iconify" data-icon="simple-icons:react"></i> React 5+ years</div>
-                                    <div class="experience-item" style="color: #38B2AC; border: 1px solid #38B2AC;"><i class="iconify" data-icon="file-icons:tailwind"></i> Tailwind CSS 5+ years</div>
-                                    <div class="experience-item" style="color: #1E90FF; border: 1px solid #1E90FF;"><i class="iconify" data-icon="simple-icons:jquery"></i> jQuery 5+ years</div>
-                                    <div class="experience-item" style="color: #F4C430; border: 1px solid #F4C430;"><i class="iconify" data-icon="simple-icons:pandas"></i> Pandas 3+ years</div>
-                                    <div class="experience-item" style="color: #4DABCF; border: 1px solid #4DABCF;"><i class="iconify" data-icon="simple-icons:numpy"></i> Numpy 3+ years</div>
+                                <div class="hero-capability">
+                                    <i class="fas fa-sitemap"></i>
+                                    <span data-i18n="hero.capabilities.businessSystems">Business Management Systems</span>
                                 </div>
-                                
-                                <div class="experience-column">
-                                    <h3><i class="fas fa-server"></i> Backend</h3>
-                                    <div class="experience-item" style="color: #A0A0A0; border: 1px solid #A0A0A0;"><i class="iconify" data-icon="simple-icons:flask"></i> Flask 5+ years</div>
-                                    <div class="experience-item" style="color: #339933; border: 1px solid #339933;"><i class="iconify" data-icon="fontisto:nodejs"></i> Node.js 5+ years</div>
-                                    <div class="experience-item" style="color: #4CAF50; border: 1px solid #4CAF50;"><i class="iconify" data-icon="simple-icons:django"></i> Django 3+ years</div>
-                                    <div class="experience-item" style="color: #ffffff; border: 1px solid #ffffff;"><i class="iconify" data-icon="simple-icons:express"></i> Express.js 3+ years</div>
-                                    <div class="experience-item" style="color: #ffffff; border: 1px solid #ffffff;"><i class="iconify" data-icon="simple-icons:nextdotjs"></i> Next.js 3+ years</div>
+                                <div class="hero-capability">
+                                    <i class="fas fa-users-cog"></i>
+                                    <span data-i18n="hero.capabilities.crm">CRM Systems</span>
                                 </div>
-
-                                <div class="experience-column">
-                                    <h3><i class="fas fa-database"></i> Data, Cloud & Tools</h3>
-                                    <div class="experience-item" style="color: #76B4E0; border: 1px solid #76B4E0;"><i class="iconify" data-icon="fontisto:mysql"></i> MySQL 5+ years</div>
-                                    <div class="experience-item" style="color: #7DB7E8; border: 1px solid #7DB7E8;"><i class="iconify" data-icon="simple-icons:postgresql"></i> PostgreSQL 3+ years</div>
-                                    <div class="experience-item" style="color: #47A248; border: 1px solid #47A248;"><i class="iconify" data-icon="fontisto:mongodb"></i> MongoDB 3+ years</div>
-                                    <div class="experience-item" style="color: #FF9900; border: 1px solid #FF9900;"><i class="iconify" data-icon="simple-icons:amazonaws"></i> AWS 3+ years</div>
-                                    <div class="experience-item" style="color: #ffffff; border: 1px solid #ffffff;"><i class="iconify" data-icon="simple-icons:prisma"></i> Prisma 3+ years</div>
+                                <div class="hero-capability">
+                                    <i class="fas fa-plug"></i>
+                                    <span data-i18n="hero.capabilities.restApis">REST APIs</span>
+                                </div>
+                                <div class="hero-capability">
+                                    <i class="fas fa-cloud-upload-alt"></i>
+                                    <span data-i18n="hero.capabilities.cloud">Cloud Deployment</span>
+                                </div>
+                                <div class="hero-capability">
+                                    <i class="fas fa-code"></i>
+                                    <span data-i18n="hero.capabilities.appDevelopment">Application Development</span>
+                                </div>
+                                <div class="hero-capability">
+                                    <i class="fas fa-database"></i>
+                                    <span data-i18n="hero.capabilities.databases">Database Design & Management</span>
+                                </div>
+                                <div class="hero-capability">
+                                    <i class="fas fa-chart-line"></i>
+                                    <span data-i18n="hero.capabilities.dataAnalysis">Data Analysis</span>
+                                </div>
+                                <div class="hero-capability">
+                                    <i class="fas fa-bolt"></i>
+                                    <span data-i18n="hero.capabilities.automation">Automation & Integration</span>
+                                </div>
+                                <div class="hero-capability">
+                                    <i class="fas fa-globe"></i>
+                                    <span data-i18n="hero.capabilities.responsiveWebsites">Responsive Websites</span>
                                 </div>
                             </div>
                         </div>
@@ -200,366 +213,633 @@
                 </div>
             </div>
         </div>
-<!--CONTENIDO PAGINA-->
         <div class="page-content">
-
-            <section id="experience" class="content-section">
-                <div class="section-heading">
-                    <h1>Work<br><em>Experience</em></h1>
-                    <p>Here are some of the projects and roles I have worked on during my professional journey.</p>
-                </div>
-                <div class="section-content">
-                    <div class="work-items">
-                        <div class="work-item">
-                            <div class="image">
-                                <i class="fas fa-building"></i> Los Andes - Enterprise Solutions
-                            </div>
-                            <div class="text-content">
-                                <h4>Software Engineer</h4>
-                                <span>Remote • Brownsville, Texas, USA <img src="https://upload.wikimedia.org/wikipedia/commons/e/e2/Flag_of_the_United_States_%28Pantone%29.svg" alt="USA Flag" class="flag" style="height: 12px; vertical-align: middle;"></span>
-                                <span>January 2024 - present</span>
-                                <p>Developed and maintained an integrated web system for customer management, product stock control, invoicing, and payments, enhancing business operations.</p>
-                                <p id="p-1" class="hidden-text">
-                                    I optimized the system for efficient record organization, improving task management and both administrative and business processes.
-                                <span style="margin-top: 1em;">
-                                    <i style="color: #2fc4b1">Technologies used</i>
-                                    <br>
-                                    <i class="iconify iconos-we" data-icon="devicon-plain:javascript"></i>
-                                    <i class="iconify iconos-we" data-icon="devicon-plain:python-wordmark"></i>
-                                    <i class="iconify iconos-we" data-icon="simple-icons:react"></i>
-                                    <i class="iconify iconos-we" data-icon="file-icons:tailwind"></i>
-                                    <i class="iconify iconos-we" data-icon="bxl:flask"></i>
-                                    <i class="iconify iconos-we" data-icon="devicon-plain:django-wordmark"></i>
-                                    <i class="iconify iconos-we" data-icon="devicon-plain:jquery-wordmark"></i>
-                                    <i class="iconify iconos-we" data-icon="devicon-plain:bootstrap-wordmark"></i>
-                                </span>
-                                </p>
-                                <button class="featured-button button" onclick="showMore(document.getElementById('p-1'), this)">Read More</button>
-                            </div>
-                        </div>
-                        <div class="work-item">
-                            <div class="image">
-                                <i class="fas fa-building"></i> TS Network
-                            </div>
-                            <div class="text-content">
-                                <h4>Database Administrator</h4>
-                                <span>Remote • Brownsville, Texas, USA <img src="https://upload.wikimedia.org/wikipedia/commons/e/e2/Flag_of_the_United_States_%28Pantone%29.svg" alt="USA Flag" class="flag" style="height: 12px; vertical-align: middle;"></span>
-                                <span>January 2024 - present</span>
-                                <p>Designed and managed the company’s relational database, overseeing table creation, relationships, and data modifications. I maintained client, sales, and payment records.</p>
-                                <p id="p-2" class="hidden-text">
-                                    I ensured a solid and efficient structure for client information management, guaranteeing data integrity through regular updates and backups.
-                                <span style="margin-top: 1em;">
-                                    <i style="color: #2fc4b1">Technologies used</i>
-                                    <br>
-                                    <i class="iconify iconos-we" data-icon="cib:mysql"></i>
-                                </span>
-                                </p>
-                                <button class="featured-button button" onclick="showMore(document.getElementById('p-2'), this)">Read More</button>
-                            </div>
-                        </div>
-                        <div class="work-item">
-                            <div class="image">
-                                <i class="fas fa-building"></i> PICAR
-                            </div>
-                            <div class="text-content">
-                                <h4>Software Developer</h4>
-                                <span>Hybrid • San Rafael, Mendoza, ARG <img src="https://upload.wikimedia.org/wikipedia/commons/1/1a/Flag_of_Argentina.svg" alt="ARG Flag" class="flag" style="height: 12px; vertical-align: middle;"></span>
-                                <span>January 2023 - December 2023</span>
-                                <p>I developed an application to manage products extracting data from Excel and storing it to generate sales and PDF invoices. It also handled client information and supplier management.</p>
-                                <p id="p-3" class="hidden-text">
-                                    I significantly optimized the organization of administrative tasks and workflow. Stock control improved efficiently, as did the management of collections.
-                                <span style="margin-top: 1em;">
-                                    <i style="color: #2fc4b1">Technologies used</i>
-                                    <br>
-                                    <i class="iconify iconos-we" data-icon="devicon-plain:java-wordmark"></i>
-                                    <i class="iconify iconos-we" data-icon="simple-icons:phpmyadmin"></i>
-                                </span>
-                                </p>
-                                <button class="featured-button button" onclick="showMore(document.getElementById('p-3'), this)">Read More</button>
-                            </div>
-                        </div>
-                        <div class="work-item">
-                            <div class="image">
-                                <i class="fas fa-user-tie"></i> Freelancer
-                            </div>
-                            <div class="text-content">
-                                <h4>Full Stack Programmer</h4>
-                                <span>Hybrid • San Rafael, Mendoza, ARG <img src="https://upload.wikimedia.org/wikipedia/commons/1/1a/Flag_of_Argentina.svg" alt="ARG Flag" class="flag" style="height: 12px; vertical-align: middle;"></span>
-                                <span>August 2022 - December 2022</span>
-                                <p>Worked on various cross-platform projects and RESTful APIs for clients as a freelancer and during internships to complete my university degree.</p>
-                                <p id="p-4" class="hidden-text">
-                                    I stay updated and continuously learn the latest technologies in demand. I developed soft skills to effectively understand and adapt to client requirements.
-                                <span style="margin-top: 1em;">
-                                    <i style="color: #2fc4b1">Technologies used</i>
-                                    <br>
-                                    <i class="iconify iconos-we" data-icon="devicon-plain:html5-wordmark"></i>
-                                    <i class="iconify iconos-we" data-icon="devicon-plain:css3-wordmark"></i>
-                                    <i class="iconify iconos-we" data-icon="devicon-plain:nodejs-wordmark"></i>
-                                    <i class="iconify iconos-we" data-icon="devicon-plain:cplusplus"></i>
-                                    <i class="iconify iconos-we" data-icon="devicon-plain:php"></i>
-                                    <i class="iconify iconos-we" data-icon="simple-icons:mariadb"></i>
-                                    <i class="iconify iconos-we" data-icon="devicon-plain:mongodb-wordmark"></i>
-                                </span>
-                                </p>
-                                <button class="featured-button button" onclick="showMore(document.getElementById('p-4'), this)">Read More</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>              
 
             <section id="projects" class="content-section">
                 <div class="section-heading">
-                    <h1>Featured<br><em>Projects</em></h1>
-                    <p>Here are some of the projects I have worked on recently.</p>
+                    <h1 data-i18n="sections.projects.title">Selected<br><em>Projects</em></h1>
+                    <p data-i18n="sections.projects.description">Explore my work by solution type.</p>
                 </div>
                 <div class="project-container">
 
-                    <!--PROYECTO 1-->
-                    <div class="project-card" data-project-id="project1">
-                        <div class="project-image">
-                            <img src="img/proyectocrm.jpg" alt="Los Andes CRM project preview">
-                            <div type="button" class="btn-project-redirect" style="left: 15px;" onclick="window.location.href='https://github.com/federicocabello/crm_los_andes/'"><i style="font-size: 20px;" class="iconify" data-icon="octicon:mark-github-24"></i></div>
-                            <div type="button" class="btn-project-redirect" style="left: 205px;" onclick="window.location.href='http://crm.losandestx.com:8350'"><i style="font-size: 20px;" class="iconify" data-icon="material-symbols:ads-click"></i></div>
+                    <article class="project-card project-case-card" data-project-folder="tsnetwork-crm">
+                        <div class="project-visual">
+                            <img class="project-image project-image-placeholder" src="img/codificacion.png" alt="TS Network CRM project cover placeholder">
                         </div>
                         <div class="project-info">
-                            <h4 style="margin-top: 0; margin-bottom: 10px;">Los Andes CRM: Comprehensive Business Management System</h4>
-                            <p style="margin-top: 0; margin-bottom: 10px;">This system is a complete web system designed to manage and optimize all key processes within the company, including user administration, client management, payments, and reminders. This platform centralizes operations, providing full control over the daily workflow in a single, organized space.</p>
-                            <div class="projects-column">
-                                <div class="experience-item" style="color: #E34F26; border: 1px solid #E34F26; margin-right: 10px;"><i class="iconify" data-icon="simple-icons:html5"></i> HTML5</div>
-                                <div class="experience-item" style="color: #1572B6; border: 1px solid #1572B6; margin-right: 10px;"><i class="iconify" data-icon="simple-icons:css3"></i> CSS3</div>
-                                <div class="experience-item" style="color: #F7DF1E; border: 1px solid #F7DF1E; margin-right: 10px;"><i class="iconify" data-icon="simple-icons:javascript"></i> JavaScript</div>
-                                <div class="experience-item" style="color: #1E90FF; border: 1px solid #1E90FF;"><i class="iconify" data-icon="simple-icons:jquery"></i> jQuery</div>
-                                
+                            <div class="project-list-icon" aria-hidden="true"><i class="fas fa-calendar-check"></i></div>
+                            <span class="project-category">CRM / Field Service Management</span>
+                            <div class="project-title-row">
+                                <h4>TS Network CRM</h4>
+                                <time datetime="2026"><i class="far fa-calendar-alt" aria-hidden="true"></i>2026</time>
                             </div>
-                            <div class="projects-column">
-                                <div class="experience-item" style="color: #66B2FF; border: 1px solid #66B2FF; margin-right: 10px;"><i class="iconify" data-icon="simple-icons:python"></i> Python</div>
-                                <div class="experience-item" style="color: #A0A0A0; border: 1px solid #A0A0A0; margin-right: 10px;"><i class="iconify" data-icon="simple-icons:flask"></i> Flask</div>
-                                <div class="experience-item" style="color: violet; border: 1px solid violet; margin-right: 10px;"><i class="iconify" data-icon="simple-icons:bootstrap"></i> Bootstrap</div>
-                                <div class="experience-item" style="color: #76B4E0; border: 1px solid #76B4E0;"><i class="iconify" data-icon="fontisto:mysql"></i> MySQL</div>
+                            <p class="project-summary">A role-based CRM that coordinates appointments, field inspections, and service visits across agents, moderators, administrators, and technicians.</p>
+                            <div class="project-tech-grid">
+                                <span style="--project-tech-color:#61DAFB"><i class="iconify" data-icon="simple-icons:react"></i>React</span>
+                                <span style="--project-tech-color:#68A063"><i class="iconify" data-icon="fontisto:nodejs"></i>Node.js</span>
+                                <span style="--project-tech-color:#38BDF8"><i class="iconify" data-icon="file-icons:tailwind"></i>Tailwind CSS</span>
+                                <span style="--project-tech-color:#F5F5F5"><i class="iconify" data-icon="simple-icons:nextdotjs"></i>Next.js</span>
+                                <span style="--project-tech-color:#D6DCE5"><i class="iconify" data-icon="simple-icons:express"></i>Express.js</span>
+                                <span style="--project-tech-color:#76B4E0"><i class="iconify" data-icon="mdi:database"></i>SQL</span>
+                                <span style="--project-tech-color:#FF9900"><i class="iconify" data-icon="simple-icons:amazonaws"></i>AWS</span>
+                            </div>
+                            <button type="button" class="project-case-toggle" aria-expanded="false" aria-controls="project5-details" aria-label="View case study" title="View case study">
+                                <i class="fas fa-chevron-down" aria-hidden="true"></i>
+                            </button>
+                            <div id="project5-details" class="project-case-details" aria-hidden="true" inert>
+                                <div class="project-case-details-inner">
+                                    <div class="project-case-copy">
+                                        <h5>The challenge</h5>
+                                        <p>Appointments and inspections involve several company roles, each requiring different information, permissions, and actions before, during, and after a visit.</p>
+                                        <h5>The solution</h5>
+                                        <p>I developed a responsive role-based platform with dedicated views for agents, moderators, administrators, and technicians. The technician interface is optimized for tablets, allowing inspections and visit updates to be managed directly in the field.</p>
+                                    </div>
+                                    <div class="project-case-meta">
+                                        <span><strong>Focus</strong>Appointments and inspections</span>
+                                        <span><strong>Access</strong>Role-based platform</span>
+                                    </div>
+                                    <div class="project-access-note project-access-note-private">
+                                        <i class="fas fa-shield-alt" aria-hidden="true"></i>
+                                        <p><strong>Demo unavailable</strong>The production system contains private operational, appointment, and customer information, so public access is restricted.</p>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                    </div>
+                    </article>
 
-                    <!--PROYECTO 2-->
-                    <div class="project-card" data-project-id="project2">
-                        <div class="project-image">
-                            <img src="img/proyectocarlotaboada.jpg" alt="Carlo Taboada CRM project preview">
-                            <div type="button" class="btn-project-redirect" style="left: 15px;" onclick="window.location.href='https://github.com/federicocabello/crm_carlo_taboada/'"><i style="font-size: 20px;" class="iconify" data-icon="octicon:mark-github-24"></i></div>
+                    <article class="project-card project-case-card" data-project-folder="cactus-alojamientos">
+                        <div class="project-visual">
+                            <img class="project-image project-image-placeholder" src="img/codificacion.png" alt="Cactus Alojamientos project cover placeholder">
+                            <a class="project-github-float" href="https://github.com/federicocabello/web_cactus" target="_blank" rel="noopener noreferrer" aria-label="View Cactus Alojamientos on GitHub" title="View on GitHub"><i class="fab fa-github" aria-hidden="true"></i></a>
                         </div>
                         <div class="project-info">
-                            <h4 style="margin-top: 0; margin-bottom: 10px;">Carlo Taboada Law Firm CRM: Legal Team Management System</h4>
-                            <p style="margin-top: 0; margin-bottom: 10px;">This web system is designed for legal firms, offering comprehensive tools to manage attorney teams, client data, and case follow-ups. The platform centralizes all relevant information, including client and case records, leads, billing, and collections.</p>
-                            <div class="projects-column">
-                                <div class="experience-item" style="color: #E34F26; border: 1px solid #E34F26; margin-right: 10px;"><i class="iconify" data-icon="simple-icons:html5"></i> HTML5</div>
-                                <div class="experience-item" style="color: #1572B6; border: 1px solid #1572B6; margin-right: 10px;"><i class="iconify" data-icon="simple-icons:css3"></i> CSS3</div>
-                                <div class="experience-item" style="color: #F7DF1E; border: 1px solid #F7DF1E; margin-right: 10px;"><i class="iconify" data-icon="simple-icons:javascript"></i> JavaScript</div>
-                                <div class="experience-item" style="color: #339933; border: 1px solid #339933;"><i class="iconify" data-icon="fontisto:nodejs"></i> Node.js</div>
+                            <div class="project-list-icon" aria-hidden="true"><i class="fas fa-home"></i></div>
+                            <span class="project-category">Booking Website / Hospitality</span>
+                            <div class="project-title-row">
+                                <h4>Cactus Alojamientos</h4>
+                                <time datetime="2026"><i class="far fa-calendar-alt" aria-hidden="true"></i>2026</time>
                             </div>
-                            <div class="projects-column">
-                                <div class="experience-item" style="color: #61DAFB; border: 1px solid #61DAFB; margin-right: 10px;"><i class="iconify" data-icon="simple-icons:react"></i> React</div>
-                                <div class="experience-item" style="color: #A0A0A0; border: 1px solid #A0A0A0; margin-right: 10px;"><i class="iconify" data-icon="simple-icons:flask"></i> Flask</div>
-                                <div class="experience-item" style="color: #38B2AC; border: 1px solid #38B2AC; margin-right: 10px;"><i class="iconify" data-icon="file-icons:tailwind"></i> Tailwind CSS</div>
-                                <div class="experience-item" style="color: #76B4E0; border: 1px solid #76B4E0;"><i class="iconify" data-icon="fontisto:mysql"></i> MySQL</div>
+                            <p class="project-summary">A responsive accommodation platform where guests can explore properties, compare amenities and prices, check availability, and request a reservation without creating an account.</p>
+                            <div class="project-tech-grid">
+                                <span style="--project-tech-color:#61DAFB"><i class="iconify" data-icon="simple-icons:react"></i>React</span>
+                                <span style="--project-tech-color:#66B2FF"><i class="iconify" data-icon="simple-icons:python"></i>Python</span>
+                                <span style="--project-tech-color:#68A063"><i class="iconify" data-icon="fontisto:nodejs"></i>Node.js</span>
+                                <span style="--project-tech-color:#38BDF8"><i class="iconify" data-icon="file-icons:tailwind"></i>Tailwind CSS</span>
+                                <span style="--project-tech-color:#F5F5F5"><i class="iconify" data-icon="simple-icons:nextdotjs"></i>Next.js</span>
+                                <span style="--project-tech-color:#D6DCE5"><i class="iconify" data-icon="simple-icons:express"></i>Express.js</span>
+                                <span style="--project-tech-color:#76B4E0"><i class="iconify" data-icon="mdi:database"></i>SQL</span>
+                                <span style="--project-tech-color:#71D5C5"><i class="iconify" data-icon="mdi:email-fast-outline"></i>SMTP</span>
+                            </div>
+                            <button type="button" class="project-case-toggle" aria-expanded="false" aria-controls="project6-details" aria-label="View case study" title="View case study">
+                                <i class="fas fa-chevron-down" aria-hidden="true"></i>
+                            </button>
+                            <div id="project6-details" class="project-case-details" aria-hidden="true" inert>
+                                <div class="project-case-details-inner">
+                                    <div class="project-case-copy">
+                                        <h5>The challenge</h5>
+                                        <p>Guests needed a faster way to find available dates and request a stay, while administrators needed to prevent scheduling conflicts and manage listings from one place.</p>
+                                        <h5>The solution</h5>
+                                        <p>I built an SQL-backed booking calendar with account-free reservations, automatic SMTP notifications, and an administration panel for properties, content, availability, and booking decisions.</p>
+                                    </div>
+                                    <div class="project-case-meta">
+                                        <span><strong>Focus</strong>Reservations and availability</span>
+                                        <span><strong>Feature</strong>Email notifications</span>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                    </div>
+                    </article>
 
-                    <!--PROYECTO 3-->
-                    <div class="project-card" data-project-id="project3">
-                        <div class="project-image">
-                            <img src="img/proyectopicar.jpg" alt="Distribuidora Picar management system preview">
-                            <div type="button" class="btn-project-redirect" style="left: 15px;" onclick="window.location.href='https://github.com/federicocabello/app_picar/'"><i style="font-size: 20px;" class="iconify" data-icon="octicon:mark-github-24"></i></div>
+                    <article class="project-card project-case-card" data-project-folder="ferreteria-mendez">
+                        <div class="project-visual">
+                            <img class="project-image project-image-placeholder" src="img/codificacion.png" alt="Ferreteria Mendez project cover placeholder">
+                            <a class="project-github-float" href="https://github.com/federicocabello/prisma_ferreteria" target="_blank" rel="noopener noreferrer" aria-label="View Ferreteria Mendez on GitHub" title="View on GitHub"><i class="fab fa-github" aria-hidden="true"></i></a>
                         </div>
                         <div class="project-info">
-                            <h4 style="margin-top: 0; margin-bottom: 10px;">Distribuidora Picar Management System</h4>
-                            <p style="margin-top: 0; margin-bottom: 10px;">This Management System is a desktop application developed to streamline and enhance the daily operations of a tool and construction supply distributor. This system was tailored specifically for Distribuidora Picar, offering comprehensive functionality to manage clients, employees, inventory control, and sales processing.</p>
-                            <div class="projects-column">
-                                <div class="experience-item" style="color: #fff; border: 1px solid #fff; margin-right: 10px;"><i class="iconify" data-icon="fontisto:java"></i> Java</div>
-                                <div class="experience-item" style="color: #FF851B; border: 1px solid #FF851B;"><i class="iconify" data-icon="simple-icons:phpmyadmin"></i> phpMyAdmin</div>
+                            <div class="project-list-icon" aria-hidden="true"><i class="fas fa-store"></i></div>
+                            <span class="project-category">Point of Sale / Business Analytics</span>
+                            <div class="project-title-row">
+                                <h4>Ferreteria Mendez Management System</h4>
+                                <time datetime="2026"><i class="far fa-calendar-alt" aria-hidden="true"></i>2026</time>
+                            </div>
+                            <p class="project-summary">An authenticated web management system currently used by a hardware store for sales, quotations, products, inventory, invoicing, and business analytics.</p>
+                            <div class="project-tech-grid">
+                                <span style="--project-tech-color:#FFD43B"><i class="iconify" data-icon="simple-icons:python"></i>Python</span>
+                                <span style="--project-tech-color:#61DAFB"><i class="iconify" data-icon="simple-icons:react"></i>React</span>
+                                <span style="--project-tech-color:#68A063"><i class="iconify" data-icon="fontisto:nodejs"></i>Node.js</span>
+                                <span style="--project-tech-color:#38BDF8"><i class="iconify" data-icon="file-icons:tailwind"></i>Tailwind CSS</span>
+                                <span style="--project-tech-color:#F5F5F5"><i class="iconify" data-icon="simple-icons:nextdotjs"></i>Next.js</span>
+                                <span style="--project-tech-color:#D6DCE5"><i class="iconify" data-icon="simple-icons:express"></i>Express.js</span>
+                                <span style="--project-tech-color:#76B4E0"><i class="iconify" data-icon="mdi:database"></i>SQL</span>
+                                <span style="--project-tech-color:#E8D44D"><i class="iconify" data-icon="simple-icons:pandas"></i>Pandas</span>
+                            </div>
+                            <button type="button" class="project-case-toggle" aria-expanded="false" aria-controls="project7-details" aria-label="View case study" title="View case study">
+                                <i class="fas fa-chevron-down" aria-hidden="true"></i>
+                            </button>
+                            <div id="project7-details" class="project-case-details" aria-hidden="true" inert>
+                                <div class="project-case-details-inner">
+                                    <div class="project-case-copy">
+                                        <h5>The challenge</h5>
+                                        <p>The company needed to connect daily sales and quotations with stock, invoicing, and reliable analysis of revenue, profitability, products, and employee activity.</p>
+                                        <h5>The solution</h5>
+                                        <p>I developed a role-based web platform that centralizes commercial operations and turns transaction data into reports by day, period, product, profit, and employee.</p>
+                                    </div>
+                                    <div class="project-case-meta">
+                                        <span><strong>Focus</strong>Sales and inventory</span>
+                                        <span><strong>Feature</strong>Business analytics</span>
+                                    </div>
+                                    <div class="project-access-note project-access-note-private">
+                                        <i class="fas fa-lock" aria-hidden="true"></i>
+                                        <p><strong>Private production system</strong>The platform is currently used by the company and cannot be public because it contains confidential financial, product, sales, and employee data.</p>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                    </div>
+                    </article>
 
-                    <!--PROYECTO 4-->
-                    <div class="project-card" data-project-id="project4">
-                        <div class="project-image">
-                            <img src="img/proyectocelulares.jpg" alt="Cell repair tracking system preview">
-                            <div type="button" class="btn-project-redirect" style="left: 15px;" onclick="window.location.href='https://github.com/federicocabello/gestion_celulares/'"><i style="font-size: 20px;" class="iconify" data-icon="octicon:mark-github-24"></i></div>
+                    <article class="project-card project-case-card" data-project-folder="cadpo-simracing">
+                        <div class="project-visual">
+                            <img class="project-image project-image-placeholder" src="img/codificacion.png" alt="Assetto Corsa sim racing league project cover placeholder">
+                            <a class="project-github-float" href="https://github.com/federicocabello/web_cadpo" target="_blank" rel="noopener noreferrer" aria-label="View Esports Championship Platform on GitHub" title="View on GitHub"><i class="fab fa-github" aria-hidden="true"></i></a>
                         </div>
                         <div class="project-info">
-                            <h4 style="margin-top: 0; margin-bottom: 10px;">Cell Repair Tracking System</h4>
-                            <p style="margin-top: 0; margin-bottom: 10px;">This system is a comprehensive solution tailored for a mobile phone repair business. This system allows employees to register incoming devices, collect client and device details, and update repair statuses. With a unique tracking code, clients can easily check the repair status of their device online, providing a smooth and transparent experience.</p>
-                            <div class="projects-column">
-                                <div class="experience-item" style="color: #8892BF; border: 1px solid #8892BF; margin-right: 10px;"><i class="iconify" data-icon="simple-icons:php"></i> php</div>
-                                <div class="experience-item" style="color: #fff; border: 1px solid #fff; margin-right: 10px;"><i class="iconify" data-icon="fontisto:java"></i> Java</div>
-                                <div class="experience-item" style="color: #4AB3D3; border: 1px solid #4AB3D3;"><i class="iconify" data-icon="simple-icons:mariadb"></i> MariaDB</div>
+                            <div class="project-list-icon" aria-hidden="true"><i class="fas fa-flag-checkered"></i></div>
+                            <span class="project-category">Esports Platform / Live Timing & Analytics</span>
+                            <div class="project-title-row">
+                                <h4>Esports Championship Platform</h4>
+                                <time datetime="2026"><i class="far fa-calendar-alt" aria-hidden="true"></i>2026</time>
+                            </div>
+                            <p class="project-summary">A responsive esports platform that centralizes championships, registrations, historical results, driver statistics, upcoming events, and live sim racing timing.</p>
+                            <div class="project-tech-grid">
+                                <span style="--project-tech-color:#61DAFB"><i class="iconify" data-icon="simple-icons:react"></i>React</span>
+                                <span style="--project-tech-color:#66B2FF"><i class="iconify" data-icon="simple-icons:python"></i>Python</span>
+                                <span style="--project-tech-color:#68A063"><i class="iconify" data-icon="fontisto:nodejs"></i>Node.js</span>
+                                <span style="--project-tech-color:#38BDF8"><i class="iconify" data-icon="file-icons:tailwind"></i>Tailwind CSS</span>
+                                <span style="--project-tech-color:#F5F5F5"><i class="iconify" data-icon="simple-icons:nextdotjs"></i>Next.js</span>
+                                <span style="--project-tech-color:#D6DCE5"><i class="iconify" data-icon="simple-icons:express"></i>Express.js</span>
+                                <span style="--project-tech-color:#76B4E0"><i class="iconify" data-icon="mdi:database"></i>SQL</span>
+                                <span style="--project-tech-color:#E8D44D"><i class="iconify" data-icon="simple-icons:pandas"></i>Pandas</span>
+                                <span style="--project-tech-color:#8CEADD"><i class="iconify" data-icon="mdi:api"></i>API</span>
+                            </div>
+                            <button type="button" class="project-case-toggle" aria-expanded="false" aria-controls="project8-details" aria-label="View case study" title="View case study">
+                                <i class="fas fa-chevron-down" aria-hidden="true"></i>
+                            </button>
+                            <div id="project8-details" class="project-case-details" aria-hidden="true" inert>
+                                <div class="project-case-details-inner">
+                                    <div class="project-case-copy">
+                                        <h5>The challenge</h5>
+                                        <p>Years of competition data were fragmented, while raw timing-server information was difficult to read and especially inconvenient for community members using mobile devices.</p>
+                                        <h5>The solution</h5>
+                                        <p>I built a centralized platform that transforms live API data into a clear responsive interface, adds historical analysis with Pandas, and provides secure tools to manage the league's content and events.</p>
+                                    </div>
+                                    <div class="project-case-meta">
+                                        <span><strong>Focus</strong>Statistics and community</span>
+                                        <span><strong>Feature</strong>Real-time lap timing</span>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                    </div>
+                    </article>
 
-                    <!--PROYECTO 5-->
-                    <div class="project-card" data-project-id="project5">
-                        <div class="project-image">
-                            <img src="img/proyectogrilla.jpg" alt="Race grid organizer project preview">
-                            <div type="button" class="btn-project-redirect" style="left: 15px;" onclick="window.location.href='https://github.com/federicocabello/engrillamiento/'"><i style="font-size: 20px;" class="iconify" data-icon="octicon:mark-github-24"></i></div>
+                    <article class="project-card project-case-card" data-project-folder="proyecto-prisma">
+                        <div class="project-visual">
+                            <img class="project-image project-image-placeholder" src="img/codificacion.png" alt="Proyecto Prisma website cover placeholder">
+                            <a class="project-github-float" href="https://github.com/federicocabello/proyecto_prisma" target="_blank" rel="noopener noreferrer" aria-label="View Proyecto Prisma on GitHub" title="View on GitHub"><i class="fab fa-github" aria-hidden="true"></i></a>
                         </div>
                         <div class="project-info">
-                            <h4 style="margin-top: 0; margin-bottom: 10px;">Race Grid Organizer</h4>
-                            <p style="margin-top: 0; margin-bottom: 10px;">This system is a desktop application developed exclusively for the San Rafael Automotive Association to streamline race grid setup for their regional competitions. This system allows race officials to input qualification results, apply custom settings like weight penalties (ballast) and race laps, and then generates an organized starting grid for each race. The system is designed to enhance the efficiency and accuracy of grid arrangements, providing a clear and professional output for race day.</p>
-                            <div class="projects-column">
-                                <div class="experience-item" style="color: #fff; border: 1px solid #fff; width: 20%;"><i class="iconify" data-icon="fontisto:java"></i> Java</div>
+                            <div class="project-list-icon" aria-hidden="true"><i class="fas fa-layer-group"></i></div>
+                            <span class="project-category">Business Website / Interactive Demos</span>
+                            <div class="project-title-row">
+                                <h4>Proyecto Prisma</h4>
+                                <time datetime="2026"><i class="far fa-calendar-alt" aria-hidden="true"></i>2026</time>
+                            </div>
+                            <p class="project-summary">The digital home of my software venture, presenting services, business solutions, professional expertise, and nine interactive demos for prospective clients.</p>
+                            <div class="project-tech-grid">
+                                <span style="--project-tech-color:#FFD43B"><i class="iconify" data-icon="simple-icons:python"></i>Python</span>
+                                <span style="--project-tech-color:#61DAFB"><i class="iconify" data-icon="simple-icons:react"></i>React</span>
+                                <span style="--project-tech-color:#68A063"><i class="iconify" data-icon="fontisto:nodejs"></i>Node.js</span>
+                                <span style="--project-tech-color:#38BDF8"><i class="iconify" data-icon="file-icons:tailwind"></i>Tailwind CSS</span>
+                                <span style="--project-tech-color:#F5F5F5"><i class="iconify" data-icon="simple-icons:nextdotjs"></i>Next.js</span>
+                                <span style="--project-tech-color:#D6DCE5"><i class="iconify" data-icon="simple-icons:express"></i>Express.js</span>
+                                <span style="--project-tech-color:#F5F5F5"><i class="iconify" data-icon="simple-icons:prisma"></i>Prisma</span>
+                                <span style="--project-tech-color:#77C5A3"><i class="iconify" data-icon="mdi:database-outline"></i>NoSQL</span>
+                            </div>
+                            <button type="button" class="project-case-toggle" aria-expanded="false" aria-controls="project9-details" aria-label="View case study" title="View case study">
+                                <i class="fas fa-chevron-down" aria-hidden="true"></i>
+                            </button>
+                            <div id="project9-details" class="project-case-details" aria-hidden="true" inert>
+                                <div class="project-case-details-inner">
+                                    <div class="project-case-copy">
+                                        <h5>The challenge</h5>
+                                        <p>Potential clients needed a simple way to understand the available services and evaluate whether a digital solution could improve their business before committing to development.</p>
+                                        <h5>The solution</h5>
+                                        <p>I built a responsive company website where visitors can explore services, learn about my approach, and test nine interactive demos before requesting a tailored solution.</p>
+                                    </div>
+                                    <div class="project-case-meta">
+                                        <span><strong>Focus</strong>Services and lead generation</span>
+                                        <span><strong>Feature</strong>Interactive demos</span>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                    </div>
+                    </article>
 
-                </div>
-                <div>
-                    <button class="show-more-button" onclick="mostrarProyecto()">Show More</button>
-                    <script>
-                    const allProjectsData = {
-                        project1: [
-                            { image: "img/img-projects/crm-losandes-1.jpg", title: "Login Page", description: "User authentication page built with Flask and Flask-Login. User credentials are securely stored in a database and verified upon login." },
-                            { image: "img/img-projects/crm-losandes-2.jpg", title: "Main Dashboard", description: "Main view showcasing client selection based on the current call type. Clients are categorized by topics such as security cameras, real estate, car sales, etc. Below, tables display daily tasks and reminders, along with overdue tasks. On the side, additional tables provide payment information: due today, overdue, and payments due within the next 5 days. The navigation bar at the top allows access to other sections like Home and Users. Values have been blurred for confidentiality purposes." },
-                            { image: "img/img-projects/crm-losandes-3.jpg", title: "Company Call Details", description: "Detailed view of a selected company, designed to capture call data. Includes essential information and scripts specific to the company to assist advisors in managing interactions efficiently. Values have been blurred for confidentiality purposes."},
-                            { image: "img/img-projects/crm-losandes-4.jpg", title: "Reminders Panel", description: "A dedicated panel to manage reminders unrelated to call logs. Users can set reminders with a date, time, task, and pre-alert. At the specified time, an alert with sound and a notification will display the reminder. The panel organizes reminders into today’s, past, and upcoming, grouped by months for easy navigation. Values have been blurred for confidentiality purposes."},
-                            { image: "img/img-projects/crm-losandes-5.jpg", title: "Payments Panel", description: "Displays all registered payments with a month-by-month navigation. Shows total payments collected and outstanding amounts for each month, along with detailed client and payment information. Includes date filters for quick searches and a button for instant payment registration. Values have been blurred for confidentiality purposes."},
-                            { image: "img/img-projects/crm-losandes-6.jpg", title: "User Management Panel", description: "Provides a comprehensive view of all registered users, displaying username, password, full name, and assigned roles. Administrators can create new users, modify existing details, or delete accounts. Includes robust role-based access controls to ensure only authorized administrators can make changes. A simple and intuitive interface for efficient user management. Values have been blurred for confidentiality purposes."},
-                            { image: "img/img-projects/crm-losandes-7.jpg", title: "Call Records Panel", description: "Centralizes all call records from companies and agents, with color-coded entries based on task type for easy identification. Includes advanced filters to help administrators quickly locate specific information. Allows modification of record status and details, with options to reassign calls to other agents. Designed for streamlined call tracking and efficient task management. Values have been blurred for confidentiality purposes."},
-                            { image: "img/img-projects/crm-losandes-8.jpg", title: "Customer Tracking Panel", description: "Offers a dedicated client profile view with comprehensive details and specialized tools, such as a quote generator to save budgets as spreadsheets or PDFs. Displays a timeline of all client-related activities, including updates, actions taken, and the responsible agent or manager. Features full editability of client data, movement records, and assigned personnel, providing a centralized hub for efficient customer management. Values have been blurred for confidentiality purposes."},
-                            { image: "img/img-projects/crm-losandes-9.jpg", title: "System Activity Log Panel", description: "Tracks and displays all system activities in detail, from user login events to task changes, description edits, or appointment reschedules. Designed for system auditing, it provides comprehensive records of every action taken. Includes powerful filters for quick searches by keywords, specific agents, or selected dates, enabling precise and efficient tracking of system movements. Values have been blurred for confidentiality purposes."}
-                        ],
-                        project2: [
-                            { image: "img/img-projects/crm-carlo-taboada-1.jpg", title: "Login Page", description: "User authentication page built with Flask and Flask-Login. The system verifies user credentials securely through backend authentication." },
-                            { image: "img/img-projects/website-under-construction.jpg", title: "Development Status", description: "This web project is currently under development, with features and functionality being actively enhanced." }
-                        ],
-                        project3: [
-                            { image: "img/img-projects/picar-1.jpg", title: "Initial Menu", description: "The initial menu features a button to load the price list, which searches for an Excel file and formats all products to store them in a database for further processing. Other buttons indicate the module to work on, such as Products, Clients, Sales, Purchases, and Reports." },
-                            { image: "img/img-projects/picar-2.jpg", title: "Client Management", description: "The Client Management Panel allows you to register a client with all their details. You can also search for a client by their ID, retrieve their data, generate a report, and/or modify their information if needed. Additionally, there is a button to display all clients in the system for a more specific search." },
-                            { image: "img/img-projects/picar-3.jpg", title: "Client Management Panel - Top Bar", description: "The top bar of the Client Management Panel features various lists to manage sales representatives, sales zones, and localities to be assigned to clients and delivery personnel." },
-                            { image: "img/img-projects/picar-4.jpg", title: "Product Management Panel", description: "The Product Management Panel lists all products stored in the database. You can search for a product by its code or apply filters. It allows you to view and modify stock levels, adjust prices, and track the quantity of stock sold for better inventory management." },
-                            { image: "img/img-projects/picar-5.jpg", title: "Sales Management Panel", description: "The Sales Management Panel displays all clients in the system. It includes a filter at the bottom to easily locate a client. Once selected, you can generate a new sale directly from the panel. Values have been blurred for confidentiality purposes." },
-                            { image: "img/img-projects/picar-6.jpg", title: "Sales Generation Window", description: 'The Sales Generation Window allows you to search for products by code, specify the quantity, and add them to the sales list. Additional products can be added, and the total purchase amount is displayed at the bottom. The product list can be edited as needed. A yellow "Print" button generates the sale in PDF format for printing, and the transaction is saved in the system. Additionally, a salesperson can be assigned to the sale for proper tracking.' },
-                            { image: "img/img-projects/picar-7.jpg", title: "Delivery Notes Management Panel", description: 'The Delivery Notes Management Panel handles the creation and storage of delivery notes in PDF format. Saved notes can be searched for reprinting, editing, or deletion as needed, ensuring easy access and efficient document management.' },
-                            { image: "img/img-projects/picar-8.jpg", title: "Client Payment Management", description: 'The Client Payment Management feature allows you to register a payment without the need to generate a sale or a PDF invoice. Simply search for the client, view their outstanding debt (if any), and record the payment amount along with the payment method used. Values have been blurred for confidentiality purposes. Additionally, there is a separate window where all payments can be viewed and filtered for better organization.' },
-                            { image: "img/img-projects/picar-9.jpg", title: "Check Payment Management", description: 'One of the accepted payment types is checks, which can be managed through their dedicated menu. The system will alert you when a check is approaching its expiration date, ensuring timely action and effective tracking.' },
-                            { image: "img/img-projects/picar-10.jpg", title: "Product Purchase Management", description: 'The Product Purchase Management system tracks company expenses and accounts through detailed purchase records. Purchases are now organized by supplier, with a dedicated menu for managing supplier details and activities, ensuring streamlined expense tracking and supplier organization.' },
-                            { image: "img/img-projects/picar-11.jpg", title: "Supplier Payment Management", description: 'The Supplier Payment Management feature allows you to register payments directly to a supplier without needing to generate a purchase in the previous menu. Additionally, it displays the outstanding balance owed to each supplier for improved financial tracking.' },
-                            { image: "img/img-projects/picar-12.jpg", title: "Reports and Analytics Management", description: 'The Reports and Analytics Management system allows you to generate detailed PDF reports by selecting a date range through a calendar interface. These reports include all system activities, such as sales, payments, product stock levels, purchases, and more, providing a comprehensive overview of business operations.' }
-                        ],
-                        project4: [
-                            { image: "img/img-projects/celulares-1.jpg", title: "Device Intake and Technician Assignment", description: "The desktop application, developed in Java, allows the company to register device and customer details. Technicians can be assigned to each repair, along with setting an estimated cost and repair deadline for better repair management." },
-                            { image: "img/img-projects/celulares-2.jpg", title: "Customer, Technician, and Status Management", description: "The application features a top navigation bar with dedicated sections for managing customers, technicians, and repair statuses. These sections allow the creation of new records, deletion, updates, and searches for streamlined data management." },
-                            { image: "img/img-projects/celulares-3.jpg", title: "Device Tracking Portal", description: "The web application provides a field for customers to enter the tracking number assigned at the time of device registration. This feature allows customers to check the status and progress of their repairs conveniently." },
-                            { image: "img/img-projects/celulares-4.jpg", title: "Validation and Device Status Details", description: "If an invalid tracking code is entered, the web application will reject it and display an error image. For valid IDs, it will display detailed information about the repair, including the current status, estimated delivery date, technician in charge, and additional relevant details." },
-                            { image: "img/img-projects/celulares-5.jpg", title: "Contact and Messaging System", description: "The web application includes a contact section with fields for users to fill out. It sends the message to the company and a copy to the sender's email, including all message details. An online messaging system was developed using PHP with SMTP server modules to ensure reliable communication." }
-                        ],
-                        project5: [
-                            { image: "img/img-projects/grid-1.jpg", title: "Grid Arrangement Application for Motorsport Competitions", description: "The desktop application, developed in Java, enables the federation to organize sprints or series after the qualifying rounds. This screenshot shows the main interface, where users can load the qualifying and ballast files. The data is formatted and displayed in a list for verification. Then, options to arrange grids into 2 series, 3 series, or inverted grid are enabled, along with a field to define the number of laps for each race." },
-                            { image: "img/img-projects/grid-2.jpg", title: "Positions and Series-Generated Files", description: "This screenshot displays the positions assigned to each driver in the respective series, organized by colors for easy identification. Additionally, the application automatically generates `.ini` files for each series, storing the data for future reference." },
-                        ]
-                    };
+                    <article class="project-card project-case-card" data-project-folder="crm-losandes">
+                        <div class="project-visual">
+                            <img class="project-image project-image-placeholder" src="img/codificacion.png" alt="Los Andes CRM project cover placeholder">
+                            <a class="project-github-float" href="https://github.com/federicocabello/crm_losandes" target="_blank" rel="noopener noreferrer" aria-label="View Los Andes CRM on GitHub" title="View on GitHub"><i class="fab fa-github" aria-hidden="true"></i></a>
+                        </div>
+                        <div class="project-info">
+                            <div class="project-list-icon" aria-hidden="true"><i class="fas fa-chart-line"></i></div>
+                            <span class="project-category">CRM / Business Management</span>
+                            <div class="project-title-row">
+                                <h4>Los Andes CRM</h4>
+                                <time datetime="2024"><i class="far fa-calendar-alt" aria-hidden="true"></i>2024</time>
+                            </div>
+                            <p class="project-summary">A centralized CRM for managing clients, calls, payments, reminders, tasks, and commercial follow-ups from a single operational workspace.</p>
+                            <div class="project-tech-grid">
+                                <span style="--project-tech-color:#66B2FF"><i class="iconify" data-icon="simple-icons:python"></i>Python</span>
+                                <span style="--project-tech-color:#D5D9E0"><i class="iconify" data-icon="simple-icons:flask"></i>Flask</span>
+                                <span style="--project-tech-color:#F7DF1E"><i class="iconify" data-icon="simple-icons:javascript"></i>JavaScript</span>
+                                <span style="--project-tech-color:#76B4E0"><i class="iconify" data-icon="mdi:database"></i>SQL</span>
+                                <span style="--project-tech-color:#61DAFB"><i class="iconify" data-icon="simple-icons:react"></i>React</span>
+                                <span style="--project-tech-color:#3178C6"><i class="iconify" data-icon="simple-icons:typescript"></i>TypeScript</span>
+                                <span style="--project-tech-color:#0769AD"><i class="iconify" data-icon="simple-icons:jquery"></i>jQuery</span>
+                                <span style="--project-tech-color:#44B78B"><i class="iconify" data-icon="simple-icons:django"></i>Django</span>
+                            </div>
+                            <button type="button" class="project-case-toggle" aria-expanded="false" aria-controls="project1-details" aria-label="View case study" title="View case study">
+                                <i class="fas fa-chevron-down" aria-hidden="true"></i>
+                            </button>
+                            <div id="project1-details" class="project-case-details" aria-hidden="true" inert>
+                                <div class="project-case-details-inner">
+                                    <div class="project-case-copy">
+                                        <h5>The challenge</h5>
+                                        <p>Daily information was distributed across calls, customer records, payments, reminders, and pending tasks, making follow-up difficult and time-consuming.</p>
+                                        <h5>The solution</h5>
+                                        <p>I designed and developed a role-based web platform that centralizes operations, prioritizes overdue activity, tracks every customer interaction, and supports payment and reminder workflows.</p>
+                                    </div>
+                                    <div class="project-case-meta">
+                                        <span><strong>Focus</strong>Workflow optimization</span>
+                                        <span><strong>Access</strong>Private production data</span>
+                                    </div>
+                                    <div class="project-access-note project-access-note-private">
+                                        <i class="fas fa-shield-alt" aria-hidden="true"></i>
+                                        <p><strong>Demo unavailable</strong>This system was developed for a private organization. The software and production data are confidential and include sensitive personal information protected by privacy and legal requirements.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
 
-                    let projectData = [];
-                    let currentProjectIndex = 0;
+                    <article class="project-card project-case-card" data-project-folder="carlo-taboada-crm">
+                        <div class="project-visual">
+                            <img class="project-image project-image-placeholder" src="img/codificacion.png" alt="Carlos Taboada CRM project cover placeholder">
+                            <a class="project-github-float" href="https://github.com/federicocabello/gestion_equipo_legal" target="_blank" rel="noopener noreferrer" aria-label="View Carlos Taboada CRM on GitHub" title="View on GitHub"><i class="fab fa-github" aria-hidden="true"></i></a>
+                        </div>
+                        <div class="project-info">
+                            <div class="project-list-icon" aria-hidden="true"><i class="fas fa-balance-scale"></i></div>
+                            <span class="project-category">Legal CRM / Team Management</span>
+                            <div class="project-title-row">
+                                <h4>Carlos Taboada Law Firm CRM</h4>
+                                <time datetime="2025"><i class="far fa-calendar-alt" aria-hidden="true"></i>2025</time>
+                            </div>
+                            <p class="project-summary">A private legal operations platform for organizing clients, cases, attorney assignments, leads, billing, and collection workflows.</p>
+                            <div class="project-tech-grid">
+                                <span style="--project-tech-color:#61DAFB"><i class="iconify" data-icon="simple-icons:react"></i>React</span>
+                                <span style="--project-tech-color:#66B2FF"><i class="iconify" data-icon="simple-icons:python"></i>Python</span>
+                                <span style="--project-tech-color:#D5D9E0"><i class="iconify" data-icon="simple-icons:flask"></i>Flask</span>
+                                <span style="--project-tech-color:#38BDF8"><i class="iconify" data-icon="file-icons:tailwind"></i>Tailwind CSS</span>
+                                <span style="--project-tech-color:#76B4E0"><i class="iconify" data-icon="mdi:database"></i>SQL</span>
+                                <span style="--project-tech-color:#3178C6"><i class="iconify" data-icon="simple-icons:typescript"></i>TypeScript</span>
+                                <span style="--project-tech-color:#FF9900"><i class="iconify" data-icon="simple-icons:amazonaws"></i>AWS</span>
+                            </div>
+                            <button type="button" class="project-case-toggle" aria-expanded="false" aria-controls="project2-details" aria-label="View case study" title="View case study">
+                                <i class="fas fa-chevron-down" aria-hidden="true"></i>
+                            </button>
+                            <div id="project2-details" class="project-case-details" aria-hidden="true" inert>
+                                <div class="project-case-details-inner">
+                                    <div class="project-case-copy">
+                                        <h5>The challenge</h5>
+                                        <p>The firm needed a controlled environment for coordinating legal teams and keeping client, case, billing, and collection information connected.</p>
+                                        <h5>The solution</h5>
+                                        <p>I developed a secure CRM with authentication, role-based access, centralized case records, attorney assignments, lead tracking, billing tools, and follow-up history.</p>
+                                    </div>
+                                    <div class="project-case-meta">
+                                        <span><strong>Focus</strong>Legal operations</span>
+                                        <span><strong>Access</strong>Confidential project</span>
+                                    </div>
+                                    <div class="project-access-note project-access-note-private">
+                                        <i class="fas fa-balance-scale" aria-hidden="true"></i>
+                                        <p><strong>Demo unavailable</strong>This legal system is private. Public access is restricted because it contains confidential client information and data subject to professional secrecy, privacy, and legal requirements.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
 
-                    function mostrarProyecto() {
-                        const activeProject = document.querySelector(".project-card.active");
-                        if (activeProject) {
-                            const projectId = activeProject.getAttribute("data-project-id");
-                            projectData = allProjectsData[projectId] || [];
-                            openModalProject(0);
-                        }
-                    }
+                    <article class="project-card project-case-card" data-project-folder="distribuidora-picar">
+                        <div class="project-visual">
+                            <img class="project-image project-image-placeholder" src="img/codificacion.png" alt="PICAR tools distribution system cover placeholder">
+                            <a class="project-github-float" href="https://github.com/federicocabello/app_picar/" target="_blank" rel="noopener noreferrer" aria-label="View PICAR Tools Distribution System on GitHub" title="View on GitHub"><i class="fab fa-github" aria-hidden="true"></i></a>
+                        </div>
+                        <div class="project-info">
+                            <div class="project-list-icon" aria-hidden="true"><i class="fas fa-boxes"></i></div>
+                            <span class="project-category">Desktop App / Tool Distribution & Sales</span>
+                            <div class="project-title-row">
+                                <h4>PICAR - Tools Distribution System</h4>
+                                <time datetime="2023"><i class="far fa-calendar-alt" aria-hidden="true"></i>2023</time>
+                            </div>
+                            <p class="project-summary">A Java desktop application built for PICAR to manage tool inventory, sales, purchases, customers, suppliers, accounts, payments, and operational reports.</p>
+                            <div class="project-tech-grid">
+                                <span style="--project-tech-color:#F89820"><i class="iconify" data-icon="fontisto:java"></i>Java</span>
+                                <span style="--project-tech-color:#76B4E0"><i class="iconify" data-icon="mdi:database"></i>SQL</span>
+                            </div>
+                            <button type="button" class="project-case-toggle" aria-expanded="false" aria-controls="project3-details" aria-label="View case study" title="View case study">
+                                <i class="fas fa-chevron-down" aria-hidden="true"></i>
+                            </button>
+                            <div id="project3-details" class="project-case-details" aria-hidden="true" inert>
+                                <div class="project-case-details-inner">
+                                    <div class="project-case-copy">
+                                        <h5>The challenge</h5>
+                                        <p>PICAR needed to replace disconnected records with a reliable system for controlling tool inventory and the commercial activity linked to customers and suppliers.</p>
+                                        <h5>The solution</h5>
+                                        <p>I developed a tailored Java application that centralizes product loading, stock movements, sales, purchases, account balances, payment control, alerts, and reporting.</p>
+                                    </div>
+                                    <div class="project-case-meta">
+                                        <span><strong>Focus</strong>Inventory and sales</span>
+                                        <span><strong>Platform</strong>Desktop application</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
 
-                    function openModalProject(index) {
-                        if (!projectData.length) {
-                            return;
-                        }
-                        currentProjectIndex = index;
-                        const modal = document.getElementById("modal-project");
-                        updateModalProjectContent();
-                        modal.style.display = "flex";
-                    }
+                    <article class="project-card project-case-card" data-project-folder="cell-repair">
+                        <div class="project-visual">
+                            <img class="project-image project-image-placeholder" src="img/codificacion.png" alt="Cell repair tracking system project cover placeholder">
+                            <a class="project-github-float" href="https://github.com/federicocabello/gestion_celulares/" target="_blank" rel="noopener noreferrer" aria-label="View Cell Repair Tracking System on GitHub" title="View on GitHub"><i class="fab fa-github" aria-hidden="true"></i></a>
+                        </div>
+                        <div class="project-info">
+                            <div class="project-list-icon" aria-hidden="true"><i class="fas fa-tools"></i></div>
+                            <span class="project-category">Desktop App / Repair Tracking</span>
+                            <div class="project-title-row">
+                                <h4>Cell Repair Tracking System</h4>
+                                <time datetime="2022"><i class="far fa-calendar-alt" aria-hidden="true"></i>2022</time>
+                            </div>
+                            <p class="project-summary">A desktop repair management system that records customers, mobile devices, dates, faults, repair details, and progress in a centralized database.</p>
+                            <div class="project-tech-grid">
+                                <span style="--project-tech-color:#E34F26"><i class="iconify" data-icon="simple-icons:html5"></i>HTML5</span>
+                                <span style="--project-tech-color:#1572B6"><i class="iconify" data-icon="simple-icons:css3"></i>CSS3</span>
+                                <span style="--project-tech-color:#F7DF1E"><i class="iconify" data-icon="simple-icons:javascript"></i>JavaScript</span>
+                                <span style="--project-tech-color:#F89820"><i class="iconify" data-icon="fontisto:java"></i>Java</span>
+                                <span style="--project-tech-color:#777BB4"><i class="iconify" data-icon="simple-icons:php"></i>PHP</span>
+                                <span style="--project-tech-color:#76B4E0"><i class="iconify" data-icon="mdi:database"></i>SQL</span>
+                            </div>
+                            <button type="button" class="project-case-toggle" aria-expanded="false" aria-controls="project4-details" aria-label="View case study" title="View case study">
+                                <i class="fas fa-chevron-down" aria-hidden="true"></i>
+                            </button>
+                            <div id="project4-details" class="project-case-details" aria-hidden="true" inert>
+                                <div class="project-case-details-inner">
+                                    <div class="project-case-copy">
+                                        <h5>The challenge</h5>
+                                        <p>Repair companies needed a reliable record of every phone and a simple way to keep customers informed without exposing internal data or handling repeated status inquiries.</p>
+                                        <h5>The solution</h5>
+                                        <p>I connected the Java desktop workflow to an SQL database and a PHP tracking website where customers can securely check repair progress using their unique code.</p>
+                                    </div>
+                                    <div class="project-case-meta">
+                                        <span><strong>Focus</strong>Repair operations</span>
+                                        <span><strong>Feature</strong>Public status tracking</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
 
-                    function closeModalProject() {
-                        const modal = document.getElementById("modal-project");
-                        modal.style.display = "none";
-                    }
-
-                    function updateModalProjectContent() {
-                        if (!projectData[currentProjectIndex]) {
-                            return;
-                        }
-                        const modalImage = document.getElementById("modal-project-image");
-                        const modalTitle = document.getElementById("modal-project-title");
-                        const modalDescription = document.getElementById("modal-project-description");
-                        modalImage.src = projectData[currentProjectIndex].image;
-                        modalImage.alt = projectData[currentProjectIndex].title;
-                        modalDescription.textContent = projectData[currentProjectIndex].description;
-                        modalTitle.textContent = projectData[currentProjectIndex].title;
-                    }
-
-                    function prevSlideProject() {
-                        currentProjectIndex = (currentProjectIndex === 0) ? projectData.length - 1 : currentProjectIndex - 1;
-                        updateModalProjectContent();
-                    }
-
-                    function nextSlideProject() {
-                    currentProjectIndex = (currentProjectIndex === projectData.length - 1) ? 0 : currentProjectIndex + 1;
-                    updateModalProjectContent();
-                    }
-                    </script>
-
-                <div class="project-navigation">
-                    <button class="nav-button project-prev-button">&lt;</button>
-                    <button class="nav-button project-next-button">&gt;</button>
-                </div>
                 </div>
             </section>
 
-            <div id="modal-project" class="modal-project">
-                <div class="modal-project-content">
-                    <span class="close" onclick="closeModalProject()">&times;</span>
-                    <div class="modal-project-body">
-                        <img id="modal-project-image" src="" alt="Project Image">
-                        <h1 id="modal-project-title"></h1>
-                        <p id="modal-project-description"></p>
-                    </div>
-                    <div class="modal-project-navigation">
-                        <button class="nav-button modal-prev-button" onclick="prevSlideProject()">&lt;</button>
-                        <button class="nav-button modal-next-button" onclick="nextSlideProject()">&gt;</button>
+
+            <section id="experience" class="content-section">
+                <div class="section-heading">
+                    <h1 data-i18n="sections.experience.title">Work<br><em>Experience</em></h1>
+                    <p data-i18n="sections.experience.description">Here are some of the projects and roles I have worked on during my professional journey.</p>
+                </div>
+                <div class="section-content">
+                    <div class="work-items">
+                        <article class="work-item is-current">
+                            <header class="work-item-header">
+                                <div class="work-company">
+                                    <strong><i class="fas fa-rocket" aria-hidden="true"></i>Proyecto Prisma</strong>
+                                    <span>Independent software venture / Digital services</span>
+                                </div>
+                                <time class="work-period" datetime="2026-01">January 2026 - Present</time>
+                            </header>
+                            <div class="text-content">
+                                <div class="work-role-row"><h4>Founder & CTO</h4><span class="role-duration" data-start="2026-01-01"></span></div>
+                                <div class="work-location"><i class="fas fa-map-marker-alt" aria-hidden="true"></i>Hybrid / San Rafael, Mendoza, Argentina <img src="https://upload.wikimedia.org/wikipedia/commons/1/1a/Flag_of_Argentina.svg" alt="Argentina" class="flag"></div>
+                                <div class="work-outcomes">
+                                    <section><h5>Responsibilities</h5><p>Run an independent venture offering technology guidance, landing pages, and custom business systems.</p></section>
+                                    <section><h5>Problems solved</h5><p>Help clients define digital needs and replace manual processes with tailored software solutions.</p></section>
+                                    <section><h5>Impact</h5><p>Created practical demos and production tools that make technology easier to evaluate and adopt.</p></section>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="work-item is-current">
+                            <header class="work-item-header">
+                                <div class="work-company">
+                                    <strong><i class="fas fa-building" aria-hidden="true"></i>Los Andes - Enterprise Solutions</strong>
+                                    <span>Local business software / Web services</span>
+                                </div>
+                                <time class="work-period" datetime="2024-01">January 2024 - Present</time>
+                            </header>
+                            <div class="text-content">
+                                <div class="work-role-row"><h4>Software Engineer</h4><span class="role-duration" data-start="2024-01-01"></span></div>
+                                <div class="work-location"><i class="fas fa-map-marker-alt" aria-hidden="true"></i>Remote / Brownsville, Texas, USA <img src="https://upload.wikimedia.org/wikipedia/commons/e/e2/Flag_of_the_United_States_%28Pantone%29.svg" alt="United States" class="flag"></div>
+                                <div class="work-outcomes">
+                                    <section><h5>Responsibilities</h5><p>Develop and maintain business systems and websites offered by the company to local clients.</p></section>
+                                    <section><h5>Problems solved</h5><p>Translate regional business needs into maintainable platforms, websites, and connected digital processes.</p></section>
+                                    <section><h5>Impact</h5><p>Expanded the company's digital service offering and supported more efficient client operations.</p></section>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="work-item is-current">
+                            <header class="work-item-header">
+                                <div class="work-company">
+                                    <strong><i class="fas fa-database" aria-hidden="true"></i>TS Network</strong>
+                                    <span>Database administration / Business systems</span>
+                                </div>
+                                <time class="work-period" datetime="2024-01">January 2024 - Present</time>
+                            </header>
+                            <div class="text-content">
+                                <div class="work-role-row"><h4>Database Administrator</h4><span class="role-duration" data-start="2024-01-01"></span></div>
+                                <div class="work-location"><i class="fas fa-map-marker-alt" aria-hidden="true"></i>Remote / Brownsville, Texas, USA <img src="https://upload.wikimedia.org/wikipedia/commons/e/e2/Flag_of_the_United_States_%28Pantone%29.svg" alt="United States" class="flag"></div>
+                                <div class="work-outcomes">
+                                    <section><h5>Responsibilities</h5><p>Design, administer, and maintain databases for customer, financial, and internal management systems.</p></section>
+                                    <section><h5>Problems solved</h5><p>Organize critical business records and reduce inconsistencies across connected company platforms.</p></section>
+                                    <section><h5>Impact</h5><p>Improved data integrity, availability, and reliability for daily operations and financial control.</p></section>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="work-item">
+                            <header class="work-item-header">
+                                <div class="work-company">
+                                    <strong><i class="fas fa-boxes" aria-hidden="true"></i>PICAR</strong>
+                                    <span>Desktop software / Inventory and sales</span>
+                                </div>
+                                <time class="work-period" datetime="2023">January - December 2023</time>
+                            </header>
+                            <div class="text-content">
+                                <div class="work-role-row"><h4>Software Developer</h4><span class="role-duration" data-start="2023-01-01" data-end="2024-01-01"></span></div>
+                                <div class="work-location"><i class="fas fa-map-marker-alt" aria-hidden="true"></i>Hybrid / San Rafael, Mendoza, Argentina <img src="https://upload.wikimedia.org/wikipedia/commons/1/1a/Flag_of_Argentina.svg" alt="Argentina" class="flag"></div>
+                                <div class="work-outcomes">
+                                    <section><h5>Responsibilities</h5><p>Designed and developed PICAR's desktop system for products, stock, sales, clients, and suppliers.</p></section>
+                                    <section><h5>Problems solved</h5><p>Replaced manual inventory and administrative records with a centralized workflow built for the company.</p></section>
+                                    <section><h5>Impact</h5><p>Improved stock visibility, sales control, billing organization, and everyday administration.</p></section>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="work-item">
+                            <header class="work-item-header">
+                                <div class="work-company">
+                                    <strong><i class="fas fa-user-tie" aria-hidden="true"></i>Freelancer</strong>
+                                    <span>Early independent work / APIs and software</span>
+                                </div>
+                                <time class="work-period" datetime="2022-08">August - December 2022</time>
+                            </header>
+                            <div class="text-content">
+                                <div class="work-role-row"><h4>Independent Software Developer</h4><span class="role-duration" data-start="2022-08-01" data-end="2023-01-01"></span></div>
+                                <div class="work-location"><i class="fas fa-map-marker-alt" aria-hidden="true"></i>Hybrid / San Rafael, Mendoza, Argentina <img src="https://upload.wikimedia.org/wikipedia/commons/1/1a/Flag_of_Argentina.svg" alt="Argentina" class="flag"></div>
+                                <div class="work-outcomes">
+                                    <section><h5>Responsibilities</h5><p>Developed REST APIs and small software products as my first independent commercial offering.</p></section>
+                                    <section><h5>Problems solved</h5><p>Turned early client ideas into focused scopes, functional prototypes, and practical applications.</p></section>
+                                    <section><h5>Impact</h5><p>Established my first service portfolio and strengthened client communication and software delivery.</p></section>
+                                </div>
+                            </div>
+                        </article>
                     </div>
                 </div>
-            </div>
+            </section>
 
+            <section id="skills" class="content-section">
+                <div class="section-heading">
+                    <h1 data-i18n="sections.skills.title">Skills &<br><em>Tech Stack</em></h1>
+                    <p data-i18n="sections.skills.description">Core technologies I use to build projects, applications, APIs, databases, and business systems.</p>
+                </div>
+                <div class="section-content skills-content">
+                    <div class="skill-network" id="skill-network">
+                        <svg class="skill-network-lines" aria-hidden="true"></svg>
+                        <div class="skill-network-groups" role="tablist" aria-label="Technology groups">
+                            <button type="button" class="skill-group-node is-active" role="tab" id="skill-tab-languages" aria-selected="true" aria-controls="skill-panel-languages" data-skill-panel="skill-panel-languages">
+                                <i class="fas fa-laptop-code" aria-hidden="true"></i><span data-i18n="skills.languages">Languages</span>
+                            </button>
+                            <button type="button" class="skill-group-node" role="tab" id="skill-tab-frontend" aria-selected="false" aria-controls="skill-panel-frontend" data-skill-panel="skill-panel-frontend">
+                                <i class="fas fa-layer-group" aria-hidden="true"></i><span data-i18n="skills.frontend">Frontend</span>
+                            </button>
+                            <button type="button" class="skill-group-node" role="tab" id="skill-tab-backend" aria-selected="false" aria-controls="skill-panel-backend" data-skill-panel="skill-panel-backend">
+                                <i class="fas fa-server" aria-hidden="true"></i><span data-i18n="skills.backend">Backend</span>
+                            </button>
+                            <button type="button" class="skill-group-node" role="tab" id="skill-tab-data" aria-selected="false" aria-controls="skill-panel-data" data-skill-panel="skill-panel-data">
+                                <i class="fas fa-cloud" aria-hidden="true"></i><span data-i18n="skills.dataCloud">Data, Cloud & Tools</span>
+                            </button>
+                        </div>
+
+                        <div class="skill-network-stage">
+                            <div class="skill-tech-panel is-active" id="skill-panel-languages" role="tabpanel" aria-labelledby="skill-tab-languages" style="--skill-columns:8">
+                                <div class="skill-tech-node" style="--tech-color:#66B2FF"><i class="iconify" data-icon="simple-icons:python"></i><span>Python</span><small>5+ years</small></div>
+                                <div class="skill-tech-node" style="--tech-color:#F7DF1E"><i class="iconify" data-icon="simple-icons:javascript"></i><span>JavaScript</span><small>5+ years</small></div>
+                                <div class="skill-tech-node" style="--tech-color:#3178C6"><i class="iconify" data-icon="simple-icons:typescript"></i><span>TypeScript</span><small>5+ years</small></div>
+                                <div class="skill-tech-node" style="--tech-color:#EF7040"><i class="fas fa-code skill-tech-symbol" aria-hidden="true"></i><span>HTML5 & CSS3</span><small>5+ years</small></div>
+                                <div class="skill-tech-node" style="--tech-color:#76B4E0"><i class="fas fa-database skill-tech-symbol" aria-hidden="true"></i><span>SQL & NoSQL</span><small>5+ years</small></div>
+                                <div class="skill-tech-node" style="--tech-color:#F89820"><i class="iconify" data-icon="fontisto:java"></i><span>Java</span><small>3+ years</small></div>
+                                <div class="skill-tech-node" style="--tech-color:#659AD2"><i class="iconify" data-icon="simple-icons:cplusplus"></i><span>C++</span><small>2+ years</small></div>
+                                <div class="skill-tech-node" style="--tech-color:#8892BF"><i class="iconify" data-icon="simple-icons:php"></i><span>PHP</span><small>2+ years</small></div>
+                            </div>
+
+                            <div class="skill-tech-panel" id="skill-panel-frontend" role="tabpanel" aria-labelledby="skill-tab-frontend" aria-hidden="true" inert style="--skill-columns:3">
+                                <div class="skill-tech-node" style="--tech-color:#61DAFB"><i class="iconify" data-icon="simple-icons:react"></i><span>React</span><small>5+ years</small></div>
+                                <div class="skill-tech-node" style="--tech-color:#38B2AC"><i class="iconify" data-icon="file-icons:tailwind"></i><span>Tailwind CSS</span><small>5+ years</small></div>
+                                <div class="skill-tech-node" style="--tech-color:#1E90FF"><i class="iconify" data-icon="simple-icons:jquery"></i><span>jQuery</span><small>5+ years</small></div>
+                            </div>
+
+                            <div class="skill-tech-panel" id="skill-panel-backend" role="tabpanel" aria-labelledby="skill-tab-backend" aria-hidden="true" inert style="--skill-columns:5">
+                                <div class="skill-tech-node" style="--tech-color:#A0A0A0"><i class="iconify" data-icon="simple-icons:flask"></i><span>Flask</span><small>5+ years</small></div>
+                                <div class="skill-tech-node" style="--tech-color:#339933"><i class="iconify" data-icon="fontisto:nodejs"></i><span>Node.js</span><small>5+ years</small></div>
+                                <div class="skill-tech-node" style="--tech-color:#4CAF50"><i class="iconify" data-icon="simple-icons:django"></i><span>Django</span><small>3+ years</small></div>
+                                <div class="skill-tech-node" style="--tech-color:#D6DCE5"><i class="iconify" data-icon="simple-icons:express"></i><span>Express.js</span><small>3+ years</small></div>
+                                <div class="skill-tech-node" style="--tech-color:#FFFFFF"><i class="iconify" data-icon="simple-icons:nextdotjs"></i><span>Next.js</span><small>3+ years</small></div>
+                            </div>
+
+                            <div class="skill-tech-panel" id="skill-panel-data" role="tabpanel" aria-labelledby="skill-tab-data" aria-hidden="true" inert style="--skill-columns:8">
+                                <div class="skill-tech-node" style="--tech-color:#76B4E0"><i class="iconify" data-icon="fontisto:mysql"></i><span>MySQL</span><small>5+ years</small></div>
+                                <div class="skill-tech-node" style="--tech-color:#F05032"><i class="iconify" data-icon="simple-icons:git"></i><span>Git</span><small>5+ years</small></div>
+                                <div class="skill-tech-node" style="--tech-color:#47A248"><i class="iconify" data-icon="fontisto:mongodb"></i><span>MongoDB</span><small>3+ years</small></div>
+                                <div class="skill-tech-node" style="--tech-color:#E8D44D"><i class="iconify" data-icon="simple-icons:pandas"></i><span>Pandas</span><small>3+ years</small></div>
+                                <div class="skill-tech-node" style="--tech-color:#4DABCF"><i class="iconify" data-icon="simple-icons:numpy"></i><span>NumPy</span><small>3+ years</small></div>
+                                <div class="skill-tech-node" style="--tech-color:#FF9900"><i class="iconify" data-icon="simple-icons:amazonaws"></i><span>AWS</span><small>3+ years</small></div>
+                                <div class="skill-tech-node" style="--tech-color:#FFFFFF"><i class="iconify" data-icon="simple-icons:prisma"></i><span>Prisma</span><small>3+ years</small></div>
+                                <div class="skill-tech-node" style="--tech-color:#2496ED"><i class="iconify" data-icon="simple-icons:docker"></i><span>Docker</span><small>3+ years</small></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
             <section id="education" class="content-section-education">
                 <div class="section-heading">
-                    <h1>Formation &<br><em>Education</em></h1>
-                    <p>Here is a summary of my educational journey and courses taken.</p>
+                    <h1 data-i18n="sections.education.title">Formation &<br><em>Education</em></h1>
+                    <p data-i18n="sections.education.description">Here is a summary of my educational journey and courses taken.</p>
                 </div>
                 <div class="education-container">
-                    
-                    <div class="education-item">
-                        <i class="fas fa-university education-icon"></i> 
-                        <h2>9-012 IES Instituto de Educación Superior "San Rafael en Informática" University</h2>
-                        <p><strong>Advanced Technical Training Course in Systems Analysis and Programming</strong></p>
-                        <p class="education-dates">Feb 2018 - Dec 2021</p>
-                    </div>
+                    <article class="education-card education-card-degree">
+                        <div class="education-visual">
+                            <button class="education-document-trigger" type="button" aria-label="Enlarge university diploma" aria-controls="education-document-dialog">
+                                <img class="education-protected-image" src="img/diploma.png" alt="University diploma for Systems Analysis and Programming" draggable="false">
+                                <span class="education-zoom-icon" aria-hidden="true"><i class="fas fa-search-plus"></i></span>
+                            </button>
+                        </div>
+                        <div class="education-copy">
+                            <span class="education-type"><i class="fas fa-university" aria-hidden="true"></i>Higher Education</span>
+                            <h2>9-012 IES Instituto de Educación Superior "San Rafael en Informática"</h2>
+                            <p class="education-program">Advanced Technical Training Course in Systems Analysis and Programming</p>
+                            <div class="education-meta">
+                                <time datetime="2018-02/2021-12"><i class="far fa-calendar-alt" aria-hidden="true"></i>Feb 2018 - Dec 2021</time>
+                                <span><i class="fas fa-graduation-cap" aria-hidden="true"></i>University degree</span>
+                            </div>
+                        </div>
+                    </article>
 
-                    <div class="education-item">
-                        <i class="fas fa-language education-icon"></i>
-                        <h2>Private Teaching Institute I.C.A.A.</h2>
-                        <p><strong>Intensive Communicational English Course - Level B2</strong></p>
-                        <p class="education-dates">Graduated in 2022</p>
-                    </div>
-            </div>
+                    <article class="education-card education-card-language">
+                        <div class="education-visual education-language-cover" aria-hidden="true">
+                            <i class="fas fa-language"></i>
+                            <div>
+                                <strong>English</strong>
+                                <span>Language Training</span>
+                            </div>
+                            <small>Level B2</small>
+                        </div>
+                        <div class="education-copy">
+                            <span class="education-type"><i class="fas fa-language" aria-hidden="true"></i>Language Education</span>
+                            <h2>Private Teaching Institute I.C.A.A.</h2>
+                            <p class="education-program">Intensive Communicational English Course - Level B2</p>
+                            <div class="education-meta">
+                                <time datetime="2022"><i class="far fa-calendar-alt" aria-hidden="true"></i>Graduated in 2022</time>
+                                <span><i class="fas fa-comments" aria-hidden="true"></i>Communicational English</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+
+                <dialog class="education-document-dialog" id="education-document-dialog" aria-label="University diploma preview">
+                    <button class="education-document-close" type="button" aria-label="Close diploma preview" title="Close">
+                        <i class="fas fa-times" aria-hidden="true"></i>
+                    </button>
+                    <img class="education-protected-image" src="img/diploma.png" alt="Enlarged university diploma for Systems Analysis and Programming" draggable="false">
+                </dialog>
             </section>
             
             <section id="contact" class="content-section-contact">
                     <div class="section-heading">
-                        <h1>Contact<br><em>Me</em></h1>
-                        <p>Let’s build new paths together!</p>
+                        <h1 data-i18n="sections.contact.title">Contact<br><em>Me</em></h1>
+                        <p data-i18n="sections.contact.description">Let’s build new paths together!</p>
                     </div>
                     <div class="section-content">
                         <div class="contact-message" style="width: 80%; margin: 0 auto;">
@@ -579,8 +859,10 @@
                             <a href="https://github.com/federicocabello" class="contact-button github" target="_blank" rel="noopener noreferrer">
                                 <i class="fab fa-github"></i> GitHub
                             </a>
-                            <button class="contact-button email" onclick="copyEmail()">
-                                <i class="fas fa-envelope"></i> fede.cabello@hotmail.com
+                            <button class="contact-button email contact-email-icon" id="contact-email-button" type="button" onclick="copyEmail()" aria-label="Copy email address" title="Copy email">
+                                <i class="fas fa-envelope" aria-hidden="true"></i>
+                                <span class="contact-copy-feedback" aria-hidden="true">Copied!</span>
+                                <span class="sr-only" id="contact-email-status" aria-live="polite"></span>
                             </button>
                     </div>
             </section>
@@ -589,59 +871,53 @@
             </section>
         </div>
 
+    <a href="#top" class="portfolio-up-button" aria-label="Back to About Me" title="Back to About Me">
+        <i class="fas fa-arrow-up" aria-hidden="true"></i>
+    </a>
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
     <script src="js/vendor/bootstrap.min.js"></script>
     <script src="js/plugins.js"></script>
-    <script src="js/main.js"></script>
+    <script src="js/main.js?v=20260904-up-control"></script>
     <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
     <script src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
     <script>
-        // Hide Header on on scroll down
-        var didScroll;
-        var lastScrollTop = 0;
-        var delta = 5;
-        var navbarHeight = $('header').outerHeight() || 0;
         document.getElementById('current-year').textContent = new Date().getFullYear();
+        updateRoleDurations();
 
-        $(window).scroll(function(event){
-            didScroll = true;
-        });
+        function updateRoleDurations() {
+            document.querySelectorAll('.role-duration').forEach((duration) => {
+                const start = new Date(duration.dataset.start + 'T00:00:00');
+                const end = duration.dataset.end ? new Date(duration.dataset.end + 'T00:00:00') : new Date();
+                let months = (end.getFullYear() - start.getFullYear()) * 12 + (end.getMonth() - start.getMonth());
 
-        setInterval(function() {
-            if (didScroll) {
-                hasScrolled();
-                didScroll = false;
-            }
-        }, 250);
-
-        function hasScrolled() {
-            var st = $(this).scrollTop();
-            
-            // Make sure they scroll more than delta
-            if(Math.abs(lastScrollTop - st) <= delta)
-                return;
-            
-            // If they scrolled down and are past the navbar, add class .nav-up.
-            // This is necessary so you never see what is "behind" the navbar.
-            if (st > lastScrollTop && st > navbarHeight){
-                // Scroll Down
-                $('header').removeClass('nav-down').addClass('nav-up');
-            } else {
-                // Scroll Up
-                if(st + $(window).height() < $(document).height()) {
-                    $('header').removeClass('nav-up').addClass('nav-down');
+                if (end.getDate() < start.getDate()) {
+                    months -= 1;
                 }
-            }
-            
-            lastScrollTop = st;
+
+                months = Math.max(months, 0);
+                const years = Math.floor(months / 12);
+                const remainingMonths = months % 12;
+                const parts = [];
+
+                if (years > 0) {
+                    parts.push(`${years} ${years === 1 ? 'year' : 'years'}`);
+                }
+
+                if (remainingMonths > 0) {
+                    parts.push(`${remainingMonths} ${remainingMonths === 1 ? 'month' : 'months'}`);
+                }
+
+                duration.textContent = parts.length ? parts.join(' ') : 'Less than 1 month';
+            });
         }
 
     document.getElementById('email-button').addEventListener('click', function() {
     const email = 'fede.cabello@hotmail.com';
-    const tooltip = document.getElementById('email-tooltip');
+    const status = document.getElementById('email-status');
+    const tooltip = document.getElementById('email-action-tooltip');
     
-    // Crear un campo de texto temporal para copiar el email
     const tempInput = document.createElement('input');
     tempInput.value = email;
     document.body.appendChild(tempInput);
@@ -649,97 +925,72 @@
     document.execCommand('copy');
     document.body.removeChild(tempInput);
     
-    // Cambiar el texto del tooltip a "Copied!"
-    tooltip.innerHTML = '<i class="fas fa-paperclip" style="margin-right: 3px; vertical-align: bottom;"></i>Copied!';
+    status.textContent = 'Email copied';
+    tooltip.textContent = 'Copied!';
+    this.classList.add('is-copied');
     
-    // Restaurar el texto a "Copy" después de 2 segundos
     setTimeout(() => {
-        tooltip.innerHTML = '<i class="fas fa-paperclip" style="margin-right: 3px; vertical-align: bottom;"></i>Copy';
+        status.textContent = '';
+        tooltip.textContent = 'Copy';
+        this.classList.remove('is-copied');
     }, 2000);
     });
-
-    function showMore(moreText, boton) {
-        if (moreText.classList.contains('hidden-text')) {
-        moreText.classList.remove('hidden-text');
-        moreText.classList.add('shown-text');
-        boton.textContent = "Read Less";
-    } else {
-        moreText.classList.remove('shown-text');
-        moreText.classList.add('hidden-text');
-        boton.textContent = "Read More";
-    }
-}
 
 $(document).ready(function(){
   $('.owl-carousel').owlCarousel({
       loop: true,
       margin: 10,
-      nav: true, // Muestra botones de navegación
-      center: true, // Centra el ítem del medio
+      nav: true,
+      center: true,
       autoplay: true,
       autoplayTimeout: 3000,
       responsive: {
           0: {
-              items: 1 // Muestra 1 ítem en pantallas pequeñas
+              items: 1
           },
           600: {
-              items: 2 // Muestra 2 ítems en pantallas medianas
+              items: 2
           },
           1000: {
-              items: 3 // Muestra 3 ítems en pantallas grandes
+              items: 3
           }
       }
   });
 });
 
-let currentProject = 0;
-const projects = document.querySelectorAll('.project-card');
-const prevButton = document.querySelector('.project-prev-button');
-const nextButton = document.querySelector('.project-next-button');
-
-function showProject(index) {
-    projects.forEach((project, i) => {
-        project.classList.remove('fade-in', 'fade-out', 'active'); // Elimina las clases de animación y active
-
-        if (i === index) {
-            project.classList.add('fade-in', 'active'); // Añade animación de entrada y activa el proyecto
-        } else if (project.classList.contains('active')) {
-            project.classList.add('fade-out'); // Añade animación de salida al proyecto que se va a ocultar
-        }
-    });
-}
-
-if (prevButton && nextButton && projects.length) {
-    prevButton.addEventListener('click', () => {
-        currentProject = (currentProject === 0) ? projects.length - 1 : currentProject - 1;
-        showProject(currentProject);
-    });
-
-    nextButton.addEventListener('click', () => {
-        currentProject = (currentProject === projects.length - 1) ? 0 : currentProject + 1;
-        showProject(currentProject);
-    });
-
-    // Mostrar solo el primer proyecto al cargar
-    showProject(currentProject);
-}
+let contactEmailFeedbackTimer;
 
 function copyEmail() {
     const email = 'fede.cabello@hotmail.com';
+    const button = document.getElementById('contact-email-button');
+    const status = document.getElementById('contact-email-status');
+
+    function showCopiedFeedback() {
+        button.classList.add('is-copied');
+        status.textContent = 'Email copied';
+        clearTimeout(contactEmailFeedbackTimer);
+        contactEmailFeedbackTimer = setTimeout(() => {
+            button.classList.remove('is-copied');
+            status.textContent = '';
+        }, 2000);
+    }
+
+    function copyWithFallback() {
+        const tempInput = document.createElement('input');
+        tempInput.value = email;
+        document.body.appendChild(tempInput);
+        tempInput.select();
+        document.execCommand('copy');
+        document.body.removeChild(tempInput);
+        showCopiedFeedback();
+    }
+
     if (navigator.clipboard && window.isSecureContext) {
-        navigator.clipboard.writeText(email).then(() => {
-            alert('Email copied to clipboard!');
-        });
+        navigator.clipboard.writeText(email).then(showCopiedFeedback).catch(copyWithFallback);
         return;
     }
 
-    const tempInput = document.createElement('input');
-    tempInput.value = email;
-    document.body.appendChild(tempInput);
-    tempInput.select();
-    document.execCommand('copy');
-    document.body.removeChild(tempInput);
-    alert('Email copied to clipboard!');
+    copyWithFallback();
 }
     </script>
 </body>

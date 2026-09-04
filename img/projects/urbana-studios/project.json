@@ -1,0 +1,14 @@
+{
+  "name": "Urbana Studios",
+  "category": "Property Management System",
+  "year": "2026",
+  "summary": "A property management platform for apartment availability, tenants, contracts, rent payments, invoicing, visit scheduling, and occupancy analytics.",
+  "functions": "Centralizes units and availability, tenants and contracts, rent payments, invoicing, prospect appointments, and income and occupancy analytics.",
+  "problem": "The company needed one professional system to manage apartments, leases, tenants, rent collection, and billing while making it easier for prospects to schedule property visits.",
+  "solution": "I developed a React and Node.js platform with a premium dark interface, an interactive appointment calendar, and a complete administrative panel for the leasing and sales team.",
+  "impacts": ["Centralized property management", "Online visit scheduling", "Revenue and occupancy insights", "Improved leasing conversion"],
+  "technologies": ["Python", "React", "Node.js", "Tailwind CSS", "Express.js", "Next.js", "SQL"],
+  "links": { "repository": null, "website": null },
+  "media": { "type": "gallery" },
+  "demo": { "status": "private", "title": "Private production system", "description": "Public access is unavailable because the platform contains confidential tenant, contract, payment, billing, and property data." }
+}

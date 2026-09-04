@@ -1,0 +1,14 @@
+{
+  "name": "The Breakers Plaza CRM",
+  "category": "CRM / Condominium Management",
+  "year": "2026",
+  "summary": "A condominium CRM that centralizes residents, maintenance fees, shared-area reservations, beach amenity requests, and maintenance work.",
+  "functions": "Manages residents and fees, synchronizes payments with QuickBooks, validates SUM availability, processes beach amenity requests, and records maintenance work.",
+  "problem": "Resident data, payments, reservations, and amenity requests were handled separately, causing lost requests, scheduling conflicts, and duplicate accounting entries.",
+  "solution": "I mapped the administrative workflow and built a centralized system with QuickBooks payment synchronization, real-time reservation validation, online requests, and staff training.",
+  "impacts": ["100% resident management", "No booking conflicts", "Single accounting entry", "Online amenity requests"],
+  "technologies": ["React", "Python", "Node.js", "Tailwind CSS", "Next.js", "Express.js", "SQL", "AWS"],
+  "links": { "repository": null, "website": null },
+  "media": { "type": "gallery" },
+  "demo": { "status": "private", "title": "Private system", "description": "Public access is unavailable because the condominium platform contains sensitive resident, payment, reservation, and operational data." }
+}

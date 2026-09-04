@@ -1,0 +1,14 @@
+{
+  "name": "Proyecto Prisma",
+  "category": "Business Website / Interactive Demos",
+  "year": "2026",
+  "summary": "The digital home of my software venture, presenting services, business solutions, professional expertise, and nine interactive demos for prospective clients.",
+  "functions": "Presents software services, landing-page development, commercial consulting, contact channels, and nine ready-to-test demos for different business needs.",
+  "problem": "Potential clients needed a simple way to understand the available services and evaluate whether a digital solution could improve their business before committing to development.",
+  "solution": "I built a responsive company website where visitors can explore services, learn about my approach, and test nine interactive demos before requesting a tailored solution.",
+  "impacts": ["9 interactive demos", "Clear service discovery", "Early solution validation", "Direct client contact"],
+  "technologies": ["Python", "React", "Node.js", "Tailwind CSS", "Next.js", "Express.js", "Prisma", "NoSQL"],
+  "links": { "repository": "https://github.com/federicocabello/proyecto_prisma", "website": null },
+  "media": { "type": "live", "url": "https://proyectoprisma.com.ar", "label": "proyectoprisma.com.ar" },
+  "demo": null
+}

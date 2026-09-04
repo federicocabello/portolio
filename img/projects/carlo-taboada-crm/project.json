@@ -1,0 +1,14 @@
+{
+  "name": "Carlos Taboada Law Firm CRM",
+  "category": "Legal CRM / Case Management",
+  "year": "2025",
+  "summary": "A private legal CRM that organizes appointments, intake notes, client information, case evaluation, and follow-up for attorneys and secretaries.",
+  "functions": "Registers cases at reception, schedules appointments, stores notes, supports attorney review, and tracks accepted matters through client contact and follow-up.",
+  "problem": "The firm needed a secure workflow for receiving legal inquiries, evaluating requirements, assigning cases, and protecting sensitive client information.",
+  "solution": "I built a role-based system where secretaries register inquiries and attorneys evaluate immigration, criminal, and other cases before acceptance and follow-up.",
+  "impacts": ["Structured case intake", "Role-based legal review", "Centralized appointments", "Traceable client follow-up"],
+  "technologies": ["React", "Python", "Flask", "Tailwind CSS", "SQL", "TypeScript", "AWS"],
+  "links": { "repository": "https://github.com/federicocabello/gestion_equipo_legal", "website": null },
+  "media": { "type": "gallery" },
+  "demo": { "status": "legal", "title": "Private legal system", "description": "Public access is prohibited because the platform contains confidential case and client data protected by privacy, professional secrecy, and legal requirements." }
+}

@@ -1,0 +1,14 @@
+{
+  "name": "The Breakers Plaza",
+  "category": "Luxury Landing Page / Condominiums",
+  "year": "2026",
+  "summary": "An elegant beachfront condominium website designed to express The Breakers Plaza's premium identity and connect residents with their private portal.",
+  "functions": "Presents the property and its amenities through an interactive gallery, provides location information, and gives residents direct access to the condominium CRM.",
+  "problem": "The Breakers Plaza needed a refined digital presence that reflected its oceanfront experience while providing a clear entry point for residents and prospective buyers.",
+  "solution": "I created a responsive luxury-focused experience with high-resolution beach imagery, elegant typography, an optimized amenities gallery, an integrated map, and direct CRM access.",
+  "impacts": ["Premium digital brand presence", "Direct resident portal access", "Clear property discovery", "Optimized image experience"],
+  "technologies": ["React", "JavaScript", "CSS3"],
+  "links": { "repository": null, "website": null },
+  "media": { "type": "live", "url": "https://thebreakersplaza.com/", "label": "thebreakersplaza.com" },
+  "demo": null
+}

@@ -1,0 +1,14 @@
+{
+  "name": "Ferreteria Mendez",
+  "category": "Point of Sale / Business Analytics",
+  "year": "2026",
+  "summary": "An authenticated web management system currently used by a hardware store for sales, quotations, products, inventory, invoicing, and business analytics.",
+  "functions": "Handles counter sales, customer quotations, product management, PDF invoicing, API integrations, and reports on sales, profits, employee shares, and product performance.",
+  "problem": "The company needed to connect daily sales and quotations with stock, invoicing, and reliable analysis of revenue, profitability, products, and employee activity.",
+  "solution": "I developed a role-based web platform that centralizes commercial operations and turns transaction data into reports by day, period, product, profit, and employee.",
+  "impacts": ["Faster counter sales", "Centralized product control", "PDF quotations and invoices", "Sales and profit insights"],
+  "technologies": ["Python", "React", "Node.js", "Tailwind CSS", "Next.js", "Express.js", "SQL", "Pandas"],
+  "links": { "repository": "https://github.com/federicocabello/prisma_ferreteria", "website": null },
+  "media": { "type": "gallery" },
+  "demo": { "status": "private", "title": "Private production system", "description": "The platform is currently used by the company and cannot be public because it contains confidential financial, product, sales, and employee data." }
+}

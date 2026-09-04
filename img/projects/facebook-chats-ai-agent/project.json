@@ -1,0 +1,14 @@
+{
+  "name": "AI Agent MVP",
+  "category": "AI Automation / Conversational Agent",
+  "year": "2026",
+  "summary": "An AI agent that monitors Facebook Messenger conversations, qualifies prospects, schedules appointments in Urbana, and reports conversion metrics in real time.",
+  "functions": "Responds to messages, classifies customer intent, checks appointment availability, creates conflict-free bookings, and tracks interactions through an analytics dashboard.",
+  "problem": "Prospects messaging outside business hours were not receiving timely responses, causing missed opportunities and leaving the company without reliable conversion or agent-performance data.",
+  "solution": "I connected an NLP-based conversational flow to the Facebook Messenger API and Urbana, adding automated 24/7 scheduling and a live dashboard for interactions, sales-funnel metrics, and conversation insights.",
+  "impacts": ["Intent classified in under 1.2s", "Responses in under 30s", "Automated scheduling 24/7", "Live conversion analytics"],
+  "technologies": ["Python", "Flask", "React", "Tailwind CSS", "SQL", "Messenger API", "NLP", "Webhooks"],
+  "links": { "repository": null, "website": null },
+  "media": { "type": "gallery" },
+  "demo": { "status": "private", "title": "Private integration", "description": "The live agent is connected to private Messenger conversations, prospect data, analytics, and the Urbana scheduling system, so public access is unavailable." }
+}

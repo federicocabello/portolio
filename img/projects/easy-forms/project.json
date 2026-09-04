@@ -1,0 +1,14 @@
+{
+  "name": "Easy Form Solutions",
+  "category": "Service Landing Page / Form Assistance",
+  "year": "2025",
+  "summary": "A warm, accessible website that helps customers understand how Easy Form Solutions organizes and prepares documentation for form-based processes in the United States.",
+  "functions": "Explains the Review, Organize, Prepare, and Follow Up workflow, answers common questions, presents important disclaimers, and captures assistance requests.",
+  "problem": "The business needed to make a potentially complex service feel clear and trustworthy while setting expectations and helping visitors understand each stage before contacting the team.",
+  "solution": "I designed a responsive information architecture with a four-stage service desk, an interactive FAQ, visible disclaimers, and a direct inquiry form using a warm professional visual language.",
+  "impacts": ["Clear four-stage process", "Stronger customer trust", "Higher inquiry conversion", "Accessible service information"],
+  "technologies": ["React", "JavaScript", "CSS3"],
+  "links": { "repository": null, "website": null },
+  "media": { "type": "live", "url": "https://easyformsolutions.com/", "label": "easyformsolutions.com" },
+  "demo": null
+}

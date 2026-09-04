@@ -1,0 +1,14 @@
+{
+  "name": "Los Andes Enterprise Solutions",
+  "category": "Corporate Landing Page / B2B Services",
+  "year": "2025",
+  "summary": "A clear corporate website presenting Los Andes Enterprise Solutions' software development, BPO, and digital marketing services to businesses across the United States.",
+  "functions": "Organizes the company's B2B services, compares Standard, Premium, and VIP plans, communicates deliverables, and routes prospects through a direct contact form.",
+  "problem": "Los Andes Enterprise Solutions needed a professional acquisition channel that explained its broad service offering and made pricing and project deliverables easy for businesses to compare.",
+  "solution": "I structured a clean, responsive sales experience with clear service positioning, project-focused visuals, an interactive pricing table, and a direct inquiry flow.",
+  "impacts": ["Primary B2B acquisition channel", "Transparent service pricing", "Clear institutional presence", "Direct prospect inquiries"],
+  "technologies": ["React", "JavaScript", "CSS3"],
+  "links": { "repository": null, "website": null },
+  "media": { "type": "live", "url": "https://losandestx.com/", "label": "losandestx.com" },
+  "demo": null
+}

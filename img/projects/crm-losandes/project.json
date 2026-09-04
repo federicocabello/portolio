@@ -1,0 +1,14 @@
+{
+  "name": "Los Andes CRM",
+  "category": "CRM / Multi-company Management",
+  "year": "2024",
+  "summary": "A multi-company CRM that centralizes calls, customers, financial activity, users, and operational records across several business areas.",
+  "functions": "Registers calls and customer activity by company and sector, covering rentals, real estate, security cameras, products, finances, users, and permissions.",
+  "problem": "Customer interactions and financial movements from different companies and business areas were difficult to separate, organize, and trace.",
+  "solution": "I developed a role-based CRM that segments records by company and sector while centralizing calls, finances, system activity, users, and permissions.",
+  "impacts": ["Segmented company records", "Centralized call history", "Financial traceability", "Role-based access"],
+  "technologies": ["Python", "Flask", "JavaScript", "SQL", "React", "TypeScript", "jQuery", "Django"],
+  "links": { "repository": "https://github.com/federicocabello/crm_losandes", "website": null },
+  "media": { "type": "gallery" },
+  "demo": { "status": "private", "title": "Private system", "description": "Public access is unavailable because the platform belongs to the company and contains sensitive customer, financial, and operational data." }
+}
