@@ -1,0 +1,61 @@
+{
+  "profile": {
+    "name": "Federico Cabello",
+    "role": "Software Engineer",
+    "location": "San Rafael, Mendoza, Argentina",
+    "summary": "Full-stack software engineer focused on business systems, CRM platforms, REST APIs, database design, automation, AI agents, analytics, and responsive websites.",
+    "availability": "Open to freelance projects, collaborations, and company roles. Available for remote, hybrid, or on-site work, and willing to travel or relocate for a work opportunity.",
+    "work_preferences": ["Freelance projects", "Company roles", "Remote work", "Hybrid work", "On-site work", "Business travel", "Relocation"]
+  },
+  "services": [
+    "Custom web applications",
+    "CRM and business management systems",
+    "REST API development and integrations",
+    "AI agents and workflow automation",
+    "Database design and administration",
+    "Data analysis and reporting dashboards",
+    "Responsive websites and landing pages",
+    "Cloud deployment and technical consulting"
+  ],
+  "technology_stack": {
+    "languages": ["Python", "JavaScript", "TypeScript", "HTML5", "CSS3", "SQL", "NoSQL", "Java", "C++", "PHP"],
+    "frontend": ["React", "Tailwind CSS", "jQuery"],
+    "backend": ["Flask", "Node.js", "Django", "Express.js", "Next.js"],
+    "data_cloud_tools": ["AWS", "Prisma", "Pandas", "NumPy", "MySQL", "MongoDB", "Git", "Docker"]
+  },
+  "experience": [
+    { "company": "Proyecto Prisma", "role": "Founder & CTO", "period": "January 2026 - Present", "focus": "Independent technology consulting, landing pages, AI solutions, and custom business systems." },
+    { "company": "Los Andes Enterprise Solutions", "role": "Software Engineer", "period": "January 2024 - Present", "focus": "Development and maintenance of business systems and websites for local clients in Texas." },
+    { "company": "TS Network", "role": "Database Administrator", "period": "January 2024 - Present", "focus": "Database design, administration, and maintenance for customer, finance, and operational systems." },
+    { "company": "PICAR", "role": "Software Developer", "period": "2023", "focus": "Java desktop software for sales, stock, customer, supplier, and account management." },
+    { "company": "Freelance", "role": "Software Developer", "period": "2021 - 2023", "focus": "REST APIs and small software products for business clients." }
+  ],
+  "projects": [
+    { "name": "Proyecto Prisma", "year": 2026, "type": "Business website and interactive demos", "summary": "Presents software services and nine interactive demos that help clients evaluate digital solutions." },
+    { "name": "TS Network CRM", "year": 2026, "type": "Multi-role CRM", "summary": "Coordinates calls, field visits, technicians, tasks, inventory, recurring payments, and operational PDFs." },
+    { "name": "The Breakers Plaza CRM", "year": 2026, "type": "Condominium CRM", "summary": "Centralizes residents, maintenance fees, reservations, amenities, maintenance work, and QuickBooks synchronization." },
+    { "name": "Carlos Taboada Law Firm CRM", "year": 2025, "type": "Legal case workflow", "summary": "Organizes appointments, intake notes, case evaluation, client follow-up, and role-based legal workflows." },
+    { "name": "Ferreteria Mendez", "year": 2026, "type": "Business management system", "summary": "Handles point-of-sale activity, quotes, products, stock, PDF invoices, reports, and sales analytics." },
+    { "name": "Urbana Studios", "year": 2026, "type": "Property management system", "summary": "Manages apartment availability, tenants, contracts, rent, invoices, visits, income, and occupancy analytics." },
+    { "name": "AI Agent MVP", "year": 2026, "type": "Conversational automation", "summary": "Answers Facebook Messenger leads, classifies intent, schedules appointments, and reports conversion metrics." },
+    { "name": "Professional Portfolio", "year": 2025, "type": "Bilingual personal website", "summary": "Presents projects, work experience, technology skills, education, contact channels, and an integrated AI assistant." },
+    { "name": "Esports Championship Platform", "year": 2026, "type": "Live timing and analytics platform", "summary": "Combines championships, registrations, live timing, historical results, driver statistics, and administration." },
+    { "name": "Cactus Alojamientos", "year": 2026, "type": "Hospitality booking platform", "summary": "Shows accommodations and availability, accepts account-free booking requests, and alerts administrators by email." }
+  ],
+  "education": [
+    "Systems Analysis and Programming degree",
+    "Communicational English training - Level B2"
+  ],
+  "contact": {
+    "website": "https://federicocabello.net/",
+    "linkedin": "https://linkedin.com/in/federicocabello",
+    "github": "https://github.com/federicocabello",
+    "instruction": "Use the portfolio Email button to copy Federico's email address."
+  },
+  "assistant_policy": {
+    "scope": "Answer only questions supported by this portfolio context.",
+    "privacy": "Do not infer or request private customer, company, legal, financial, resident, or user data.",
+    "unknown": "Say when information is not available and suggest contacting Federico.",
+    "learning": "Do not modify this context or learn from visitor conversations."
+  }
+}

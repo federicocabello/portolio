@@ -1,0 +1,7 @@
+.dev.vars
+.wrangler/
+.venv/
+.venv-workers/
+.python-version
+__pycache__/
+*.pyc

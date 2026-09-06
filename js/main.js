@@ -81,6 +81,13 @@ jQuery(document).ready(function($) {
         var profileAnimation = null;
         var contactActionsAnimation = null;
         var profileResizeTimer = null;
+
+        function translate(key, replacements) {
+            if (window.portfolioI18n) {
+                return window.portfolioI18n.t(key, replacements);
+            }
+            return key;
+        }
         
         navigation.on('click', 'a', function(event){
             if (!this.hash) {
@@ -311,7 +318,7 @@ jQuery(document).ready(function($) {
         });
 
         function updateBackToTop() {
-            backToTop.addClass('is-visible');
+            backToTop.toggleClass('is-visible', $(window).scrollTop() > 32);
         }
 
         function updateSidebarProfileLink(isInSidebar) {
@@ -354,7 +361,6 @@ jQuery(document).ready(function($) {
 
             sidebarProfileSlot.classList.toggle('has-profile', targetSlot === sidebarProfileSlot);
             updateSidebarProfileLink(targetSlot === sidebarProfileSlot);
-            backToTop.addClass('is-visible');
 
             if (currentSlot !== targetSlot) {
                 moveProfileTo(targetSlot, animate);
@@ -546,10 +552,37 @@ jQuery(document).ready(function($) {
           $('html, body').animate({ scrollTop: $($(this).attr('href')).offset().top -0 }, 500, 'linear');
         });
 
+        var projectContainer = document.querySelector('.project-container');
+        var projectContainerTemplate = projectContainer ? projectContainer.cloneNode(true) : null;
+        var projectBuildVersion = 0;
+        var projectJsonCache = {};
+
         organizeProjectGroups();
 
-        async function organizeProjectGroups() {
+        document.addEventListener('portfolio:languagechange', function() {
+            var currentScrollPosition = window.scrollY;
+            var currentContainer = document.querySelector('.project-container');
+            if (!currentContainer || !projectContainerTemplate) {
+                return;
+            }
+            projectBuildVersion += 1;
+            var freshContainer = projectContainerTemplate.cloneNode(true);
+            currentContainer.replaceWith(freshContainer);
+            organizeProjectGroups(true).then(function() {
+                window.scrollTo(0, currentScrollPosition);
+                window.requestAnimationFrame(function() {
+                    drawProjectConnections(true);
+                    window.scrollTo(0, currentScrollPosition);
+                });
+            });
+            if (typeof updateRoleDurations === 'function') {
+                updateRoleDurations();
+            }
+        });
+
+        async function organizeProjectGroups(skipInitialAnimation) {
             var container = document.querySelector('.project-container');
+            var buildVersion = ++projectBuildVersion;
 
             if (!container || container.querySelector('.project-group-tabs')) {
                 return;
@@ -568,6 +601,8 @@ jQuery(document).ready(function($) {
                 { folder: 'breakers-plaza-crm', name: 'The Breakers Plaza', category: 'CRM System', icon: 'fa-building', summary: 'A centralized CRM workspace for customer relationships and operational follow-up.' },
                 { folder: 'urbana-studios', name: 'Urbana Studios', category: 'Property Management System', icon: 'fa-building', summary: 'A property management platform for apartment availability, tenants, contracts, rent payments, invoicing, visit scheduling, and occupancy analytics.' },
                 { folder: 'facebook-chats-ai-agent', name: 'AI Agent MVP', category: 'AI Automation / Conversational Agent', icon: 'fa-robot', summary: 'An AI agent that monitors Facebook Messenger conversations, qualifies prospects, schedules appointments in Urbana, and reports conversion metrics in real time.' },
+                { folder: 'portfolio-ai-assistant', name: 'Portfolio AI Assistant', category: 'AI Automation / Conversational Portfolio', icon: 'fa-comment-dots', summary: 'A bilingual AI assistant that answers focused questions about my experience, projects, technologies, and education using a controlled public context.' },
+                { folder: 'professional-portfolio', name: 'Professional Portfolio', category: 'Personal Website / Professional Profile', icon: 'fa-id-card', summary: 'A bilingual professional portfolio that presents my projects, experience, technology stack, education, and contact channels in one responsive experience.' },
                 { folder: 'ts-network-website', name: 'TS Network Website', category: 'Bilingual Landing Page / Internet & Security', icon: 'fa-globe', summary: 'A bilingual conversion-focused website promoting high-speed internet and security camera services for homes and businesses across Brownsville and the Texas Valley.' },
                 { folder: 'los-andes-website', name: 'Los Andes Website', category: 'Corporate Landing Page / B2B Services', icon: 'fa-globe-americas', summary: 'A clear corporate website presenting software development, BPO, and digital marketing services to businesses across the United States.' },
                 { folder: 'breakers-plaza-website', name: 'The Breakers Plaza Website', category: 'Luxury Landing Page / Condominiums', icon: 'fa-building', summary: 'An elegant beachfront condominium website designed to express a premium identity and connect residents with their private portal.' },
@@ -585,11 +620,11 @@ jQuery(document).ready(function($) {
                 'Cell Repair Tracking System': { folder: 'cell-repair' }
             };
             var groups = [
-                { id: 'crm', label: 'CRM', icon: 'fa-users-cog', projects: ['tsnetwork-crm', 'breakers-plaza-crm', 'carlo-taboada-crm', 'crm-losandes'] },
-                { id: 'business', label: 'Business Management Systems', icon: 'fa-chart-line', projects: ['proyecto-prisma', 'ferreteria-mendez', 'urbana-studios'] },
-                { id: 'automation', label: 'Automation & AI', icon: 'fa-robot', projects: ['facebook-chats-ai-agent'] },
-                { id: 'landing', label: 'Landing Pages', icon: 'fa-globe', projects: ['ts-network-website', 'los-andes-website', 'breakers-plaza-website', 'easy-forms'] },
-                { id: 'additional', label: 'Additional Projects', icon: 'fa-folder', secondary: true, projects: ['cadpo-simracing', 'cactus-alojamientos', 'distribuidora-picar', 'cell-repair'] }
+                { id: 'crm', label: translate('projects.groups.crm'), icon: 'fa-users-cog', projects: ['tsnetwork-crm', 'breakers-plaza-crm', 'carlo-taboada-crm', 'crm-losandes'] },
+                { id: 'business', label: translate('projects.groups.business'), icon: 'fa-chart-line', projects: ['proyecto-prisma', 'ferreteria-mendez', 'urbana-studios'] },
+                { id: 'automation', label: translate('projects.groups.automation'), icon: 'fa-robot', projects: ['facebook-chats-ai-agent', 'portfolio-ai-assistant'] },
+                { id: 'landing', label: translate('projects.groups.landing'), icon: 'fa-globe', projects: ['ts-network-website', 'los-andes-website', 'breakers-plaza-website', 'easy-forms'] },
+                { id: 'additional', label: translate('projects.groups.additional'), icon: 'fa-folder', secondary: true, projects: ['cadpo-simracing', 'cactus-alojamientos', 'distribuidora-picar', 'cell-repair', 'professional-portfolio'] }
             ];
 
             var detailedConfigs = await Promise.all(Object.keys(projectResults).map(function(title) {
@@ -598,6 +633,10 @@ jQuery(document).ready(function($) {
             var previewConfigs = await Promise.all(previewProjects.map(function(project) {
                 return loadProjectConfig(project.folder, project);
             }));
+
+            if (buildVersion !== projectBuildVersion || !container.isConnected) {
+                return;
+            }
             var cardsByProject = new Map();
 
             Object.keys(projectResults).forEach(function(title, index) {
@@ -621,9 +660,10 @@ jQuery(document).ready(function($) {
             var connectionLines = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
             var panels = document.createElement('div');
             explorer.className = 'project-explorer';
+            explorer.classList.toggle('skip-initial-animation', skipInitialAnimation === true);
             tabs.className = 'project-group-tabs';
             tabs.setAttribute('role', 'tablist');
-            tabs.setAttribute('aria-label', 'Project categories');
+            tabs.setAttribute('aria-label', translate('projects.groupsLabel'));
             stage.className = 'project-group-stage';
             connectionLines.classList.add('project-group-lines');
             connectionLines.setAttribute('aria-hidden', 'true');
@@ -666,6 +706,7 @@ jQuery(document).ready(function($) {
                 });
 
                 tab.addEventListener('click', function() {
+                    explorer.classList.remove('skip-initial-animation');
                     $('.project-case-card.is-expanded').each(function() {
                         collapseProjectCase($(this));
                     });
@@ -722,8 +763,12 @@ jQuery(document).ready(function($) {
             stage.appendChild(panels);
             explorer.append(connectionLines, tabs, stage);
             container.replaceChildren(explorer);
-            window.requestAnimationFrame(drawProjectConnections);
-            setTimeout(drawProjectConnections, 350);
+            window.requestAnimationFrame(function() {
+                drawProjectConnections(skipInitialAnimation === true);
+            });
+            setTimeout(function() {
+                drawProjectConnections(skipInitialAnimation === true);
+            }, 350);
         }
 
         function drawProjectConnections(staticLines) {
@@ -810,7 +855,12 @@ jQuery(document).ready(function($) {
         }
 
         function loadProjectConfig(folder, fallback) {
-            return fetch('img/projects/' + folder + '/project.json', { cache: 'no-store' })
+            if (projectJsonCache[folder]) {
+                var cached = Object.assign({}, fallback, projectJsonCache[folder], { folder: folder });
+                return Promise.resolve(window.portfolioI18n ? window.portfolioI18n.localizeProject(cached, folder) : cached);
+            }
+
+            return fetch('img/projects/' + folder + '/project.json')
                 .then(function(response) {
                     if (!response.ok) {
                         throw new Error('Project configuration not found');
@@ -818,10 +868,13 @@ jQuery(document).ready(function($) {
                     return response.json();
                 })
                 .then(function(config) {
-                    return Object.assign({}, fallback, config, { folder: folder });
+                    projectJsonCache[folder] = config;
+                    var result = Object.assign({}, fallback, config, { folder: folder });
+                    return window.portfolioI18n ? window.portfolioI18n.localizeProject(result, folder) : result;
                 })
                 .catch(function() {
-                    return Object.assign({}, fallback, { folder: folder });
+                    var result = Object.assign({}, fallback, { folder: folder });
+                    return window.portfolioI18n ? window.portfolioI18n.localizeProject(result, folder) : result;
                 });
         }
 
@@ -855,7 +908,11 @@ jQuery(document).ready(function($) {
                 'messenger api': ['simple-icons:messenger', '#00B2FF'],
                 'nlp': ['mdi:brain', '#C39BFF'],
                 'webhooks': ['mdi:webhook', '#FF9F6E'],
-                'smtp': ['mdi:email-fast-outline', '#71D5C5']
+                'smtp': ['mdi:email-fast-outline', '#71D5C5'],
+                'workers ai': ['simple-icons:cloudflare', '#F48120'],
+                'cloudflare': ['simple-icons:cloudflare', '#F48120'],
+                'rest api': ['mdi:api', '#8CEADD'],
+                'json': ['mdi:code-json', '#C8D2DC']
             };
             return technologies[key] || ['mdi:code-tags', '#9FB0C2'];
         }
@@ -880,11 +937,13 @@ jQuery(document).ready(function($) {
             link.href = url;
             link.target = '_blank';
             link.rel = 'noopener noreferrer';
-            link.setAttribute('aria-label', (isRepository ? 'Open repository for ' : 'Visit website for ') + projectTitle);
-            link.title = isRepository ? 'Open repository' : 'Visit website';
+            link.setAttribute('aria-label', isRepository
+                ? translate('projects.openRepository') + ': ' + projectTitle
+                : translate('projects.openInTab', { project: projectTitle }));
+            link.title = isRepository ? translate('projects.openRepository') : translate('projects.openWebsite');
             icon.className = isRepository ? 'fab fa-github' : 'fas fa-external-link-alt';
             icon.setAttribute('aria-hidden', 'true');
-            label.textContent = isRepository ? 'Repository' : 'Visit website';
+            label.textContent = isRepository ? translate('projects.repository') : translate('projects.visitWebsite');
             link.append(icon, label);
             return link;
         }
@@ -905,8 +964,8 @@ jQuery(document).ready(function($) {
             note.className = 'project-access-note project-access-note-' + status;
             icon.className = iconNames[status] || iconNames.pending;
             icon.setAttribute('aria-hidden', 'true');
-            title.textContent = demo && demo.title ? demo.title : 'Preview being prepared';
-            copy.append(title, document.createTextNode(' ' + (demo && demo.description ? demo.description : 'Screenshots or a public project link will be added when they are available.')));
+            title.textContent = demo && demo.title ? demo.title : translate('projects.previewPending');
+            copy.append(title, document.createTextNode(' ' + (demo && demo.description ? demo.description : translate('projects.previewPendingDescription'))));
             note.append(icon, copy);
             return note;
         }
@@ -982,17 +1041,17 @@ jQuery(document).ready(function($) {
             expandedTitle.className = 'project-case-left-title';
             expandedTitle.textContent = projectTitle.textContent;
             functions.className = 'project-main-functions';
-            functionsTitle.textContent = 'Main functions';
+            functionsTitle.textContent = translate('projects.mainFunctions');
             functionsCopy.textContent = result.functions || summary.textContent;
             impactTitle.className = 'project-case-section-title';
-            impactTitle.textContent = 'Impact';
+            impactTitle.textContent = translate('projects.impact');
             impactList.className = 'project-impact-list';
             technologyTitle.className = 'project-case-section-title';
-            technologyTitle.textContent = 'Technologies used';
+            technologyTitle.textContent = translate('projects.technologies');
             demoTitle.className = 'project-case-section-title project-demo-title';
-            demoTitle.textContent = 'Demo status';
-            toggle.setAttribute('aria-label', 'View case study');
-            toggle.setAttribute('title', 'View case study');
+            demoTitle.textContent = translate('projects.demoStatus');
+            toggle.setAttribute('aria-label', translate('projects.viewCase'));
+            toggle.setAttribute('title', translate('projects.viewCase'));
 
             leftMeta.appendChild(expandedCategory);
             if (expandedYear) {
@@ -1029,8 +1088,8 @@ jQuery(document).ready(function($) {
             if (!hasDemoConfig && !accessNote) {
                 accessNote = createDemoNote(result.media && result.media.type === 'live' ? {
                     status: 'public',
-                    title: 'Public website',
-                    description: 'Explore the live preview or open the website in a new tab.'
+                    title: translate('projects.publicWebsite'),
+                    description: translate('projects.publicWebsiteDescription')
                 } : null);
             }
 
@@ -1043,10 +1102,10 @@ jQuery(document).ready(function($) {
 
             var copyHeadings = caseCopy.querySelectorAll('h5');
             if (copyHeadings[0]) {
-                copyHeadings[0].textContent = 'What it solved';
+                copyHeadings[0].textContent = translate('projects.whatSolved');
             }
             if (copyHeadings[1]) {
-                copyHeadings[1].textContent = 'How it was solved';
+                copyHeadings[1].textContent = translate('projects.howSolved');
             }
 
             meta.remove();
@@ -1067,7 +1126,7 @@ jQuery(document).ready(function($) {
             if (!media.url) {
                 var pendingImage = visual.querySelector('img');
                 if (pendingImage) {
-                    pendingImage.alt = projectTitle + ' website preview';
+                    pendingImage.alt = translate('projects.coverAlt', { project: projectTitle });
                 }
                 visual.classList.add('project-live-pending');
                 return;
@@ -1091,13 +1150,13 @@ jQuery(document).ready(function($) {
             externalLink.href = media.url;
             externalLink.target = '_blank';
             externalLink.rel = 'noopener noreferrer';
-            externalLink.setAttribute('aria-label', 'Open ' + projectTitle + ' in a new tab');
-            externalLink.title = 'Open website';
+            externalLink.setAttribute('aria-label', translate('projects.openInTab', { project: projectTitle }));
+            externalLink.title = translate('projects.openWebsite');
             externalIcon.className = 'fas fa-external-link-alt';
             externalIcon.setAttribute('aria-hidden', 'true');
             externalLink.appendChild(externalIcon);
             frame.src = media.url;
-            frame.title = 'Live preview of ' + projectTitle;
+            frame.title = translate('projects.livePreview', { project: projectTitle });
             frame.loading = 'lazy';
             frame.referrerPolicy = 'strict-origin-when-cross-origin';
 
@@ -1193,10 +1252,10 @@ jQuery(document).ready(function($) {
             navigation.className = 'project-gallery-navigation';
             previous.type = 'button';
             previous.className = 'project-gallery-control';
-            previous.setAttribute('aria-label', 'Previous project image');
+            previous.setAttribute('aria-label', translate('projects.previousImage'));
             next.type = 'button';
             next.className = 'project-gallery-control';
-            next.setAttribute('aria-label', 'Next project image');
+            next.setAttribute('aria-label', translate('projects.nextImage'));
             previousIcon.className = 'fas fa-chevron-left';
             nextIcon.className = 'fas fa-chevron-right';
             previousIcon.setAttribute('aria-hidden', 'true');
@@ -1208,8 +1267,8 @@ jQuery(document).ready(function($) {
             function showSlide(index, direction) {
                 currentIndex = (index + slides.length) % slides.length;
                 image.src = slides[currentIndex];
-                image.alt = projectTitle + ' screenshot ' + (currentIndex + 1);
-                image.setAttribute('aria-label', 'Enlarge ' + projectTitle + ' screenshot ' + (currentIndex + 1));
+                image.alt = translate('projects.imageOf', { current: currentIndex + 1, total: slides.length }) + ': ' + projectTitle;
+                image.setAttribute('aria-label', translate('projects.imageOf', { current: currentIndex + 1, total: slides.length }));
                 counter.textContent = (currentIndex + 1) + ' / ' + slides.length;
                 previous.disabled = slides.length < 2;
                 next.disabled = slides.length < 2;
@@ -1262,18 +1321,18 @@ jQuery(document).ready(function($) {
             lightbox.className = 'project-lightbox';
             lightbox.setAttribute('role', 'dialog');
             lightbox.setAttribute('aria-modal', 'true');
-            lightbox.setAttribute('aria-label', projectTitle + ' image gallery');
+            lightbox.setAttribute('aria-label', projectTitle + ' - ' + translate('projects.imageOf', { current: currentIndex + 1, total: slides.length }));
             dialog.className = 'project-lightbox-dialog';
             image.className = 'project-lightbox-image';
             close.type = 'button';
             close.className = 'project-lightbox-close';
-            close.setAttribute('aria-label', 'Close enlarged image');
+            close.setAttribute('aria-label', translate('projects.closeGallery'));
             previous.type = 'button';
             previous.className = 'project-lightbox-control project-lightbox-previous';
-            previous.setAttribute('aria-label', 'Previous project image');
+            previous.setAttribute('aria-label', translate('projects.previousImage'));
             next.type = 'button';
             next.className = 'project-lightbox-control project-lightbox-next';
-            next.setAttribute('aria-label', 'Next project image');
+            next.setAttribute('aria-label', translate('projects.nextImage'));
             closeIcon.className = 'fas fa-times';
             previousIcon.className = 'fas fa-chevron-left';
             nextIcon.className = 'fas fa-chevron-right';
@@ -1288,7 +1347,7 @@ jQuery(document).ready(function($) {
             function showSlide(index, direction) {
                 currentIndex = (index + slides.length) % slides.length;
                 image.src = slides[currentIndex];
-                image.alt = projectTitle + ' screenshot ' + (currentIndex + 1) + ' enlarged';
+                image.alt = translate('projects.imageOf', { current: currentIndex + 1, total: slides.length }) + ': ' + projectTitle;
                 counter.textContent = (currentIndex + 1) + ' / ' + slides.length;
                 previous.disabled = slides.length < 2;
                 next.disabled = slides.length < 2;
@@ -1385,7 +1444,7 @@ jQuery(document).ready(function($) {
                 visual.className = 'project-visual';
                 cover.className = 'project-image project-image-placeholder';
                 cover.src = 'img/codificacion.png';
-                cover.alt = project.name + ' project cover placeholder';
+                cover.alt = translate('projects.coverAlt', { project: project.name });
                 year.dateTime = project.year;
                 yearIcon.className = 'far fa-calendar-alt';
                 yearIcon.setAttribute('aria-hidden', 'true');
@@ -1396,8 +1455,8 @@ jQuery(document).ready(function($) {
                 toggle.className = 'project-case-toggle';
                 toggle.setAttribute('aria-expanded', 'false');
                 toggle.setAttribute('aria-controls', detailsId);
-                toggle.setAttribute('aria-label', 'View case study');
-                toggle.title = 'View case study';
+                toggle.setAttribute('aria-label', translate('projects.viewCase'));
+                toggle.title = translate('projects.viewCase');
                 toggleIcon.className = 'fas fa-chevron-down';
                 toggleIcon.setAttribute('aria-hidden', 'true');
                 toggle.appendChild(toggleIcon);
@@ -1407,9 +1466,9 @@ jQuery(document).ready(function($) {
                 details.setAttribute('inert', '');
                 detailsInner.className = 'project-case-details-inner';
                 caseCopy.className = 'project-case-copy';
-                problemTitle.textContent = 'The challenge';
+                problemTitle.textContent = translate('projects.whatSolved');
                 problem.textContent = project.problem;
-                solutionTitle.textContent = 'The solution';
+                solutionTitle.textContent = translate('projects.howSolved');
                 solution.textContent = project.solution;
                 meta.className = 'project-case-meta';
                 caseCopy.append(problemTitle, problem, solutionTitle, solution);
@@ -1434,8 +1493,8 @@ jQuery(document).ready(function($) {
             card.closest('.project-group-panel').removeClass('has-expanded-card');
             card.find('.project-case-toggle')
                 .attr('aria-expanded', 'false')
-                .attr('aria-label', 'View case study')
-                .attr('title', 'View case study');
+                .attr('aria-label', translate('projects.viewCase'))
+                .attr('title', translate('projects.viewCase'));
             card.find('.project-case-details')
                 .attr('aria-hidden', 'true')
                 .attr('inert', '');
@@ -1454,8 +1513,8 @@ jQuery(document).ready(function($) {
             card.attr('aria-expanded', willOpen ? 'true' : 'false');
             card.closest('.project-group-panel').toggleClass('has-expanded-card', willOpen);
             button.attr('aria-expanded', willOpen ? 'true' : 'false');
-            button.attr('aria-label', willOpen ? 'Collapse case study' : 'View case study');
-            button.attr('title', willOpen ? 'Collapse case study' : 'View case study');
+            button.attr('aria-label', willOpen ? translate('projects.collapseCase') : translate('projects.viewCase'));
+            button.attr('title', willOpen ? translate('projects.collapseCase') : translate('projects.viewCase'));
             card.find('.project-case-details')
                 .attr('aria-hidden', willOpen ? 'false' : 'true')
                 .prop('inert', !willOpen);
@@ -1506,6 +1565,12 @@ jQuery(document).ready(function($) {
         });
 
         $(window).on('resize', function() {
+            window.requestAnimationFrame(function() {
+                drawProjectConnections(true);
+            });
+        });
+
+        window.addEventListener('load', function() {
             window.requestAnimationFrame(function() {
                 drawProjectConnections(true);
             });

@@ -1,0 +1,24 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "federico-portfolio-assistant",
+  "main": "src/entry.py",
+  "compatibility_date": "2026-09-05",
+  "compatibility_flags": ["python_workers", "disable_python_external_sdk"],
+  "ai": {
+    "binding": "AI"
+  },
+  "d1_databases": [
+    {
+      "binding": "HISTORY_DB",
+      "database_name": "portfolio-assistant-history",
+      "database_id": "73b01231-4af1-4c70-9573-f40f3143e08f"
+    }
+  ],
+  "vars": {
+    "CONTEXT_URL": "https://federicocabello.net/data/portfolio-context.json",
+    "NOTIFICATION_URL": "https://federicocabello.net/api/notify.php"
+  },
+  "observability": {
+    "enabled": true
+  }
+}

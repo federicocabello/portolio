@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <title>Federico Cabello • Software Engineer</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="portfolio-ai-endpoint" content="https://federico-portfolio-assistant.fede-cabello.workers.dev">
 
         <meta property="og:title" content="Federico Cabello • Portfolio">
         <meta property="og:description" content="Full Stack Software Engineer">
@@ -20,7 +21,7 @@
         <link rel="stylesheet" href="css/fontAwesome.css">
         <link rel="stylesheet" href="css/light-box.css">
         <link rel="stylesheet" href="css/owl-carousel.css">
-        <link rel="stylesheet" href="css/templatemo-style.css?v=20260904-up-control">
+        <link rel="stylesheet" href="css/templatemo-style.css?v=20260905-ai-history">
 
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
 
@@ -40,11 +41,16 @@
     <div class="extra-star-9"></div>
     <div class="extra-star-10"></div>
         <div class="language-switcher" aria-label="Language selector">
-            <button class="language-option active" type="button" aria-pressed="true">
+            <span class="language-switcher-icon" aria-hidden="true">
+                <i class="fas fa-language"></i>
+            </span>
+            <button class="language-option active" type="button" data-lang="en" aria-label="View site in English" aria-pressed="true">
                 <span>EN</span>
+                <span class="language-tooltip" data-i18n="language.english">English</span>
             </button>
-            <button class="language-option" type="button" aria-pressed="false">
+            <button class="language-option" type="button" data-lang="es" aria-label="Ver sitio en español" aria-pressed="false">
                 <span>ES</span>
+                <span class="language-tooltip" data-i18n="language.spanish">Spanish</span>
             </button>
         </div>
         <div class="sidebar-navigation hidden-sm hidden-xs">
@@ -59,42 +65,42 @@
             <nav>
                 <ul>
                     <li>
-                        <a href="#top" data-i18n="nav.about">
+                        <a href="#top" data-i18n="nav.about" data-i18n-mode="direct">
                             <span class="rect"></span>
                             <span class="circle"></span>
                             About me
                         </a>
                     </li>
                     <li>
-                        <a href="#projects" data-i18n="nav.projects">
+                        <a href="#projects" data-i18n="nav.projects" data-i18n-mode="direct">
                             <span class="rect"></span>
                             <span class="circle"></span>
                             Projects
                         </a>
                     </li>
                     <li>
-                        <a href="#experience" data-i18n="nav.experience">
+                        <a href="#experience" data-i18n="nav.experience" data-i18n-mode="direct">
                             <span class="rect"></span>
                             <span class="circle"></span>
                             Work experience
                         </a>
                     </li>
                     <li>
-                        <a href="#skills" data-i18n="nav.skills">
+                        <a href="#skills" data-i18n="nav.skills" data-i18n-mode="direct">
                             <span class="rect"></span>
                             <span class="circle"></span>
                             Tech Stack
                         </a>
                     </li>
                     <li>
-                        <a href="#education" data-i18n="nav.education">
+                        <a href="#education" data-i18n="nav.education" data-i18n-mode="direct">
                             <span class="rect"></span>
                             <span class="circle"></span>
                             Education
                         </a>
                     </li>
                     <li>
-                        <a href="#contact" data-i18n="nav.contact">
+                        <a href="#contact" data-i18n="nav.contact" data-i18n-mode="direct">
                             <span class="rect"></span>
                             <span class="circle"></span>
                             Contact
@@ -135,12 +141,14 @@
                                             </button>
                                             <a class="contact-action" href="https://www.linkedin.com/in/federicocabello" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile">
                                                 <i class="fab fa-linkedin-in" aria-hidden="true"></i>
+                                                <span class="contact-action-tooltip linkedin-action-tooltip" aria-hidden="true">Go to Profile</span>
                                             </a>
                                             <a class="contact-action" href="https://github.com/federicocabello" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile">
                                                 <i class="fab fa-github" aria-hidden="true"></i>
+                                                <span class="contact-action-tooltip github-action-tooltip" aria-hidden="true">Go to Repository</span>
                                             </a>
                                         </div>
-                                        <a class="hero-location-button" href="https://www.google.com/maps/place/San+Rafael,Mendoza,+Argentina" target="_blank" rel="noopener noreferrer" aria-label="Open Argentina location in Google Maps">
+                                        <a class="hero-location-button" id="open-location-modal" href="#" aria-label="Open Argentina location">
                                             <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
                                             <span>Argentina</span>
                                             <img src="https://upload.wikimedia.org/wikipedia/commons/1/1a/Flag_of_Argentina.svg" alt="Argentina flag">
@@ -148,7 +156,7 @@
                                         </a>
                                     </div>
                                     <div class="hero-description" data-i18n="hero.description">
-                                        <p>As a <span class="hero-role-highlight">Software Engineer</span>, I specialize in building <strong class="hero-key-highlight">full-stack systems</strong> with <span class="hero-tech-inline" style="--inline-tech-color:#61DAFB"><i class="iconify" data-icon="simple-icons:react" aria-hidden="true"></i>React</span>, <span class="hero-tech-inline" style="--inline-tech-color:#66B2FF"><i class="iconify" data-icon="simple-icons:python" aria-hidden="true"></i>Python</span>, <span class="hero-tech-inline" style="--inline-tech-color:#68A063"><i class="iconify" data-icon="fontisto:nodejs" aria-hidden="true"></i>Node.js</span>, and <span class="hero-tech-inline" style="--inline-tech-color:#D5D9E0"><i class="iconify" data-icon="simple-icons:flask" aria-hidden="true"></i>Flask</span>, as well as <span class="hero-tech-inline" style="--inline-tech-color:#73B6E6"><i class="fas fa-database" aria-hidden="true"></i>database design and administration</span>. I have hands-on experience creating <strong class="hero-key-highlight">solutions for businesses</strong> and providing <strong class="hero-key-highlight">commercial guidance</strong> on how technology can improve operations, such as <strong class="hero-key-highlight">AI agents</strong> and <strong class="hero-key-highlight">management platforms</strong> for analyzing <strong class="hero-key-highlight">financial data</strong>, products, customers, and employees, with several of these systems currently being used in <strong class="hero-key-highlight">real-world environments</strong>.</p>
+                                        <p>As a <span class="hero-role-highlight">Software Engineer</span>, I specialize in building <strong class="hero-key-highlight">full-stack systems</strong> with <span class="hero-tech-inline" style="--inline-tech-color:#61DAFB"><i class="iconify" data-icon="simple-icons:react" aria-hidden="true"></i>React</span>, <span class="hero-tech-inline" style="--inline-tech-color:#66B2FF"><i class="iconify" data-icon="simple-icons:python" aria-hidden="true"></i>Python</span>, <span class="hero-tech-inline" style="--inline-tech-color:#68A063"><i class="iconify" data-icon="fontisto:nodejs" aria-hidden="true"></i>Node.js</span>, and <span class="hero-tech-inline" style="--inline-tech-color:#D5D9E0"><i class="iconify" data-icon="simple-icons:flask" aria-hidden="true"></i>Flask</span>, as well as <span class="hero-tech-inline" style="--inline-tech-color:#73B6E6"><i class="fas fa-database" aria-hidden="true"></i>database design and administration</span>. I have hands-on experience creating <strong class="hero-key-highlight">solutions for businesses</strong> and providing <strong class="hero-key-highlight">commercial guidance</strong> on how technology can improve operations, such as <strong class="hero-key-highlight">AI agents</strong> and <strong class="hero-key-highlight">management platforms</strong> for analyzing financial data, products, customers, and employees, with several of these systems currently being used in real-world environments.</p>
                                         <p>My skills are complemented by <span class="hero-tech-inline" style="--inline-tech-color:#4C9CEB"><i class="iconify" data-icon="simple-icons:typescript" aria-hidden="true"></i>TypeScript</span>, <span class="hero-tech-inline" style="--inline-tech-color:#59B86A"><i class="iconify" data-icon="simple-icons:django" aria-hidden="true"></i>Django</span>, and <span class="hero-tech-inline" style="--inline-tech-color:#FFB33B"><i class="iconify" data-icon="simple-icons:amazonaws" aria-hidden="true"></i>AWS</span>, which I've used across different projects to expand and support the solutions I build.</p>
                                     </div>
                                 </div>
@@ -875,11 +883,56 @@
         <i class="fas fa-arrow-up" aria-hidden="true"></i>
     </a>
 
+    <aside class="portfolio-assistant" id="portfolio-assistant">
+        <section class="portfolio-assistant-panel" id="portfolio-assistant-panel" role="dialog" aria-modal="false" aria-labelledby="portfolio-assistant-title" hidden>
+            <header class="portfolio-assistant-header">
+                <div class="portfolio-assistant-identity">
+                    <span class="portfolio-assistant-avatar" aria-hidden="true"><i class="fas fa-robot"></i></span>
+                    <div>
+                        <h2 id="portfolio-assistant-title" data-i18n="assistant.title">Federico's AI Agent</h2>
+                        <span class="portfolio-assistant-status"><i aria-hidden="true"></i><span data-i18n="assistant.onlineStatus">AI assistant online</span></span>
+                    </div>
+                </div>
+                <div class="portfolio-assistant-tools">
+                    <button class="portfolio-assistant-icon-button" id="portfolio-assistant-reset" type="button" aria-label="Clear conversation" title="Clear conversation">
+                        <i class="fas fa-trash-alt" aria-hidden="true"></i>
+                    </button>
+                    <button class="portfolio-assistant-icon-button" id="portfolio-assistant-close" type="button" aria-label="Close assistant" title="Close assistant">
+                        <i class="fas fa-times" aria-hidden="true"></i>
+                    </button>
+                </div>
+            </header>
+            <div class="portfolio-assistant-messages" id="portfolio-assistant-messages" role="log" aria-live="polite" aria-relevant="additions"></div>
+            <div class="portfolio-assistant-suggestions" id="portfolio-assistant-suggestions"></div>
+            <form class="portfolio-assistant-form" id="portfolio-assistant-form">
+                <label class="sr-only" for="portfolio-assistant-input" data-i18n="assistant.inputLabel">Question about Federico</label>
+                <textarea id="portfolio-assistant-input" rows="1" maxlength="500" data-i18n-placeholder="assistant.placeholder" placeholder="Ask about experience, projects or skills..."></textarea>
+                <button class="portfolio-assistant-send" type="submit" aria-label="Send question" title="Send question">
+                    <i class="fas fa-paper-plane" aria-hidden="true"></i>
+                </button>
+            </form>
+        </section>
+        <button class="portfolio-assistant-launcher" id="portfolio-assistant-launcher" type="button" aria-controls="portfolio-assistant-panel" aria-expanded="false" aria-label="Open AI assistant" title="Open AI assistant">
+            <span class="portfolio-assistant-launcher-avatar" aria-hidden="true">
+                <i class="fas fa-robot"></i>
+                <i class="fas fa-hand-paper portfolio-assistant-wave"></i>
+                <span class="portfolio-assistant-robot-feet"><i></i><i></i></span>
+            </span>
+            <span class="portfolio-assistant-launcher-copy">
+                <strong data-i18n="assistant.launcherTitle">Federico's AI Agent</strong>
+                <small data-i18n="assistant.launcherHint">Hello! Ask me something</small>
+            </span>
+            <span class="portfolio-assistant-launcher-status" aria-hidden="true"></span>
+        </button>
+    </aside>
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
     <script src="js/vendor/bootstrap.min.js"></script>
     <script src="js/plugins.js"></script>
-    <script src="js/main.js?v=20260904-up-control"></script>
+    <script src="js/i18n.js?v=20260905-ai-history"></script>
+    <script src="js/main.js?v=20260905-portfolio-project"></script>
+    <script src="js/portfolio-assistant.js?v=20260905-ai-persistent-history"></script>
     <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
     <script src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
     <script>
@@ -902,14 +955,14 @@
                 const parts = [];
 
                 if (years > 0) {
-                    parts.push(`${years} ${years === 1 ? 'year' : 'years'}`);
+                    parts.push(window.portfolioI18n.t(years === 1 ? 'years.one' : 'years.many', { years }));
                 }
 
                 if (remainingMonths > 0) {
-                    parts.push(`${remainingMonths} ${remainingMonths === 1 ? 'month' : 'months'}`);
+                    parts.push(window.portfolioI18n.t(remainingMonths === 1 ? 'years.monthOne' : 'years.monthMany', { months: remainingMonths }));
                 }
 
-                duration.textContent = parts.length ? parts.join(' ') : 'Less than 1 month';
+                duration.textContent = parts.length ? parts.join(window.portfolioI18n.t('years.separator')) : window.portfolioI18n.t('years.lessMonth');
             });
         }
 
@@ -925,13 +978,13 @@
     document.execCommand('copy');
     document.body.removeChild(tempInput);
     
-    status.textContent = 'Email copied';
-    tooltip.textContent = 'Copied!';
+    status.textContent = window.portfolioI18n.t('actions.emailCopied');
+    tooltip.textContent = window.portfolioI18n.t('actions.copied');
     this.classList.add('is-copied');
     
     setTimeout(() => {
         status.textContent = '';
-        tooltip.textContent = 'Copy';
+        tooltip.textContent = window.portfolioI18n.t('actions.copy');
         this.classList.remove('is-copied');
     }, 2000);
     });
@@ -967,7 +1020,7 @@ function copyEmail() {
 
     function showCopiedFeedback() {
         button.classList.add('is-copied');
-        status.textContent = 'Email copied';
+        status.textContent = window.portfolioI18n.t('actions.emailCopied');
         clearTimeout(contactEmailFeedbackTimer);
         contactEmailFeedbackTimer = setTimeout(() => {
             button.classList.remove('is-copied');
@@ -992,6 +1045,179 @@ function copyEmail() {
 
     copyWithFallback();
 }
+    </script>
+
+    <div id="location-modal" class="location-modal" aria-hidden="true">
+        <div class="location-modal-overlay"></div>
+        <div class="flight-screen-canvas">
+            <div class="airplane-animation-3d">
+                <div class="contrail-wrap">
+                    <div class="jet-trail engine-left"></div>
+                    <div class="jet-trail engine-right"></div>
+                </div>
+                <!-- Clean Commercial Airliner SVG -->
+                <svg class="plane-svg-3d" viewBox="0 0 100 100" width="85" height="85">
+                    <defs>
+                        <linearGradient id="planeBody" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stop-color="#ffffff"/>
+                            <stop offset="60%" stop-color="#f1f5f9"/>
+                            <stop offset="100%" stop-color="#cbd5e1"/>
+                        </linearGradient>
+                        <linearGradient id="planeWings" x1="0%" y1="0%" x2="0%" y2="100%">
+                            <stop offset="0%" stop-color="#f8fafc"/>
+                            <stop offset="100%" stop-color="#94a3b8"/>
+                        </linearGradient>
+                        <filter id="planeShadow" x="-30%" y="-30%" width="160%" height="160%">
+                            <feDropShadow dx="3" dy="10" stdDeviation="6" flood-color="#000000" flood-opacity="0.5"/>
+                        </filter>
+                    </defs>
+                    <g filter="url(#planeShadow)">
+                        <!-- Main Swept Wings -->
+                        <path d="M 50 34 L 95 64 L 83 70 L 50 48 L 17 70 L 5 64 Z" fill="url(#planeWings)" />
+
+                        <!-- Tail Fin / Rear Wings -->
+                        <path d="M 50 76 L 72 90 L 65 94 L 50 85 L 35 94 L 28 90 Z" fill="url(#planeWings)" />
+
+                        <!-- Commercial Airliner Fuselage Body -->
+                        <path d="M 50 6 C 56 16 57 40 56 82 C 56 90 53 96 50 98 C 47 96 44 90 44 82 C 43 40 44 16 50 6 Z" fill="url(#planeBody)" />
+
+                        <!-- Cockpit Glass Window -->
+                        <path d="M 50 14 C 54 18 54 23 50 26 C 46 23 46 18 50 14 Z" fill="#0284c7" />
+
+                        <!-- Engine Nacelles under wings -->
+                        <rect x="30" y="52" width="5" height="13" rx="2.5" fill="#334155" />
+                        <rect x="65" y="52" width="5" height="13" rx="2.5" fill="#334155" />
+
+                        <!-- Cabin Windows (dots) -->
+                        <circle cx="48" cy="38" r="0.9" fill="#64748b"/>
+                        <circle cx="48" cy="44" r="0.9" fill="#64748b"/>
+                        <circle cx="48" cy="50" r="0.9" fill="#64748b"/>
+                        <circle cx="48" cy="56" r="0.9" fill="#64748b"/>
+                        <circle cx="48" cy="62" r="0.9" fill="#64748b"/>
+
+                        <circle cx="52" cy="38" r="0.9" fill="#64748b"/>
+                        <circle cx="52" cy="44" r="0.9" fill="#64748b"/>
+                        <circle cx="52" cy="50" r="0.9" fill="#64748b"/>
+                        <circle cx="52" cy="56" r="0.9" fill="#64748b"/>
+                        <circle cx="52" cy="62" r="0.9" fill="#64748b"/>
+                    </g>
+                </svg>
+            </div>
+        </div>
+        <div class="location-modal-content">
+            <button type="button" class="location-modal-close" aria-label="Close modal"><i class="fas fa-times"></i></button>
+            <div class="location-map-container" id="location-map-container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d105260.71887140889!2d-68.41164964627252!3d-34.61514349185196!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x967907f9c898c199%3A0xc34a6efc42289657!2sSan%20Rafael%2C%20Mendoza%2C%20Argentina!5e0!3m2!1sen!2sus!4v1700000000000!5m2!1sen!2sus" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <div class="map-click-shield" id="map-click-shield"></div>
+                <div class="map-landing-target" id="map-landing-target">
+                    <div class="radar-pulse"></div>
+                    <div class="radar-pulse delay-1"></div>
+                    <div class="landing-pin">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <div class="landing-badge">
+                        <i class="fas fa-plane-arrival"></i> San Rafael, Mendoza, Argentina
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const modal = document.getElementById('location-modal');
+            const openBtn = document.getElementById('open-location-modal');
+            const closeBtn = document.querySelector('.location-modal-close');
+            const overlay = document.querySelector('.location-modal-overlay');
+
+            function hideLandingTarget() {
+                const target = document.getElementById('map-landing-target');
+                const shield = document.getElementById('map-click-shield');
+                if (target) target.classList.add('is-hidden');
+                if (shield) shield.classList.add('is-hidden');
+            }
+
+            function bindMapEvents() {
+                const target = document.getElementById('map-landing-target');
+                const shield = document.getElementById('map-click-shield');
+                const container = document.getElementById('location-map-container');
+
+                if (shield) {
+                    const events = ['click', 'mousedown', 'pointerdown', 'touchstart', 'wheel'];
+                    events.forEach(eventType => {
+                        shield.addEventListener(eventType, hideLandingTarget, { passive: true });
+                    });
+                }
+
+                if (container) {
+                    const events = ['click', 'mousedown', 'pointerdown', 'touchstart', 'wheel'];
+                    events.forEach(eventType => {
+                        container.addEventListener(eventType, hideLandingTarget, { passive: true });
+                    });
+                }
+
+                if (target) {
+                    target.addEventListener('click', hideLandingTarget);
+                }
+            }
+
+            function openModal(e) {
+                e.preventDefault();
+                modal.classList.add('active');
+                modal.setAttribute('aria-hidden', 'false');
+                document.body.classList.add('modal-open');
+
+                // Restart flight canvas animation
+                const canvas = document.querySelector('.flight-screen-canvas');
+                if (canvas) {
+                    const newCanvas = canvas.cloneNode(true);
+                    canvas.parentNode.replaceChild(newCanvas, canvas);
+                }
+
+                // Reset landing target & shield visibility
+                let landingTarget = document.getElementById('map-landing-target');
+                let shield = document.getElementById('map-click-shield');
+
+                if (shield) shield.classList.remove('is-hidden');
+                if (landingTarget) {
+                    landingTarget.classList.remove('is-hidden');
+                    const newTarget = landingTarget.cloneNode(true);
+                    landingTarget.parentNode.replaceChild(newTarget, landingTarget);
+                }
+
+                bindMapEvents();
+            }
+
+            function closeModal() {
+                modal.classList.remove('active');
+                modal.setAttribute('aria-hidden', 'true');
+                document.body.classList.remove('modal-open');
+            }
+
+            if (openBtn) {
+                openBtn.addEventListener('click', openModal);
+            }
+            if (closeBtn) {
+                closeBtn.addEventListener('click', closeModal);
+            }
+            if (overlay) {
+                overlay.addEventListener('click', closeModal);
+            }
+
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && modal.classList.contains('active')) {
+                    closeModal();
+                }
+            });
+
+            window.addEventListener('blur', () => {
+                if (modal && modal.classList.contains('active')) {
+                    hideLandingTarget();
+                }
+            });
+
+            bindMapEvents();
+        });
     </script>
 </body>
 </html>
