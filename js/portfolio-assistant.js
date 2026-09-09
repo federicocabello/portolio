@@ -282,6 +282,9 @@
         }
     });
     document.addEventListener('portfolio:languagechange', updateInterfaceLanguage);
+    document.addEventListener('portfolio:assistantopen', function() {
+        setOpen(true);
+    });
 
     fetch('data/portfolio-context.json?v=20260908-contact-language')
         .then(function(response) { return response.ok ? response.json() : null; })

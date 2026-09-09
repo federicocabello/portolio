@@ -167,6 +167,8 @@
             'projects.collapseCase': 'Collapse case study',
             'projects.repository': 'Repository',
             'projects.openRepository': 'Open repository',
+            'projects.tryAgent': 'Try AI Agent',
+            'projects.openAgent': 'Open Federico\'s AI Agent',
             'projects.visitWebsite': 'Visit website',
             'projects.openWebsite': 'Open website',
             'projects.clientLocation': 'Client location',
@@ -354,6 +356,8 @@
             'projects.collapseCase': 'Contraer caso de estudio',
             'projects.repository': 'Repositorio',
             'projects.openRepository': 'Abrir repositorio',
+            'projects.tryAgent': 'Probar agente IA',
+            'projects.openAgent': 'Abrir el agente IA de Federico',
             'projects.visitWebsite': 'Visitar sitio',
             'projects.openWebsite': 'Abrir sitio web',
             'projects.clientLocation': 'Ubicación del cliente',
@@ -482,8 +486,8 @@
         'facebook-chats-ai-agent': {
             name: 'Agente de IA MVP',
             category: 'Automatización con IA / Agente conversacional',
-            summary: 'Agente de IA que monitorea Facebook Messenger, califica prospectos, agenda citas en Urbana y reporta conversiones en tiempo real.',
-            functions: 'Responde mensajes, clasifica intenciones, consulta disponibilidad, crea citas sin superposiciones y registra interacciones en un dashboard analítico.',
+            summary: 'Agente de IA que atiende conversaciones de Facebook Messenger, califica prospectos, agenda citas en Urbana y centraliza los datos recopilados en un portal de análisis privado.',
+            functions: 'Responde mensajes, clasifica intenciones, crea citas sin superposiciones y transforma los datos de las interacciones en gráficos y estadísticas para mejorar los resultados del cliente.',
             problem: 'Los mensajes fuera de horario quedaban sin respuesta, generando oportunidades perdidas y poca información sobre conversión y rendimiento.',
             solution: 'Conecté un flujo NLP con la API de Messenger y Urbana, incorporando agenda automática 24/7 y analítica en vivo del embudo y las conversaciones.',
             impacts: ['Intención clasificada en menos de 1,2 s', 'Respuestas en menos de 30 s', 'Agenda automática 24/7', 'Analítica de conversión en vivo'],
@@ -493,10 +497,10 @@
             name: 'Asistente IA del Portfolio',
             category: 'Automatización con IA / Portfolio conversacional',
             summary: 'Asistente bilingüe que responde preguntas concretas sobre mi experiencia, proyectos, tecnologías y formación mediante un contexto público controlado.',
-            functions: 'Ofrece preguntas sugeridas, mantiene una conversación breve, responde en inglés o español y utiliza respuestas locales seguras si el servicio de IA no está disponible.',
+            functions: 'Responde en inglés o español, me avisa por email después de cada intercambio y registra un historial anónimo para detectar preguntas frecuentes y mejorar su contexto.',
             problem: 'El portfolio contiene mucha información y encontrar rápidamente un proyecto, una habilidad o una experiencia específica requiere recorrer varias secciones.',
-            solution: 'Diseñé un asistente compacto con una API segura y Workers AI, una fuente de conocimiento controlada, alcance estricto y sin aprendizaje automático desde las conversaciones.',
-            impacts: ['Exploración más rápida', 'Respuestas bilingües', 'Contexto público controlado', 'Historial persistente de conversaciones']
+            solution: 'Diseñé un asistente compacto con una API segura y Workers AI, reglas de alcance estrictas; reviso las preguntas recurrentes y agrego manualmente información útil a su contexto controlado.',
+            impacts: ['Exploración más rápida', 'Respuestas bilingües', 'Avisos por email', 'Análisis de preguntas frecuentes']
         },
         'professional-portfolio': {
             name: 'Portfolio Profesional',

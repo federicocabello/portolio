@@ -3,12 +3,13 @@
   "category": "AI Automation / Conversational Portfolio",
   "year": "2026",
   "summary": "A bilingual AI assistant that answers focused questions about my experience, projects, technologies, and education using a controlled public context.",
-  "functions": "Provides suggested questions, maintains a short conversation, responds in English or Spanish, and falls back to safe local answers when the AI service is unavailable.",
+  "functions": "Answers in English or Spanish, notifies me by email after each exchange, and records anonymous history to identify frequent questions and improve its curated context.",
   "problem": "Visitors can scan the portfolio, but finding a specific project, skill, or experience quickly still requires navigating several sections.",
-  "solution": "I designed a compact assistant backed by a secure API and Workers AI, with a curated knowledge source, strict scope rules, and no autonomous learning from visitors.",
-  "impacts": ["Faster portfolio discovery", "Bilingual answers", "Controlled public context", "Persistent conversation history"],
+  "solution": "I designed a compact assistant backed by a secure API and Workers AI, with strict scope rules; I review recurring questions and manually add useful information to its controlled context.",
+  "impacts": ["Faster portfolio discovery", "Bilingual answers", "Email notifications", "Frequent-question analysis"],
   "technologies": ["Python", "JavaScript", "Cloudflare", "REST API"],
   "links": { "repository": "https://github.com/federicocabello/portolio", "website": null },
+  "action": "open-assistant",
   "media": { "type": "gallery" },
   "demo": null
 }

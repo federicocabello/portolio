@@ -766,6 +766,19 @@ jQuery(document).ready(function($) {
             $(container).find('.project-case-card').each(function() {
                 initializeInteractiveProjectCard($(this));
             });
+            var galleryCards = Array.prototype.slice.call(container.querySelectorAll('.project-case-card'));
+            var preloadGalleries = function() {
+                galleryCards.forEach(function(card, index) {
+                    window.setTimeout(function() {
+                        initializeProjectGallery(card);
+                    }, index * 100);
+                });
+            };
+            if ('requestIdleCallback' in window) {
+                window.requestIdleCallback(preloadGalleries, { timeout: 1200 });
+            } else {
+                window.setTimeout(preloadGalleries, 500);
+            }
             window.requestAnimationFrame(function() {
                 drawProjectConnections(skipInitialAnimation === true);
             });
@@ -863,7 +876,7 @@ jQuery(document).ready(function($) {
                 return Promise.resolve(window.portfolioI18n ? window.portfolioI18n.localizeProject(cached, folder) : cached);
             }
 
-            return fetch('img/projects/' + folder + '/project.json?v=20260908-project-voice')
+            return fetch('img/projects/' + folder + '/project.json?v=20260909-ai-analytics')
                 .then(function(response) {
                     if (!response.ok) {
                         throw new Error('Project configuration not found');
@@ -990,6 +1003,28 @@ jQuery(document).ready(function($) {
             label.textContent = isRepository ? translate('projects.repository') : translate('projects.visitWebsite');
             link.append(icon, label);
             return link;
+        }
+
+        function createProjectAction(action) {
+            if (action !== 'open-assistant') return null;
+
+            var button = document.createElement('button');
+            var icon = document.createElement('i');
+            var label = document.createElement('span');
+            button.type = 'button';
+            button.className = 'project-case-link project-agent-action';
+            button.setAttribute('aria-label', translate('projects.openAgent'));
+            button.title = translate('projects.openAgent');
+            icon.className = 'fas fa-robot';
+            icon.setAttribute('aria-hidden', 'true');
+            label.textContent = translate('projects.tryAgent');
+            button.append(icon, label);
+            button.addEventListener('click', function(event) {
+                event.preventDefault();
+                event.stopPropagation();
+                document.dispatchEvent(new CustomEvent('portfolio:assistantopen'));
+            });
+            return button;
         }
 
         function createDemoNote(demo) {
@@ -1152,6 +1187,10 @@ jQuery(document).ready(function($) {
 
             visual.dataset.projectFolder = result.folder;
             buildProjectMedia(visual, result.media, projectTitle.textContent);
+            var projectAction = createProjectAction(result.action);
+            if (projectAction) {
+                visual.appendChild(projectAction);
+            }
             visual.insertAdjacentElement('beforebegin', leftColumn);
             leftColumn.appendChild(visual);
             leftColumn.append(leftMeta, expandedTitle, functions);
@@ -1234,9 +1273,28 @@ jQuery(document).ready(function($) {
             }
 
             visual.dataset.galleryLoaded = 'loading';
+            visual.classList.add('is-gallery-loading');
             var folder = visual.dataset.projectFolder;
             var basePath = 'img/projects/' + folder + '/';
             var slides = [];
+
+            function addSlide(path) {
+                if (!path) return;
+                slides.push(path);
+                if (slides.length === 1) {
+                    renderProjectGallery(visual, slides);
+                } else if (typeof visual.refreshProjectGallery === 'function') {
+                    visual.refreshProjectGallery();
+                }
+            }
+
+            function finishLoading() {
+                visual.dataset.galleryLoaded = 'true';
+                visual.classList.remove('is-gallery-loading');
+                if (typeof visual.refreshProjectGallery === 'function') {
+                    visual.refreshProjectGallery();
+                }
+            }
 
             function probe(fileName, onComplete) {
                 var image = new Image();
@@ -1247,27 +1305,35 @@ jQuery(document).ready(function($) {
 
             function probeNumber(index) {
                 if (index > 12) {
-                    renderProjectGallery(visual, slides);
+                    finishLoading();
                     return;
                 }
 
                 probe(index + '.png', function(path) {
                     if (!path) {
-                        renderProjectGallery(visual, slides);
+                        finishLoading();
                         return;
                     }
-                    slides.push(path);
+                    addSlide(path);
                     probeNumber(index + 1);
                 });
             }
 
             probe('portada.png', function(path) {
-                if (!path) {
-                    visual.dataset.galleryLoaded = 'true';
+                if (path) {
+                    addSlide(path);
+                    probeNumber(1);
                     return;
                 }
-                slides.push(path);
-                probeNumber(1);
+
+                probe('1.png', function(firstNumberedImage) {
+                    if (!firstNumberedImage) {
+                        finishLoading();
+                        return;
+                    }
+                    addSlide(firstNumberedImage);
+                    probeNumber(2);
+                });
             });
         }
 
@@ -1288,13 +1354,14 @@ jQuery(document).ready(function($) {
 
         function renderProjectGallery(visual, slides) {
             visual.dataset.galleryLoaded = 'true';
+            visual.classList.remove('is-gallery-loading');
 
             if (!slides.length) {
                 return;
             }
 
             var projectTitle = visual.dataset.projectTitle;
-            var links = Array.prototype.slice.call(visual.querySelectorAll(':scope > a'));
+            var overlays = Array.prototype.slice.call(visual.querySelectorAll(':scope > a, :scope > .project-agent-action'));
             var gallery = document.createElement('div');
             var viewport = document.createElement('div');
             var image = document.createElement('img');
@@ -1335,6 +1402,12 @@ jQuery(document).ready(function($) {
                 animateProjectSlide(image, direction, false);
             }
 
+            visual.refreshProjectGallery = function() {
+                counter.textContent = (currentIndex + 1) + ' / ' + slides.length;
+                previous.disabled = slides.length < 2;
+                next.disabled = slides.length < 2;
+            };
+
             previous.addEventListener('click', function() { showSlide(currentIndex - 1, -1); });
             next.addEventListener('click', function() { showSlide(currentIndex + 1, 1); });
             image.tabIndex = 0;
@@ -1354,7 +1427,7 @@ jQuery(document).ready(function($) {
             navigation.append(previous, counter, next);
             gallery.append(viewport, navigation);
             visual.replaceChildren(gallery);
-            links.forEach(function(link) { visual.appendChild(link); });
+            overlays.forEach(function(overlay) { visual.appendChild(overlay); });
             showSlide(0);
             trackProjectConnections(350);
         }
