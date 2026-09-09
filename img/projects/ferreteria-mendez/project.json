@@ -2,6 +2,7 @@
   "name": "Ferreteria Mendez",
   "category": "Point of Sale / Business Analytics",
   "year": "2026",
+  "location": { "name": "San Rafael, Mendoza, Argentina", "flag": "https://upload.wikimedia.org/wikipedia/commons/1/1a/Flag_of_Argentina.svg" },
   "summary": "An authenticated web management system currently used by a hardware store for sales, quotations, products, inventory, invoicing, and business analytics.",
   "functions": "Handles counter sales, customer quotations, product management, PDF invoicing, API integrations, and reports on sales, profits, employee shares, and product performance.",
   "problem": "The company needed to connect daily sales and quotations with stock, invoicing, and reliable analysis of revenue, profitability, products, and employee activity.",

@@ -21,13 +21,13 @@
     "languages": ["Python", "JavaScript", "TypeScript", "HTML5", "CSS3", "SQL", "NoSQL", "Java", "C++", "PHP"],
     "frontend": ["React", "Tailwind CSS", "jQuery"],
     "backend": ["Flask", "Node.js", "Django", "Express.js", "Next.js"],
-    "data_cloud_tools": ["AWS", "Prisma", "Pandas", "NumPy", "MySQL", "MongoDB", "Git", "Docker"]
+    "data_cloud_tools": ["MySQL", "Git", "MongoDB", "Pandas", "NumPy", "AWS", "Prisma", "Docker", "Cloudflare", "Proxmox"]
   },
   "experience": [
     { "company": "Proyecto Prisma", "role": "Founder & CTO", "period": "January 2026 - Present", "focus": "Independent technology consulting, landing pages, AI solutions, and custom business systems." },
-    { "company": "Los Andes Enterprise Solutions", "role": "Software Engineer", "period": "January 2024 - Present", "focus": "Development and maintenance of business systems and websites for local clients in Texas." },
-    { "company": "TS Network", "role": "Database Administrator", "period": "January 2024 - Present", "focus": "Database design, administration, and maintenance for customer, finance, and operational systems." },
-    { "company": "PICAR", "role": "Software Developer", "period": "2023", "focus": "Java desktop software for sales, stock, customer, supplier, and account management." },
+    { "company": "Los Andes Enterprise Solutions", "role": "Software Engineer", "period": "January 2024 - Present", "location": "Brownsville, Texas, United States", "focus": "Development and maintenance of business systems and websites for local clients in Texas." },
+    { "company": "TS Network", "role": "Database Administrator", "period": "January 2024 - Present", "location": "Brownsville, Texas, United States", "focus": "Database design, administration, and maintenance for customer, finance, and operational systems." },
+    { "company": "PICAR", "role": "Software Developer", "period": "2023", "location": "General Alvear, Mendoza, Argentina", "focus": "Java desktop software for sales, stock, customer, supplier, and account management." },
     { "company": "Freelance", "role": "Software Developer", "period": "2021 - 2023", "focus": "REST APIs and small software products for business clients." }
   ],
   "projects": [
@@ -35,22 +35,33 @@
     { "name": "TS Network CRM", "year": 2026, "type": "Multi-role CRM", "summary": "Coordinates calls, field visits, technicians, tasks, inventory, recurring payments, and operational PDFs." },
     { "name": "The Breakers Plaza CRM", "year": 2026, "type": "Condominium CRM", "summary": "Centralizes residents, maintenance fees, reservations, amenities, maintenance work, and QuickBooks synchronization." },
     { "name": "Carlos Taboada Law Firm CRM", "year": 2025, "type": "Legal case workflow", "summary": "Organizes appointments, intake notes, case evaluation, client follow-up, and role-based legal workflows." },
-    { "name": "Ferreteria Mendez", "year": 2026, "type": "Business management system", "summary": "Handles point-of-sale activity, quotes, products, stock, PDF invoices, reports, and sales analytics." },
-    { "name": "Urbana Studios", "year": 2026, "type": "Property management system", "summary": "Manages apartment availability, tenants, contracts, rent, invoices, visits, income, and occupancy analytics." },
+    { "name": "Ferreteria Mendez", "year": 2026, "location": "San Rafael, Mendoza, Argentina", "type": "Business management system", "summary": "Handles point-of-sale activity, quotes, products, stock, PDF invoices, reports, and sales analytics." },
+    { "name": "Urbana Studios", "year": 2026, "location": "Brownsville, Texas, United States", "type": "Property management system", "summary": "Manages apartment availability, tenants, contracts, rent, invoices, visits, income, and occupancy analytics." },
+    { "name": "TS Network Website", "year": 2026, "location": "Brownsville, Texas, United States", "type": "Bilingual business website", "summary": "Presents internet and security services, captures local leads, and connects customers with payments and account access." },
+    { "name": "Los Andes Enterprise Solutions Website", "year": 2025, "location": "Brownsville, Texas, United States", "type": "Corporate B2B website", "summary": "Presents software, BPO, and digital marketing services with plans, pricing, and direct inquiries." },
+    { "name": "Easy Form Solutions Website", "year": 2025, "location": "Brownsville, Texas, United States", "type": "Service website", "summary": "Explains a four-stage form assistance process and provides a direct inquiry channel." },
+    { "name": "The Breakers Plaza Website", "year": 2026, "location": "South Padre Island, Texas, United States", "type": "Condominium website", "summary": "Presents the beachfront property, amenities, location, and private resident portal." },
     { "name": "AI Agent MVP", "year": 2026, "type": "Conversational automation", "summary": "Answers Facebook Messenger leads, classifies intent, schedules appointments, and reports conversion metrics." },
     { "name": "Professional Portfolio", "year": 2025, "type": "Bilingual personal website", "summary": "Presents projects, work experience, technology skills, education, contact channels, and an integrated AI assistant." },
-    { "name": "Esports Championship Platform", "year": 2026, "type": "Live timing and analytics platform", "summary": "Combines championships, registrations, live timing, historical results, driver statistics, and administration." },
-    { "name": "Cactus Alojamientos", "year": 2026, "type": "Hospitality booking platform", "summary": "Shows accommodations and availability, accepts account-free booking requests, and alerts administrators by email." }
+    { "name": "eSports Championship Platform", "year": 2026, "location": "Capital Federal, Buenos Aires, Argentina", "type": "Live timing and analytics platform", "summary": "Combines championships, registrations, live timing, historical results, driver statistics, and administration." },
+    { "name": "Cactus Alojamientos", "year": 2026, "location": "San Rafael, Mendoza, Argentina", "type": "Hospitality booking platform", "summary": "Shows accommodations and availability, accepts account-free booking requests, and alerts administrators by email." },
+    { "name": "PICAR Tools Distribution System", "year": 2023, "location": "General Alvear, Mendoza, Argentina", "type": "Desktop business management system", "summary": "Centralizes tool inventory, sales, purchases, customers, suppliers, accounts, payments, and reports." },
+    { "name": "Cell Repair Technical Service System", "year": 2022, "location": "Luján de Cuyo, Mendoza, Argentina", "type": "Technical service management system", "summary": "Records devices and repairs while allowing customers to check progress with a unique tracking code." }
   ],
   "education": [
     "Systems Analysis and Programming degree",
     "Communicational English training - Level B2"
   ],
-  "contact": {
-    "website": "https://federicocabello.net/",
-    "linkedin": "https://linkedin.com/in/federicocabello",
-    "github": "https://github.com/federicocabello",
-    "instruction": "Use the portfolio Email button to copy Federico's email address."
+    "contact": {
+      "website": "https://federicocabello.net/",
+      "linkedin": "https://linkedin.com/in/federicocabello",
+      "github": "https://github.com/federicocabello",
+      "direct_message_button": { "en": "Leave a message", "es": "Dejame un mensaje" },
+      "direct_message": "The Contact section includes a direct-message button whose label changes with the website language and sends a short message directly to Federico.",
+      "instruction": "For direct inquiries, recommend the direct-message button using its exact label for the visitor's current language. Visitors can also use the Email button to copy Federico's email address."
+    },
+  "language_guidance": {
+    "spanish": "Avoid the technical terms 'landing page', 'responsive', and 'responsivo'. Use 'sitio web' or 'página web', and describe responsive design as 'multiplataforma', 'adaptado para computadoras, tablets y celulares', or 'acceso desde cualquier dispositivo'."
   },
   "assistant_policy": {
     "scope": "Answer only questions supported by this portfolio context.",

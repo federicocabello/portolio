@@ -2,6 +2,7 @@
   "name": "The Breakers Plaza CRM",
   "category": "CRM / Condominium Management",
   "year": "2026",
+  "location": { "name": "South Padre Island, Texas, United States", "flag": "https://flagcdn.com/us.svg" },
   "summary": "A condominium CRM that centralizes residents, maintenance fees, shared-area reservations, beach amenity requests, and maintenance work.",
   "functions": "Manages residents and fees, synchronizes payments with QuickBooks, validates SUM availability, processes beach amenity requests, and records maintenance work.",
   "problem": "Resident data, payments, reservations, and amenity requests were handled separately, causing lost requests, scheduling conflicts, and duplicate accounting entries.",

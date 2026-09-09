@@ -5,10 +5,10 @@
   "summary": "A bilingual AI assistant that answers focused questions about my experience, projects, technologies, and education using a controlled public context.",
   "functions": "Provides suggested questions, maintains a short conversation, responds in English or Spanish, and falls back to safe local answers when the AI service is unavailable.",
   "problem": "Visitors can scan the portfolio, but finding a specific project, skill, or experience quickly still requires navigating several sections.",
-  "solution": "I designed a compact assistant backed by a Python API and Workers AI, with a curated JSON knowledge source, strict scope rules, and no autonomous learning from visitors.",
-  "impacts": ["Faster portfolio discovery", "Bilingual answers", "Controlled public context", "No stored conversations"],
-  "technologies": ["Python", "JavaScript", "Workers AI", "Cloudflare", "REST API", "JSON"],
+  "solution": "I designed a compact assistant backed by a secure API and Workers AI, with a curated knowledge source, strict scope rules, and no autonomous learning from visitors.",
+  "impacts": ["Faster portfolio discovery", "Bilingual answers", "Controlled public context", "Persistent conversation history"],
+  "technologies": ["Python", "JavaScript", "Cloudflare", "REST API"],
   "links": { "repository": "https://github.com/federicocabello/portolio", "website": null },
   "media": { "type": "gallery" },
-  "demo": { "status": "public", "title": "Live AI assistant", "description": "The assistant is available from the chat button in this portfolio and responds through a Python Worker connected to Workers AI." }
+  "demo": null
 }

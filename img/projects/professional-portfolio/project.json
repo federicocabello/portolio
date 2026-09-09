@@ -4,10 +4,10 @@
   "year": "2025",
   "summary": "A bilingual professional portfolio that presents my projects, experience, technology stack, education, and contact channels in one responsive experience.",
   "functions": "Organizes projects by category, presents detailed case studies, translates the content, and offers an AI assistant for exploring my professional profile.",
-  "problem": "I needed a clear and accessible place to centralize my experience, technical profile, and growing collection of software projects.",
+  "problem": "The professional experience, technical profile, and growing collection of software projects needed a clear, accessible, and centralized presentation.",
   "solution": "I developed a responsive portfolio with section navigation, interactive project cases, bilingual content, and direct access to my professional profiles.",
   "impacts": ["Centralized professional profile", "Bilingual content", "Responsive experience", "Organized project cases"],
-  "technologies": ["HTML5", "CSS3", "JavaScript", "jQuery"],
+  "technologies": ["HTML5", "CSS3", "JavaScript", "jQuery", "Python", "PHP", "Cloudflare", "REST API"],
   "links": { "repository": "https://github.com/federicocabello/portolio", "website": null },
   "media": { "type": "gallery" },
   "demo": null

@@ -14,6 +14,22 @@ function respond(int $status, array $payload): void
     exit;
 }
 
+function formatArgentinaDate(string $value): string
+{
+    try {
+        $date = new DateTimeImmutable($value !== '' ? $value : 'now');
+    } catch (Throwable $error) {
+        $date = new DateTimeImmutable('now', new DateTimeZone('UTC'));
+    }
+
+    $argentinaTime = $date->setTimezone(new DateTimeZone('America/Argentina/Buenos_Aires'));
+
+    return $argentinaTime->format('d/m/Y')
+        . ' • '
+        . $argentinaTime->format('H:i')
+        . ' hs (UTC-3, Argentina)';
+}
+
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     header('Allow: POST');
     respond(405, ['error' => 'Method not allowed']);
@@ -47,14 +63,26 @@ if (!is_array($payload)) {
     respond(400, ['error' => 'Invalid JSON']);
 }
 
-$question = trim((string) ($payload['question'] ?? ''));
-$answer = trim((string) ($payload['answer'] ?? ''));
+$type = ($payload['type'] ?? 'ai_exchange') === 'contact_message'
+    ? 'contact_message'
+    : 'ai_exchange';
 $language = ($payload['language'] ?? 'en') === 'es' ? 'es' : 'en';
-$status = ($payload['status'] ?? 'answered') === 'error' ? 'error' : 'answered';
-$createdAt = trim((string) ($payload['createdAt'] ?? gmdate('c')));
+$createdAt = formatArgentinaDate(trim((string) ($payload['createdAt'] ?? '')));
 
-if ($question === '' || $answer === '' || mb_strlen($question) > 500 || mb_strlen($answer) > 4000) {
-    respond(422, ['error' => 'Invalid notification data']);
+if ($type === 'contact_message') {
+    $name = trim((string) ($payload['name'] ?? ''));
+    $message = trim((string) ($payload['message'] ?? ''));
+    $name = preg_replace('/[\r\n]+/', ' ', $name) ?? '';
+    if ($name === '' || $message === '' || mb_strlen($name) > 80 || mb_strlen($message) > 1200) {
+        respond(422, ['error' => 'Invalid contact data']);
+    }
+} else {
+    $question = trim((string) ($payload['question'] ?? ''));
+    $answer = trim((string) ($payload['answer'] ?? ''));
+    $status = ($payload['status'] ?? 'answered') === 'error' ? 'error' : 'answered';
+    if ($question === '' || $answer === '' || mb_strlen($question) > 500 || mb_strlen($answer) > 4000) {
+        respond(422, ['error' => 'Invalid notification data']);
+    }
 }
 
 $smtpUsername = (string) ($config['smtp_username'] ?? '');
@@ -75,20 +103,33 @@ try {
     $mail->Port = 465;
     $mail->CharSet = 'UTF-8';
     $mail->Encoding = PHPMailer::ENCODING_BASE64;
-    $mail->setFrom($smtpUsername, 'Portfolio AI Agent');
+    $mail->setFrom(
+        $smtpUsername,
+        $type === 'contact_message' ? 'Portfolio Contact Form' : 'Portfolio AI Agent'
+    );
     foreach ($recipients as $recipient) {
         $mail->addAddress($recipient);
     }
-    $mail->Subject = $status === 'answered'
-        ? 'New Portfolio AI conversation'
-        : 'Portfolio AI response error';
-    $mail->Body = implode("\n\n", [
-        'Date: ' . $createdAt,
-        'Language: ' . strtoupper($language),
-        'Status: ' . $status,
-        "Question:\n" . $question,
-        "Answer:\n" . $answer,
-    ]);
+    if ($type === 'contact_message') {
+        $mail->Subject = 'New message from your portfolio';
+        $mail->Body = implode("\n\n", [
+            'Fecha: ' . $createdAt,
+            'Language: ' . strtoupper($language),
+            'Name: ' . $name,
+            "Message:\n" . $message,
+        ]);
+    } else {
+        $mail->Subject = $status === 'answered'
+            ? 'New Portfolio AI conversation'
+            : 'Portfolio AI response error';
+        $mail->Body = implode("\n\n", [
+            'Fecha: ' . $createdAt,
+            'Language: ' . strtoupper($language),
+            'Status: ' . $status,
+            "Question:\n" . $question,
+            "Answer:\n" . $answer,
+        ]);
+    }
     $mail->send();
     respond(200, ['sent' => true]);
 } catch (Throwable $error) {

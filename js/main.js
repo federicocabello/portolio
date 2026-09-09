@@ -612,19 +612,19 @@ jQuery(document).ready(function($) {
                 'TS Network CRM': { folder: 'tsnetwork-crm' },
                 'Cactus Alojamientos': { folder: 'cactus-alojamientos' },
                 'Ferreteria Mendez Management System': { folder: 'ferreteria-mendez' },
-                'Esports Championship Platform': { folder: 'cadpo-simracing' },
+                'eSports Championship Platform': { folder: 'cadpo-simracing' },
                 'Proyecto Prisma': { folder: 'proyecto-prisma' },
                 'Los Andes CRM': { folder: 'crm-losandes' },
                 'Carlos Taboada Law Firm CRM': { folder: 'carlo-taboada-crm' },
                 'PICAR - Tools Distribution System': { folder: 'distribuidora-picar' },
-                'Cell Repair Tracking System': { folder: 'cell-repair' }
+                'Cell Repair Technical Service System': { folder: 'cell-repair' }
             };
             var groups = [
                 { id: 'crm', label: translate('projects.groups.crm'), icon: 'fa-users-cog', projects: ['tsnetwork-crm', 'breakers-plaza-crm', 'carlo-taboada-crm', 'crm-losandes'] },
                 { id: 'business', label: translate('projects.groups.business'), icon: 'fa-chart-line', projects: ['proyecto-prisma', 'ferreteria-mendez', 'urbana-studios'] },
                 { id: 'automation', label: translate('projects.groups.automation'), icon: 'fa-robot', projects: ['facebook-chats-ai-agent', 'portfolio-ai-assistant'] },
                 { id: 'landing', label: translate('projects.groups.landing'), icon: 'fa-globe', projects: ['ts-network-website', 'los-andes-website', 'breakers-plaza-website', 'easy-forms'] },
-                { id: 'additional', label: translate('projects.groups.additional'), icon: 'fa-folder', secondary: true, projects: ['cadpo-simracing', 'cactus-alojamientos', 'distribuidora-picar', 'cell-repair', 'professional-portfolio'] }
+                { id: 'additional', label: translate('projects.groups.additional'), icon: 'fa-folder', secondary: true, projects: ['cadpo-simracing', 'cactus-alojamientos', 'professional-portfolio', 'distribuidora-picar', 'cell-repair'] }
             ];
 
             var detailedConfigs = await Promise.all(Object.keys(projectResults).map(function(title) {
@@ -763,6 +763,9 @@ jQuery(document).ready(function($) {
             stage.appendChild(panels);
             explorer.append(connectionLines, tabs, stage);
             container.replaceChildren(explorer);
+            $(container).find('.project-case-card').each(function() {
+                initializeInteractiveProjectCard($(this));
+            });
             window.requestAnimationFrame(function() {
                 drawProjectConnections(skipInitialAnimation === true);
             });
@@ -860,7 +863,7 @@ jQuery(document).ready(function($) {
                 return Promise.resolve(window.portfolioI18n ? window.portfolioI18n.localizeProject(cached, folder) : cached);
             }
 
-            return fetch('img/projects/' + folder + '/project.json')
+            return fetch('img/projects/' + folder + '/project.json?v=20260908-project-voice')
                 .then(function(response) {
                     if (!response.ok) {
                         throw new Error('Project configuration not found');
@@ -899,6 +902,7 @@ jQuery(document).ready(function($) {
                 'flask': ['simple-icons:flask', '#D5D9E0'],
                 'django': ['simple-icons:django', '#44B78B'],
                 'jquery': ['simple-icons:jquery', '#0769AD'],
+                'bootstrap': ['simple-icons:bootstrap', '#7952B3'],
                 'java': ['fontisto:java', '#F89820'],
                 'php': ['simple-icons:php', '#8892BF'],
                 'pandas': ['simple-icons:pandas', '#E8D44D'],
@@ -911,6 +915,7 @@ jQuery(document).ready(function($) {
                 'smtp': ['mdi:email-fast-outline', '#71D5C5'],
                 'workers ai': ['simple-icons:cloudflare', '#F48120'],
                 'cloudflare': ['simple-icons:cloudflare', '#F48120'],
+                'cloudflare d1': ['mdi:database-cog-outline', '#F48120'],
                 'rest api': ['mdi:api', '#8CEADD'],
                 'json': ['mdi:code-json', '#C8D2DC']
             };
@@ -925,6 +930,45 @@ jQuery(document).ready(function($) {
             icon.className = 'iconify';
             icon.setAttribute('data-icon', appearance[0]);
             badge.append(icon, document.createTextNode(name));
+            return badge;
+        }
+
+        function createProjectLocation(location, detailView) {
+            if (!location || typeof location !== 'object') {
+                return null;
+            }
+
+            var locationText = String(location.name || '').trim();
+            var flagSource = String(location.flag || '').trim();
+
+            if (!locationText) {
+                return null;
+            }
+
+            var badge = document.createElement('span');
+            var marker = document.createElement('span');
+            var label = document.createElement('span');
+
+            badge.className = 'project-client-location' + (detailView ? ' is-detail-location' : '');
+            badge.title = translate('projects.clientLocation') + ': ' + locationText;
+            badge.setAttribute('aria-label', badge.title);
+            marker.className = 'project-client-location-marker';
+            marker.setAttribute('aria-hidden', 'true');
+            if (flagSource) {
+                var flag = document.createElement('img');
+                flag.src = flagSource;
+                flag.alt = '';
+                marker.appendChild(flag);
+            } else {
+                var markerIcon = document.createElement('i');
+                markerIcon.className = 'fas fa-map-marker-alt';
+                marker.appendChild(markerIcon);
+            }
+            label.className = 'project-client-location-text';
+            label.textContent = detailView
+                ? translate('projects.clientLocatedIn', { location: locationText })
+                : locationText;
+            badge.append(marker, label);
             return badge;
         }
 
@@ -971,6 +1015,7 @@ jQuery(document).ready(function($) {
         }
 
         function enhanceProjectCase(card, result) {
+            var info = card.querySelector('.project-info');
             var detailsInner = card.querySelector('.project-case-details-inner');
             var meta = card.querySelector('.project-case-meta');
             var technologies = card.querySelector('.project-tech-grid');
@@ -985,8 +1030,19 @@ jQuery(document).ready(function($) {
             var legacyProjectLink = visual.querySelector('.project-github-float');
             var accessNote = detailsInner.querySelector('.project-access-note');
 
-            if (!detailsInner || !meta || !technologies || !titleRow || !toggle || !visual || !summary || !caseCopy || !category || !projectTitle || !result) {
+            if (!info || !detailsInner || !meta || !technologies || !titleRow || !toggle || !visual || !summary || !caseCopy || !category || !projectTitle || !result) {
                 return;
+            }
+
+            var previousLocation = info.querySelector('.project-client-location');
+            if (previousLocation) {
+                previousLocation.remove();
+            }
+            info.classList.remove('has-project-location');
+            var clientLocation = createProjectLocation(result.location, false);
+            if (clientLocation) {
+                info.classList.add('has-project-location');
+                info.prepend(clientLocation);
             }
 
             category.textContent = result.category || category.textContent;
@@ -1074,6 +1130,7 @@ jQuery(document).ready(function($) {
                 legacyProjectLink.remove();
                 detailHeader.appendChild(createProjectLink(legacyUrl, legacyType, projectTitle.textContent));
             }
+            var detailLocation = createProjectLocation(result.location, true);
 
             functions.append(functionsTitle, functionsCopy);
             (result.impacts || result.impact || []).forEach(function(impact) {
@@ -1098,6 +1155,9 @@ jQuery(document).ready(function($) {
             visual.insertAdjacentElement('beforebegin', leftColumn);
             leftColumn.appendChild(visual);
             leftColumn.append(leftMeta, expandedTitle, functions);
+            if (detailLocation) {
+                leftColumn.appendChild(detailLocation);
+            }
             projectTitle.insertAdjacentElement('afterend', toggle);
 
             var copyHeadings = caseCopy.querySelectorAll('h5');
@@ -1418,6 +1478,12 @@ jQuery(document).ready(function($) {
             title.textContent = project.name || project.title;
             summary.className = 'project-summary';
             summary.textContent = project.summary;
+
+            var clientLocation = createProjectLocation(project.location, false);
+            if (clientLocation) {
+                info.classList.add('has-project-location');
+                info.appendChild(clientLocation);
+            }
 
             iconContainer.appendChild(icon);
             titleRow.appendChild(title);

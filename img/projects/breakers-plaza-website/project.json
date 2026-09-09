@@ -2,6 +2,7 @@
   "name": "The Breakers Plaza",
   "category": "Luxury Landing Page / Condominiums",
   "year": "2026",
+  "location": { "name": "South Padre Island, Texas, United States", "flag": "https://flagcdn.com/us.svg" },
   "summary": "An elegant beachfront condominium website designed to express The Breakers Plaza's premium identity and connect residents with their private portal.",
   "functions": "Presents the property and its amenities through an interactive gallery, provides location information, and gives residents direct access to the condominium CRM.",
   "problem": "The Breakers Plaza needed a refined digital presence that reflected its oceanfront experience while providing a clear entry point for residents and prospective buyers.",

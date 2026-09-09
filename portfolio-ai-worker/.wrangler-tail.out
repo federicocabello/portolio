@@ -1,0 +1,12 @@
+
+ ⛅️ wrangler 4.130.0
+────────────────────
+Successfully created tail, expires at 2026-09-08T22:40:52Z
+Connected to federico-portfolio-assistant, waiting for logs...
+POST https://federico-portfolio-assistant.fede-cabello.workers.dev/contact - Ok @ 8/9/2026, 04:01:35
+  (log) Email notification error: 422
+Reconnected to federico-portfolio-assistant.
+OPTIONS https://federico-portfolio-assistant.fede-cabello.workers.dev/contact - Ok @ 8/9/2026, 04:08:50
+  (warn) Constructing a Response with a null body status (204) and a non-null, zero-length body. This is technically incorrect, and we recommend you update your code to explicitly pass in a `null` body, e.g. `new Response(null, { status: 204, ... })`. (We continue to allow the zero-length body behavior because it was previously the only way to construct a Response with a null body status. This behavior may change in the future.)
+POST https://federico-portfolio-assistant.fede-cabello.workers.dev/contact - Ok @ 8/9/2026, 04:08:51
+Reconnected to federico-portfolio-assistant.

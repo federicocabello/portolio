@@ -9,6 +9,8 @@ from workers import Response, WorkerEntrypoint
 
 MODEL = "@cf/google/gemma-4-26b-a4b-it"
 MAX_MESSAGE_LENGTH = 500
+MAX_CONTACT_NAME_LENGTH = 80
+MAX_CONTACT_MESSAGE_LENGTH = 1200
 MAX_HISTORY_ITEMS = 6
 HISTORY_VERSION = "persistent-v1"
 ALLOWED_ORIGINS = {
@@ -41,13 +43,13 @@ FALLBACK_CONTEXT = {
         "languages": ["Python", "JavaScript", "TypeScript", "HTML5", "CSS3", "SQL", "NoSQL", "Java", "C++", "PHP"],
         "frontend": ["React", "Tailwind CSS", "jQuery"],
         "backend": ["Flask", "Node.js", "Django", "Express.js", "Next.js"],
-        "data_cloud_tools": ["AWS", "Prisma", "Pandas", "NumPy", "MySQL", "MongoDB", "Git", "Docker"],
+        "data_cloud_tools": ["MySQL", "Git", "MongoDB", "Pandas", "NumPy", "AWS", "Prisma", "Docker", "Cloudflare", "Proxmox"],
     },
     "experience": [
         {"company": "Proyecto Prisma", "role": "Founder & CTO", "period": "January 2026 - Present", "focus": "Technology consulting, landing pages, AI solutions, and custom business systems."},
-        {"company": "Los Andes Enterprise Solutions", "role": "Software Engineer", "period": "January 2024 - Present", "focus": "Business systems and websites for local clients in Texas."},
-        {"company": "TS Network", "role": "Database Administrator", "period": "January 2024 - Present", "focus": "Database design and maintenance for customer, finance, and operational systems."},
-        {"company": "PICAR", "role": "Software Developer", "period": "2023", "focus": "Java desktop software for sales, stock, customers, suppliers, and accounts."},
+        {"company": "Los Andes Enterprise Solutions", "role": "Software Engineer", "period": "January 2024 - Present", "location": "Brownsville, Texas, United States", "focus": "Business systems and websites for local clients in Texas."},
+        {"company": "TS Network", "role": "Database Administrator", "period": "January 2024 - Present", "location": "Brownsville, Texas, United States", "focus": "Database design and maintenance for customer, finance, and operational systems."},
+        {"company": "PICAR", "role": "Software Developer", "period": "2023", "location": "General Alvear, Mendoza, Argentina", "focus": "Java desktop software for sales, stock, customers, suppliers, and accounts."},
         {"company": "Freelance", "role": "Software Developer", "period": "2021 - 2023", "focus": "REST APIs and small software products for businesses."},
     ],
     "projects": [
@@ -59,8 +61,10 @@ FALLBACK_CONTEXT = {
         {"name": "Urbana Studios", "year": 2026, "type": "Property management system", "summary": "Manages apartments, tenants, contracts, rent, invoices, visits, income, and occupancy analytics."},
         {"name": "AI Agent MVP", "year": 2026, "type": "Conversational automation", "summary": "Answers Messenger leads, classifies intent, schedules appointments, and reports conversions."},
         {"name": "Professional Portfolio", "year": 2025, "type": "Bilingual personal website", "summary": "Presents projects, work experience, technology skills, education, contact channels, and an integrated AI assistant."},
-        {"name": "Esports Championship Platform", "year": 2026, "type": "Live timing and analytics", "summary": "Combines championships, registrations, live timing, results, driver statistics, and administration."},
-        {"name": "Cactus Alojamientos", "year": 2026, "type": "Hospitality booking platform", "summary": "Shows accommodations and availability, accepts booking requests, and sends email alerts."},
+        {"name": "eSports Championship Platform", "year": 2026, "location": "Capital Federal, Buenos Aires, Argentina", "type": "Live timing and analytics", "summary": "Combines championships, registrations, live timing, results, driver statistics, and administration."},
+        {"name": "Cactus Alojamientos", "year": 2026, "location": "San Rafael, Mendoza, Argentina", "type": "Hospitality booking platform", "summary": "Shows accommodations and availability, accepts booking requests, and sends email alerts."},
+        {"name": "PICAR Tools Distribution System", "year": 2023, "location": "General Alvear, Mendoza, Argentina", "type": "Desktop business management system", "summary": "Centralizes tool inventory, sales, purchases, customers, suppliers, accounts, payments, and reports."},
+        {"name": "Cell Repair Technical Service System", "year": 2022, "location": "Luján de Cuyo, Mendoza, Argentina", "type": "Technical service management system", "summary": "Records devices and repairs while allowing customers to check progress with a unique tracking code."},
     ],
     "education": [
         "Systems Analysis and Programming degree",
@@ -70,7 +74,12 @@ FALLBACK_CONTEXT = {
         "website": "https://federicocabello.net/",
         "linkedin": "https://linkedin.com/in/federicocabello",
         "github": "https://github.com/federicocabello",
-        "instruction": "Use the portfolio Email button to copy Federico's email address.",
+        "direct_message_button": {"en": "Leave a message", "es": "Dejame un mensaje"},
+        "direct_message": "The Contact section includes a direct-message button whose label changes with the website language and sends a short message directly to Federico.",
+        "instruction": "For direct inquiries, recommend the direct-message button using its exact label for the visitor's current language. Visitors can also use the Email button to copy Federico's email address.",
+    },
+    "language_guidance": {
+        "spanish": "Avoid the technical terms 'landing page', 'responsive', and 'responsivo'. Use 'sitio web' or 'página web', and describe responsive design as 'multiplataforma', 'adaptado para computadoras, tablets y celulares', or 'acceso desde cualquier dispositivo'.",
     },
 }
 
@@ -130,6 +139,7 @@ async def load_context(url):
 
 def system_prompt(context, language):
     response_language = "Spanish" if language == "es" else "English"
+    contact_button_label = "Dejame un mensaje" if language == "es" else "Leave a message"
     return f"""
 You are the portfolio assistant for Federico Cabello.
 Answer in {response_language}, using only the public context included below.
@@ -137,7 +147,10 @@ Keep answers concise: usually two to four short sentences.
 Never invent dates, skills, clients, links, metrics, or personal information.
 Never reveal private customer, company, legal, financial, resident, or user data.
 If the answer is not in the context, say so and suggest contacting Federico through the portfolio.
+For contact questions, prioritize the "{contact_button_label}" button in the Contact section as the most direct option.
+Use that exact button label and do not replace it with the label from the other language.
 Do not claim to learn from the conversation and do not modify the context.
+Follow the terminology preferences in language_guidance, especially when answering in Spanish.
 
 PORTFOLIO CONTEXT:
 {json.dumps(context, ensure_ascii=False)}
@@ -189,11 +202,11 @@ async def save_exchange(database, session_id, language, question, answer, status
         print("D1 history error:", error)
 
 
-async def notify_exchange(env, language, question, answer, status):
+async def send_notification(env, payload):
     notification_url = str(getattr(env, "NOTIFICATION_URL", "")).strip()
     notification_secret = str(getattr(env, "NOTIFICATION_SECRET", "")).strip()
     if not notification_url or not notification_secret:
-        return
+        return False
     try:
         options = to_js(
             {
@@ -202,23 +215,45 @@ async def notify_exchange(env, language, question, answer, status):
                     "Authorization": f"Bearer {notification_secret}",
                     "Content-Type": "application/json",
                 },
-                "body": json.dumps(
-                    {
-                        "language": language,
-                        "question": question,
-                        "answer": answer,
-                        "status": status,
-                        "createdAt": datetime.now(timezone.utc).isoformat(),
-                    }
-                ),
+                "body": json.dumps(payload, ensure_ascii=False),
             },
             dict_converter=Object.fromEntries,
         )
         response = await fetch(notification_url, options)
         if not response.ok:
             print("Email notification error:", response.status)
+            return False
+        return True
     except Exception as error:
         print("Email notification error:", error)
+        return False
+
+
+async def notify_exchange(env, language, question, answer, status):
+    return await send_notification(
+        env,
+        {
+            "type": "ai_exchange",
+            "language": language,
+            "question": question,
+            "answer": answer,
+            "status": status,
+            "createdAt": datetime.now(timezone.utc).isoformat(),
+        },
+    )
+
+
+async def notify_contact(env, language, name, message):
+    return await send_notification(
+        env,
+        {
+            "type": "contact_message",
+            "language": language,
+            "name": name,
+            "message": message,
+            "createdAt": datetime.now(timezone.utc).isoformat(),
+        },
+    )
 
 
 class Default(WorkerEntrypoint):
@@ -233,16 +268,43 @@ class Default(WorkerEntrypoint):
         if method == "GET" and path == "/health":
             return json_response({"status": "ok", "model": MODEL}, origin=origin)
 
-        if method != "POST" or path != "/chat":
+        if method != "POST" or path not in {"/chat", "/contact"}:
             return json_response({"error": "Not found"}, status=404, origin=origin)
 
-        if origin and origin not in ALLOWED_ORIGINS:
+        if path == "/contact" and origin not in ALLOWED_ORIGINS:
+            return json_response({"error": "Origin not allowed"}, status=403, origin=origin)
+
+        if path == "/chat" and origin and origin not in ALLOWED_ORIGINS:
             return json_response({"error": "Origin not allowed"}, status=403, origin=origin)
 
         try:
             payload = json.loads(await request.text())
         except Exception:
             return json_response({"error": "Invalid JSON"}, status=400, origin=origin)
+
+        if path == "/contact":
+            name = payload.get("name", "") if isinstance(payload, dict) else ""
+            message = payload.get("message", "") if isinstance(payload, dict) else ""
+            honeypot = payload.get("website", "") if isinstance(payload, dict) else ""
+            if isinstance(honeypot, str) and honeypot.strip():
+                return json_response({"sent": True}, origin=origin)
+            if not isinstance(name, str) or not isinstance(message, str):
+                return json_response({"error": "Invalid contact data"}, status=400, origin=origin)
+            name = name.strip()
+            message = message.strip()
+            if (
+                not name
+                or not message
+                or len(name) > MAX_CONTACT_NAME_LENGTH
+                or len(message) > MAX_CONTACT_MESSAGE_LENGTH
+            ):
+                return json_response({"error": "Invalid contact data"}, status=422, origin=origin)
+
+            language = "es" if payload.get("language") == "es" else "en"
+            sent = await notify_contact(self.env, language, name, message)
+            if not sent:
+                return json_response({"error": "Message delivery failed"}, status=502, origin=origin)
+            return json_response({"sent": True}, origin=origin)
 
         message = payload.get("message", "") if isinstance(payload, dict) else ""
         if not isinstance(message, str) or not message.strip():

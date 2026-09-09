@@ -150,10 +150,10 @@
         var query = normalize(question);
         var spanish = language() === 'es';
 
-        if (/contact|email|correo|linkedin|github|contratar/.test(query)) {
+        if (/contact|email|correo|linkedin|github|contratar|mensaje|message|propuesta|proposal/.test(query)) {
             return spanish
-                ? 'Podés contactar a Federico desde los botones de Email o LinkedIn del portfolio. También podés revisar sus repositorios desde GitHub.'
-                : 'You can contact Federico through the Email or LinkedIn buttons in the portfolio. You can also review his repositories on GitHub.';
+                ? 'La forma más directa es usar el botón “Dejame un mensaje” en la sección de contacto. También podés copiar su email, visitar LinkedIn o revisar sus repositorios en GitHub.'
+                : 'The most direct option is the “Leave a message” button in the Contact section. You can also copy his email, visit LinkedIn, or review his GitHub repositories.';
         }
 
         if (/available|availability|disponible|disponibilidad|oportunidad/.test(query)) {
@@ -178,8 +178,8 @@
         }
         if (/tecnolog|stack|lenguaje|react|python|node|flask|database|base de datos/.test(query)) {
             return spanish
-                ? 'Su stack principal combina React, TypeScript y Tailwind CSS en frontend; Python, Flask, Node.js, Express y Next.js en backend; además de SQL, NoSQL, AWS, Prisma, Pandas y Docker.'
-                : 'His main stack combines React, TypeScript, and Tailwind CSS on the frontend; Python, Flask, Node.js, Express, and Next.js on the backend; plus SQL, NoSQL, AWS, Prisma, Pandas, and Docker.';
+                ? 'Su stack principal combina React, TypeScript y Tailwind CSS en frontend; Python, Flask, Node.js, Express y Next.js en backend; además de SQL, NoSQL, AWS, Cloudflare, Proxmox, Prisma, Pandas, NumPy y Docker.'
+                : 'His main stack combines React, TypeScript, and Tailwind CSS on the frontend; Python, Flask, Node.js, Express, and Next.js on the backend; plus SQL, NoSQL, AWS, Cloudflare, Proxmox, Prisma, Pandas, NumPy, and Docker.';
         }
         if (/proyecto|project|crm|prisma|ferreter|urbana|esport|simracing/.test(query)) {
             var names = projectNames();
@@ -199,7 +199,7 @@
         }
         if (/que (hace|desarrolla)|what.*(build|do)|servicio|service|sistema/.test(query)) {
             return spanish
-                ? 'Federico diseña, desarrolla, prueba y despliega sistemas full-stack: CRM, plataformas de gestión, APIs REST, automatizaciones, agentes de IA, bases de datos y sitios responsive.'
+                ? 'Federico diseña, desarrolla, prueba y despliega sistemas full-stack: CRM, plataformas de gestión, APIs REST, automatizaciones, agentes de IA, bases de datos y sitios adaptados para computadoras, tablets y celulares.'
                 : 'Federico designs, develops, tests, and deploys full-stack systems: CRMs, management platforms, REST APIs, automation, AI agents, databases, and responsive websites.';
         }
         return spanish
@@ -283,7 +283,7 @@
     });
     document.addEventListener('portfolio:languagechange', updateInterfaceLanguage);
 
-    fetch('data/portfolio-context.json')
+    fetch('data/portfolio-context.json?v=20260908-contact-language')
         .then(function(response) { return response.ok ? response.json() : null; })
         .then(function(data) { context = data; })
         .catch(function() { context = null; });

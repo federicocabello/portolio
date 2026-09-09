@@ -52,7 +52,7 @@ npx.cmd wrangler d1 execute portfolio-assistant-history --remote --command "SELE
 
 ## Email notifications through Hostinger
 
-The Worker can notify a protected PHP endpoint after every AI response. The endpoint uses PHPMailer with Gmail SMTP and supports multiple recipients.
+The Worker can notify a protected PHP endpoint after every AI response and when someone submits the portfolio contact form. The endpoint uses PHPMailer with Gmail SMTP and supports multiple recipients.
 
 1. Upload `../api` to `public_html/api`.
 2. In Hostinger SSH, run `cd domains/federicocabello.net/public_html/api` and `composer2 install --no-dev --optimize-autoloader`.
@@ -60,5 +60,5 @@ The Worker can notify a protected PHP endpoint after every AI response. The endp
 4. Fill that private file with a long shared secret, the Gmail address, a newly generated Google App Password, and the destination addresses.
 5. Add `NOTIFICATION_URL` and the matching `NOTIFICATION_SECRET` to the Worker, then redeploy it.
 
-The notification integration remains disabled while either Worker variable is missing. Email failures are logged and never interrupt the visitor's chat response.
+The notification integration remains disabled while either Worker variable is missing. AI email failures are logged without interrupting chat responses; contact form failures are returned to the form so the visitor can retry.
 - Allowed browser origins are listed in `src/entry.py`.

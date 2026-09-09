@@ -26,7 +26,7 @@
             'language.english': 'English',
             'language.spanish': 'Spanish',
             'hero.title': "Hello! I'm Federico.",
-            'hero.description': '<p>As a <span class="hero-role-highlight">Software Engineer</span>, I specialize in building <strong class="hero-key-highlight">full-stack systems</strong> with <span class="hero-tech-inline" style="--inline-tech-color:#61DAFB"><i class="iconify" data-icon="simple-icons:react" aria-hidden="true"></i>React</span>, <span class="hero-tech-inline" style="--inline-tech-color:#66B2FF"><i class="iconify" data-icon="simple-icons:python" aria-hidden="true"></i>Python</span>, <span class="hero-tech-inline" style="--inline-tech-color:#68A063"><i class="iconify" data-icon="fontisto:nodejs" aria-hidden="true"></i>Node.js</span>, and <span class="hero-tech-inline" style="--inline-tech-color:#D5D9E0"><i class="iconify" data-icon="simple-icons:flask" aria-hidden="true"></i>Flask</span>, as well as <span class="hero-tech-inline" style="--inline-tech-color:#73B6E6"><i class="fas fa-database" aria-hidden="true"></i>database design and administration</span>. I have hands-on experience creating <strong class="hero-key-highlight">solutions for businesses</strong> and providing <strong class="hero-key-highlight">commercial guidance</strong> on how technology can improve operations, such as <strong class="hero-key-highlight">AI agents</strong> and <strong class="hero-key-highlight">management platforms</strong> for analyzing financial data, products, customers, and employees, with several of these systems currently being used in real-world environments.</p><p>My skills are complemented by <span class="hero-tech-inline" style="--inline-tech-color:#4C9CEB"><i class="iconify" data-icon="simple-icons:typescript" aria-hidden="true"></i>TypeScript</span>, <span class="hero-tech-inline" style="--inline-tech-color:#59B86A"><i class="iconify" data-icon="simple-icons:django" aria-hidden="true"></i>Django</span>, and <span class="hero-tech-inline" style="--inline-tech-color:#FFB33B"><i class="iconify" data-icon="simple-icons:amazonaws" aria-hidden="true"></i>AWS</span>, which I have used across different projects to expand and support the solutions I build.</p>',
+            'hero.description': '<p>As a <span class="hero-role-highlight">Software Engineer</span>, I specialize in developing <strong class="hero-key-highlight">full-stack systems</strong> with <span class="hero-tech-inline" style="--inline-tech-color:#61DAFB"><i class="iconify" data-icon="simple-icons:react" aria-hidden="true"></i>React</span>, <span class="hero-tech-inline" style="--inline-tech-color:#66B2FF"><i class="iconify" data-icon="simple-icons:python" aria-hidden="true"></i>Python</span>, <span class="hero-tech-inline" style="--inline-tech-color:#68A063"><i class="iconify" data-icon="fontisto:nodejs" aria-hidden="true"></i>Node.js</span>, and <span class="hero-tech-inline" style="--inline-tech-color:#D5D9E0"><i class="iconify" data-icon="simple-icons:flask" aria-hidden="true"></i>Flask</span>, alongside <span class="hero-tech-inline" style="--inline-tech-color:#73B6E6"><i class="fas fa-database" aria-hidden="true"></i>database design and administration</span>. I have hands-on experience creating <strong class="hero-key-highlight">solutions for businesses</strong> and providing <strong class="hero-key-highlight">business consulting</strong> on how technology can improve their operations through <strong class="hero-key-highlight">AI agents</strong> and <strong class="hero-key-highlight">management platforms</strong> for analyzing financial data, products, customers, and employees. Several of these systems are currently used in real-world environments.</p><p>I complement this expertise with <span class="hero-tech-inline" style="--inline-tech-color:#4C9CEB"><i class="iconify" data-icon="simple-icons:typescript" aria-hidden="true"></i>TypeScript</span>, <span class="hero-tech-inline" style="--inline-tech-color:#59B86A"><i class="iconify" data-icon="simple-icons:django" aria-hidden="true"></i>Django</span>, and <span class="hero-tech-inline" style="--inline-tech-color:#FFB33B"><i class="iconify" data-icon="simple-icons:amazonaws" aria-hidden="true"></i>AWS</span>, technologies I have used across different projects to expand and support the solutions I develop.</p>',
             'hero.open': 'Open to new opportunities',
             'hero.capabilities.aiTools': 'AI Tools',
             'hero.capabilities.businessSystems': 'Business Management Systems',
@@ -49,7 +49,7 @@
             'assistant.launcherTitle': "Federico's AI Agent",
             'assistant.launcherHint': 'Hello! Ask me something',
             'assistant.localStatus': 'Local preview',
-            'assistant.onlineStatus': 'AI assistant online',
+            'assistant.onlineStatus': 'Assistant online',
             'assistant.open': 'Open AI assistant',
             'assistant.close': 'Close assistant',
             'assistant.clear': 'Clear conversation',
@@ -66,57 +66,57 @@
             'assistant.error': 'I could not answer right now. Please try again in a moment.',
             'assistant.empty': 'Write a question before sending it.',
             'sections.projects.title': 'Selected<br><em>Projects</em>',
-            'sections.projects.description': 'Explore my work by solution type.',
+            'sections.projects.description': 'Explore how I turned ideas into solutions that help my clients grow.',
             'sections.experience.title': 'Work<br><em>Experience</em>',
-            'sections.experience.description': 'A concise overview of the roles, responsibilities, and results that shaped my professional journey.',
-            'sections.skills.title': 'Skills &<br><em>Tech Stack</em>',
-            'sections.skills.description': 'Core technologies I use to build projects, applications, APIs, databases, and business systems.',
+            'sections.experience.description': 'Discover my professional journey and the challenges I have taken on along the way.',
+            'sections.skills.title': 'Tech<br><em>Stack</em>',
+            'sections.skills.description': 'Discover how my experience and expertise have evolved over the years.',
             'sections.education.title': 'Formation &<br><em>Education</em>',
-            'sections.education.description': 'A summary of my formal education and language training.',
+            'sections.education.description': 'The foundation that supports my professional development.',
             'sections.contact.title': 'Contact<br><em>Me</em>',
-            'sections.contact.description': 'Let us build new paths together!',
+            'sections.contact.description': 'Explore these channels and get in touch!',
             'skills.languages': 'Languages',
             'skills.frontend': 'Frontend',
             'skills.backend': 'Backend',
             'skills.dataCloud': 'Data, Cloud & Tools',
             'experience.responsibilities': 'Responsibilities',
-            'experience.problems': 'Problems solved',
+            'experience.problems': 'Challenges addressed',
             'experience.impact': 'Impact',
             'experience.1.type': 'Independent software venture / Digital services',
             'experience.1.period': 'January 2026 - Present',
             'experience.1.role': 'Founder & CTO',
             'experience.1.location': 'Hybrid / San Rafael, Mendoza, Argentina',
-            'experience.1.responsibilities': 'Run an independent venture offering technology guidance, landing pages, and custom business systems.',
-            'experience.1.problems': 'Help clients define digital needs and replace manual processes with tailored software solutions.',
-            'experience.1.impact': 'Created practical demos and production tools that make technology easier to evaluate and adopt.',
+            'experience.1.responsibilities': 'I run an independent venture offering technology guidance, landing pages, and custom business systems.',
+            'experience.1.problems': 'I help clients define digital needs and replace manual processes with tailored software solutions.',
+            'experience.1.impact': 'I created practical demos and production tools that make technology easier to evaluate and adopt.',
             'experience.2.type': 'Local business software / Web services',
             'experience.2.period': 'January 2024 - Present',
             'experience.2.role': 'Software Engineer',
-            'experience.2.location': 'Remote / Brownsville, Texas, USA',
-            'experience.2.responsibilities': 'Develop and maintain business systems and websites offered by the company to local clients.',
-            'experience.2.problems': 'Translate regional business needs into maintainable platforms, websites, and connected digital processes.',
-            'experience.2.impact': "Expanded the company's digital service offering and supported more efficient client operations.",
+            'experience.2.location': 'Remote / Brownsville, Texas, United States',
+            'experience.2.responsibilities': 'I develop and maintain business systems and websites offered by the company to local clients.',
+            'experience.2.problems': 'I translate regional business needs into maintainable platforms, websites, and connected digital processes.',
+            'experience.2.impact': "I expanded the company's digital service offering and supported more efficient client operations.",
             'experience.3.type': 'Database administration / Business systems',
             'experience.3.period': 'January 2024 - Present',
             'experience.3.role': 'Database Administrator',
-            'experience.3.location': 'Remote / Brownsville, Texas, USA',
-            'experience.3.responsibilities': 'Design, administer, and maintain databases for customer, financial, and internal management systems.',
-            'experience.3.problems': 'Organize critical business records and reduce inconsistencies across connected company platforms.',
-            'experience.3.impact': 'Improved data integrity, availability, and reliability for daily operations and financial control.',
+            'experience.3.location': 'Remote / Brownsville, Texas, United States',
+            'experience.3.responsibilities': 'I design, administer, and maintain databases for customer, financial, and internal management systems.',
+            'experience.3.problems': 'I organize critical business records and reduce inconsistencies across connected company platforms.',
+            'experience.3.impact': 'I improved data integrity, availability, and reliability for daily operations and financial control.',
             'experience.4.type': 'Desktop software / Inventory and sales',
             'experience.4.period': 'January - December 2023',
             'experience.4.role': 'Software Developer',
-            'experience.4.location': 'Hybrid / San Rafael, Mendoza, Argentina',
-            'experience.4.responsibilities': "Designed and developed PICAR's desktop system for products, stock, sales, clients, and suppliers.",
-            'experience.4.problems': 'Replaced manual inventory and administrative records with a centralized workflow built for the company.',
-            'experience.4.impact': 'Improved stock visibility, sales control, billing organization, and everyday administration.',
+            'experience.4.location': 'Hybrid / General Alvear, Mendoza, Argentina',
+            'experience.4.responsibilities': "I designed and developed PICAR's desktop system for products, stock, sales, clients, and suppliers.",
+            'experience.4.problems': 'I replaced manual inventory and administrative records with a centralized workflow built for the company.',
+            'experience.4.impact': 'I improved stock visibility, sales control, billing organization, and everyday administration.',
             'experience.5.type': 'Early independent work / APIs and software',
             'experience.5.period': 'August - December 2022',
             'experience.5.role': 'Independent Software Developer',
             'experience.5.location': 'Hybrid / San Rafael, Mendoza, Argentina',
-            'experience.5.responsibilities': 'Developed REST APIs and small software products as my first independent commercial offering.',
-            'experience.5.problems': 'Turned early client ideas into focused scopes, functional prototypes, and practical applications.',
-            'experience.5.impact': 'Established my first service portfolio and strengthened client communication and software delivery.',
+            'experience.5.responsibilities': 'I developed REST APIs and small software products as my first independent commercial offering.',
+            'experience.5.problems': 'I turned early client ideas into focused scopes, functional prototypes, and practical applications.',
+            'experience.5.impact': 'I established my first service portfolio and strengthened client communication and software delivery.',
             'education.higher': 'Higher Education',
             'education.degree': 'Advanced Technical Training Course in Systems Analysis and Programming',
             'education.period': 'Feb 2018 - Dec 2021',
@@ -129,8 +129,28 @@
             'education.course': 'Intensive Communicational English Course - Level B2',
             'education.graduated': 'Graduated in 2022',
             'education.communicational': 'Communicational English',
-            'contact.message': 'Let us explore new projects together to grow both professionally and personally. I am here for you!',
-            'footer.copy': 'Made with code and coffee by Federico Cabello &copy; <span id="current-year"></span> - Always learning, always coding.',
+            'contact.message': "I'm open to job opportunities, relocation, and independent projects. If you're looking for a technical professional with hands-on systems engineering experience who can build tools to strengthen your team, let's schedule a meeting!",
+            'contact.leaveMessage': 'Leave a message',
+            'contact.copyEmail': 'Copy email',
+            'contact.formTitle': 'Leave a message',
+            'contact.nameLabel': 'Name',
+            'contact.namePlaceholder': 'Your name',
+            'contact.messageLabel': 'Message',
+            'contact.messagePlaceholder': 'Tell me briefly about your project or proposal...',
+            'contact.sendMessage': 'Send message',
+            'contact.sending': 'Sending...',
+            'contact.success': 'Message sent successfully. Thank you for reaching out.',
+            'contact.error': 'The message could not be sent. Please try again.',
+            'contact.close': 'Close message form',
+            'contact.deliverySendingTitle': 'Sending your message',
+            'contact.deliverySendingBody': 'Your message is traveling securely to Federico.',
+            'contact.deliverySuccessTitle': 'Message delivered',
+            'contact.deliverySuccessBody': 'Federico received your message. Thank you for getting in touch.',
+            'contact.deliveryErrorTitle': 'Message not sent',
+            'contact.deliveryErrorBody': 'There was a problem delivering it. Your message is still in the form.',
+            'contact.deliveryReturn': 'Return to portfolio',
+            'contact.deliveryRetry': 'Back to message',
+            'footer.copy': 'Designed and developed by Federico Cabello &copy; <span id="current-year"></span> - Always learning, building, and improving.',
             'projects.groupsLabel': 'Project categories',
             'projects.groups.crm': 'CRM',
             'projects.groups.business': 'Business Management Systems',
@@ -149,6 +169,8 @@
             'projects.openRepository': 'Open repository',
             'projects.visitWebsite': 'Visit website',
             'projects.openWebsite': 'Open website',
+            'projects.clientLocation': 'Client location',
+            'projects.clientLocatedIn': 'Client located in {location}',
             'projects.publicWebsite': 'Public website',
             'projects.publicWebsiteDescription': 'Explore the live preview or open the website in a new tab.',
             'projects.previewPending': 'Preview being prepared',
@@ -185,7 +207,7 @@
             'nav.projects': 'Proyectos',
             'nav.experience': 'Experiencia laboral',
             'nav.experienceShort': 'Experiencia',
-            'nav.skills': 'Stack tecnológico',
+            'nav.skills': 'Tecnologías',
             'nav.education': 'Educación',
             'nav.contact': 'Contacto',
             'language.english': 'Inglés',
@@ -197,31 +219,31 @@
             'hero.capabilities.businessSystems': 'Sistemas de gestión empresarial',
             'hero.capabilities.crm': 'Sistemas CRM',
             'hero.capabilities.restApis': 'APIs REST',
-            'hero.capabilities.cloud': 'Despliegue en la nube',
+            'hero.capabilities.cloud': 'Implementación en servidores',
             'hero.capabilities.appDevelopment': 'Desarrollo de aplicaciones',
             'hero.capabilities.databases': 'Diseño y gestión de bases de datos',
             'hero.capabilities.dataAnalysis': 'Análisis de datos',
             'hero.capabilities.automation': 'Automatización e integración',
-            'hero.capabilities.responsiveWebsites': 'Sitios web responsive',
+            'hero.capabilities.responsiveWebsites': 'Sitios web multiplataforma',
             'actions.viewCv': 'Ver CV',
             'actions.copy': 'Copiar',
-            'actions.copied': '¡Copiado!',
+            'actions.copied': 'Copiado!',
             'actions.emailCopied': 'Correo copiado',
             'actions.location': 'Ir a mi ubicación',
             'actions.linkedinProfile': 'Ir al perfil',
             'actions.githubRepository': 'Ir al repositorio',
             'assistant.title': 'Agente IA de Federico',
             'assistant.launcherTitle': 'Agente IA de Federico',
-            'assistant.launcherHint': '¡Hola! Preguntame algo',
+            'assistant.launcherHint': 'Hola! Preguntame algo',
             'assistant.localStatus': 'Vista local',
-            'assistant.onlineStatus': 'Asistente IA en línea',
+            'assistant.onlineStatus': 'Asistente en línea',
             'assistant.open': 'Abrir asistente de IA',
             'assistant.close': 'Cerrar asistente',
             'assistant.clear': 'Limpiar conversación',
             'assistant.send': 'Enviar pregunta',
             'assistant.inputLabel': 'Pregunta sobre Federico',
             'assistant.placeholder': 'Preguntá sobre experiencia, proyectos o tecnologías...',
-            'assistant.welcome': '¡Hola! Puedo responder preguntas breves sobre la experiencia, los proyectos, las tecnologías y la formación de Federico.',
+            'assistant.welcome': 'Hola! Puedo responder preguntas breves sobre la experiencia, los proyectos, las tecnologías y la formación de Federico.',
             'assistant.suggestionOne': '¿Qué sistemas desarrolla?',
             'assistant.suggestionTwo': '¿Programa con IA?',
             'assistant.suggestionThree': '¿Tiene disponibilidad?',
@@ -231,47 +253,47 @@
             'assistant.error': 'No pude responder en este momento. Intentá nuevamente en unos segundos.',
             'assistant.empty': 'Escribí una pregunta antes de enviarla.',
             'sections.projects.title': 'Proyectos<br><em>Seleccionados</em>',
-            'sections.projects.description': 'Explorá mi trabajo según el tipo de solución.',
+            'sections.projects.description': 'Explorá cómo transformé ideas para potenciar mis clientes.',
             'sections.experience.title': 'Experiencia<br><em>Laboral</em>',
-            'sections.experience.description': 'Un resumen de los roles, responsabilidades y resultados que marcaron mi recorrido profesional.',
-            'sections.skills.title': 'Habilidades y<br><em>Stack tecnológico</em>',
-            'sections.skills.description': 'Tecnologías principales que utilizo para crear proyectos, aplicaciones, APIs, bases de datos y sistemas empresariales.',
+            'sections.experience.description': 'Conocé mi recorrido profesional y los desafíos que fui asumiendo.',
+            'sections.skills.title': 'Tecnologías y<br><em>herramientas</em>',
+            'sections.skills.description': 'Descubrí mi experiencia y evolución a lo largo de los años.',
             'sections.education.title': 'Formación y<br><em>Educación</em>',
-            'sections.education.description': 'Un resumen de mi formación académica y capacitación en idiomas.',
-            'sections.contact.title': 'Contactame',
-            'sections.contact.description': '¡Construyamos nuevos caminos juntos!',
+            'sections.education.description': 'La base que acompaña mi desarrollo profesional.',
+            'sections.contact.title': 'Contactame y<br><em>hablemos</em>',
+            'sections.contact.description': 'Visitá estos medios y contactame!',
             'skills.languages': 'Lenguajes',
             'skills.frontend': 'Frontend',
             'skills.backend': 'Backend',
-            'skills.dataCloud': 'Datos, nube y herramientas',
+            'skills.dataCloud': 'Análisis de datos y servidores',
             'experience.responsibilities': 'Responsabilidades',
-            'experience.problems': 'Problemas resueltos',
+            'experience.problems': 'Desafíos abordados',
             'experience.impact': 'Impacto',
             'experience.1.type': 'Emprendimiento de software / Servicios digitales',
             'experience.1.period': 'Enero de 2026 - Actualidad',
             'experience.1.role': 'Fundador y CTO',
             'experience.1.location': 'Híbrido / San Rafael, Mendoza, Argentina',
-            'experience.1.responsibilities': 'Dirijo un emprendimiento independiente que ofrece asesoría tecnológica, landing pages y sistemas empresariales a medida.',
+            'experience.1.responsibilities': 'Dirijo un emprendimiento independiente que ofrece asesoría tecnológica, sitios web y sistemas empresariales a medida.',
             'experience.1.problems': 'Ayudo a definir necesidades digitales y reemplazar procesos manuales por soluciones de software personalizadas.',
             'experience.1.impact': 'Creé demos prácticos y herramientas productivas que facilitan evaluar y adoptar nuevas tecnologías.',
             'experience.2.type': 'Software empresarial local / Servicios web',
             'experience.2.period': 'Enero de 2024 - Actualidad',
             'experience.2.role': 'Ingeniero de Software',
-            'experience.2.location': 'Remoto / Brownsville, Texas, EE. UU.',
+            'experience.2.location': 'Remoto / Brownsville, Texas, Estados Unidos',
             'experience.2.responsibilities': 'Desarrollo y mantengo sistemas empresariales y sitios web que la compañía ofrece a clientes locales.',
             'experience.2.problems': 'Transformo necesidades comerciales regionales en plataformas mantenibles, sitios web y procesos digitales conectados.',
             'experience.2.impact': 'Amplié la oferta de servicios digitales y contribuí a mejorar las operaciones de sus clientes.',
             'experience.3.type': 'Administración de bases de datos / Sistemas empresariales',
             'experience.3.period': 'Enero de 2024 - Actualidad',
             'experience.3.role': 'Administrador de Bases de Datos',
-            'experience.3.location': 'Remoto / Brownsville, Texas, EE. UU.',
+            'experience.3.location': 'Remoto / Brownsville, Texas, Estados Unidos',
             'experience.3.responsibilities': 'Diseño, administro y mantengo bases de datos para sistemas de clientes, finanzas y gestión interna.',
             'experience.3.problems': 'Organizo registros críticos y reduzco inconsistencias entre las plataformas conectadas de la empresa.',
             'experience.3.impact': 'Mejoré la integridad, disponibilidad y confiabilidad de los datos utilizados en las operaciones diarias.',
             'experience.4.type': 'Software de escritorio / Inventario y ventas',
             'experience.4.period': 'Enero - Diciembre de 2023',
             'experience.4.role': 'Desarrollador de Software',
-            'experience.4.location': 'Híbrido / San Rafael, Mendoza, Argentina',
+            'experience.4.location': 'Híbrido / General Alvear, Mendoza, Argentina',
             'experience.4.responsibilities': 'Diseñé y desarrollé el sistema de escritorio de PICAR para productos, stock, ventas, clientes y proveedores.',
             'experience.4.problems': 'Reemplacé registros manuales por un flujo centralizado diseñado específicamente para la empresa.',
             'experience.4.impact': 'Mejoré la visibilidad del stock, el control de ventas, la facturación y la administración cotidiana.',
@@ -294,13 +316,33 @@
             'education.course': 'Curso Intensivo de Inglés Comunicacional - Nivel B2',
             'education.graduated': 'Graduado en 2022',
             'education.communicational': 'Inglés comunicacional',
-            'contact.message': 'Exploremos nuevos proyectos para crecer juntos, tanto profesional como personalmente. ¡Estoy para ayudarte!',
-            'footer.copy': 'Hecho con código y café por Federico Cabello &copy; <span id="current-year"></span> - Siempre aprendiendo, siempre programando.',
+            'contact.message': 'Estoy abierto a nuevas propuestas de trabajo, oportunidades de reubicación y proyectos personales. Si buscás un perfil técnico con experiencia práctica en ingeniería de sistemas y desarrollo de herramientas para potenciar tu equipo hagamos una reunión!',
+            'contact.leaveMessage': 'Dejame un mensaje',
+            'contact.copyEmail': 'Copiar',
+            'contact.formTitle': 'Dejame un mensaje',
+            'contact.nameLabel': 'Nombre',
+            'contact.namePlaceholder': 'Tu nombre',
+            'contact.messageLabel': 'Mensaje',
+            'contact.messagePlaceholder': 'Contame brevemente sobre tu proyecto o propuesta...',
+            'contact.sendMessage': 'Enviar mensaje',
+            'contact.sending': 'Enviando...',
+            'contact.success': 'El mensaje se envió correctamente. Gracias por contactarme.',
+            'contact.error': 'No se pudo enviar el mensaje. Intentá nuevamente.',
+            'contact.close': 'Cerrar formulario de mensaje',
+            'contact.deliverySendingTitle': 'Enviando tu mensaje a Federico',
+            'contact.deliverySendingBody': 'Tu mensaje está viajando de forma segura.',
+            'contact.deliverySuccessTitle': 'Mensaje entregado',
+            'contact.deliverySuccessBody': 'Federico recibió tu mensaje. Gracias por ponerte en contacto.',
+            'contact.deliveryErrorTitle': 'No se pudo enviar',
+            'contact.deliveryErrorBody': 'Hubo un problema al entregarlo. Tu mensaje sigue disponible en el formulario.',
+            'contact.deliveryReturn': 'Volver al portfolio',
+            'contact.deliveryRetry': 'Volver al mensaje',
+            'footer.copy': 'Diseñado y desarrollado por Federico Cabello &copy; <span id="current-year"></span> - Siempre aprendiendo, creando y mejorando.',
             'projects.groupsLabel': 'Categorías de proyectos',
             'projects.groups.crm': 'CRM',
             'projects.groups.business': 'Sistemas de gestión empresarial',
             'projects.groups.automation': 'Automatización e IA',
-            'projects.groups.landing': 'Landing pages',
+            'projects.groups.landing': 'Sitios web',
             'projects.groups.additional': 'Proyectos adicionales',
             'projects.mainFunctions': 'Funciones principales',
             'projects.whatSolved': 'Qué resolvió',
@@ -314,6 +356,8 @@
             'projects.openRepository': 'Abrir repositorio',
             'projects.visitWebsite': 'Visitar sitio',
             'projects.openWebsite': 'Abrir sitio web',
+            'projects.clientLocation': 'Ubicación del cliente',
+            'projects.clientLocatedIn': 'Cliente ubicado en {location}',
             'projects.publicWebsite': 'Sitio web público',
             'projects.publicWebsiteDescription': 'Explorá la vista en vivo o abrí el sitio en una nueva pestaña.',
             'projects.previewPending': 'Vista previa en preparación',
@@ -348,6 +392,7 @@
 
     var projectTranslationsEs = {
         'breakers-plaza-crm': {
+            location: { name: 'South Padre Island, Texas, Estados Unidos', flag: 'https://flagcdn.com/us.svg' },
             category: 'CRM / Administración de condominios',
             summary: 'CRM condominial que centraliza residentes, cuotas de mantenimiento, reservas de espacios comunes, solicitudes de playa y trabajos de mantenimiento.',
             functions: 'Gestiona residentes y cuotas, sincroniza pagos con QuickBooks, valida la disponibilidad del SUM y registra solicitudes y tareas de mantenimiento.',
@@ -357,73 +402,81 @@
             demo: { title: 'Sistema privado', description: 'El acceso público no está disponible porque contiene datos sensibles de residentes, pagos, reservas y operaciones.' }
         },
         'breakers-plaza-website': {
-            category: 'Landing page de lujo / Condominios',
+            location: { name: 'South Padre Island, Texas, Estados Unidos', flag: 'https://flagcdn.com/us.svg' },
+            category: 'Sitio web de lujo / Condominios',
             summary: 'Sitio elegante para un condominio frente al mar, diseñado para transmitir una identidad premium y conectar a los residentes con su portal privado.',
             functions: 'Presenta la propiedad y sus comodidades mediante una galería interactiva, muestra la ubicación y brinda acceso directo al CRM del condominio.',
             problem: 'The Breakers Plaza necesitaba una presencia digital refinada que representara su experiencia frente al mar y orientara a residentes y compradores.',
-            solution: 'Creé una experiencia responsive con fotografías en alta resolución, tipografía elegante, galería optimizada, mapa integrado y acceso directo al CRM.',
+            solution: 'Creé un sitio web adaptado para computadoras, tablets y celulares, con fotografías en alta resolución, tipografía elegante, galería optimizada, mapa y acceso directo al CRM.',
             impacts: ['Presencia digital premium', 'Acceso directo para residentes', 'Exploración clara de la propiedad', 'Imágenes optimizadas']
         },
         'cactus-alojamientos': {
+            location: { name: 'San Rafael, Mendoza, Argentina', flag: 'https://upload.wikimedia.org/wikipedia/commons/1/1a/Flag_of_Argentina.svg' },
             category: 'Sitio de reservas / Alojamientos',
-            summary: 'Plataforma responsive donde los huéspedes exploran alojamientos, comparan comodidades y precios, consultan disponibilidad y reservan sin crear una cuenta.',
+            summary: 'Plataforma para computadoras, tablets y celulares donde los huéspedes exploran alojamientos, comparan precios, consultan disponibilidad y reservan sin crear una cuenta.',
             functions: 'Presenta propiedades, ubicaciones, tarifas y disponibilidad; gestiona solicitudes, avisos por email y la confirmación o rechazo desde administración.',
             problem: 'Los huéspedes necesitaban consultar fechas y reservar con rapidez, mientras la administración debía evitar superposiciones y centralizar los alojamientos.',
-            solution: 'Desarrollé un calendario conectado a SQL con reservas sin cuenta, notificaciones SMTP y un panel para administrar propiedades, contenido y disponibilidad.',
+            solution: 'Desarrollé un calendario conectado a una base de datos, con reservas sin cuenta, notificaciones SMTP y un panel para administrar propiedades, contenido y disponibilidad.',
             impacts: ['Reservas sin crear cuenta', 'Disponibilidad en tiempo real', 'Avisos automáticos por email', 'Control centralizado de reservas']
         },
         'cadpo-simracing': {
-            name: 'Plataforma de Campeonatos de Esports',
-            category: 'Liga de simracing / Tiempos en vivo y analítica',
-            summary: 'Plataforma responsive que centraliza campeonatos, inscripciones, resultados históricos, estadísticas de pilotos, próximos eventos y tiempos en vivo.',
+            location: { name: 'Capital Federal, Buenos Aires, Argentina', flag: 'https://upload.wikimedia.org/wikipedia/commons/1/1a/Flag_of_Argentina.svg' },
+            name: 'Plataforma de Campeonatos de eSports',
+            category: 'eSports / Tiempos en vivo y analítica',
+            summary: 'Plataforma multiplataforma que centraliza campeonatos, inscripciones, resultados históricos, estadísticas de pilotos, próximos eventos y tiempos en vivo.',
             functions: 'Publica calendarios, inscripciones, resultados, historia, tiempos y estadísticas, e incluye un panel autenticado para administrar la liga.',
             problem: 'Años de información estaban fragmentados y los datos crudos del servidor de tiempos eran difíciles de consultar, especialmente desde celulares.',
-            solution: 'Construí una plataforma que transforma la API en una interfaz responsive, incorpora análisis histórico con Pandas y permite gestionar contenidos y eventos.',
-            impacts: ['Tiempos de carrera en vivo', 'Acceso responsive', 'Análisis histórico de datos', 'Gestión centralizada de la liga']
+            solution: 'Construí una plataforma que transforma los datos de la API en una interfaz adaptada para cualquier dispositivo, incorpora análisis histórico y permite gestionar contenidos y eventos.',
+            impacts: ['Tiempos de carrera en vivo', 'Acceso desde cualquier dispositivo', 'Análisis histórico de datos', 'Gestión centralizada de la liga']
         },
         'carlo-taboada-crm': {
-            name: 'CRM del Estudio Jurídico Carlos Taboada',
+            location: { name: 'Brownsville, Texas, Estados Unidos', flag: 'https://flagcdn.com/us.svg' },
+            name: 'Estudio Jurídico Carlo Taboada CRM',
             category: 'CRM jurídico / Gestión de casos',
             summary: 'CRM jurídico privado que organiza citas, notas de admisión, clientes, evaluación de casos y seguimiento para abogados y secretarios.',
             functions: 'Registra casos en recepción, agenda citas, almacena notas, facilita la revisión legal y acompaña cada caso aceptado hasta el contacto y seguimiento.',
-            problem: 'El estudio necesitaba recibir consultas, evaluar requisitos, asignar casos y resguardar información sensible dentro de un proceso seguro.',
-            solution: 'Desarrollé un sistema por roles donde secretarios registran consultas y abogados evalúan casos migratorios, penales y de otras áreas antes de continuar.',
-            impacts: ['Admisión de casos estructurada', 'Revisión legal por roles', 'Citas centralizadas', 'Seguimiento trazable'],
+            problem: 'El estudio utilizaba un sistema genérico, obsoleto y sin soporte que dispersaba horarios, datos de clientes y llamadas, generando desorganización y pérdida de información.',
+            solution: 'Migré y normalicé los datos del sistema anterior en una nueva base de datos y desarrollé un CRM moderno, adaptado al flujo jurídico, la agenda y el seguimiento de clientes y casos.',
+            impacts: ['Datos históricos migrados', 'Información normalizada', 'Agenda y llamadas centralizadas', 'CRM adaptado al estudio jurídico'],
             demo: { title: 'Sistema jurídico privado', description: 'El acceso público está restringido porque contiene casos y datos de clientes protegidos por privacidad, secreto profesional y requisitos legales.' }
         },
         'cell-repair': {
-            name: 'Sistema de Seguimiento de Reparaciones',
-            category: 'Aplicación de escritorio / Seguimiento de reparaciones',
-            summary: 'Sistema que registra clientes, teléfonos, fechas, fallas, reparaciones y avances dentro de una base de datos centralizada.',
+            location: { name: 'Luján de Cuyo, Mendoza, Argentina', flag: 'https://upload.wikimedia.org/wikipedia/commons/1/1a/Flag_of_Argentina.svg' },
+            name: 'Sistema de Servicio Técnico para Celulares',
+            category: 'Servicio técnico / Aplicación de escritorio',
+            summary: 'Sistema para servicios técnicos que registra clientes, teléfonos, fechas, fallas, reparaciones y avances dentro de una base de datos centralizada.',
             functions: 'Registra clientes y dispositivos, almacena reparaciones y fechas, administra estados y genera un código público de seguimiento para cada equipo.',
             problem: 'Los talleres necesitaban un historial confiable y una forma simple de informar avances sin exponer datos internos ni responder consultas repetidas.',
-            solution: 'Conecté la aplicación Java con SQL y un sitio PHP donde cada cliente consulta de forma segura el avance mediante un código único.',
+            solution: 'Conecté la aplicación de escritorio con una base de datos centralizada y un sitio de seguimiento donde cada cliente consulta de forma segura el avance mediante un código único.',
             impacts: ['Trazabilidad de reparaciones', 'Consulta pública de estados', 'Asignación de técnicos', 'Recepción organizada']
         },
         'crm-losandes': {
+            location: { name: 'Brownsville, Texas, Estados Unidos', flag: 'https://flagcdn.com/us.svg' },
             category: 'CRM / Gestión multiempresa',
             summary: 'CRM multiempresa que centraliza llamadas, clientes, movimientos financieros, usuarios y registros operativos de distintas áreas comerciales.',
-            functions: 'Registra llamadas y actividad por empresa y rubro, incluyendo alquileres, inmuebles, cámaras, productos, finanzas, usuarios y permisos.',
-            problem: 'Las interacciones y movimientos de distintas empresas eran difíciles de separar, organizar y seguir.',
-            solution: 'Desarrollé un CRM por roles que segmenta los registros por empresa y rubro, y centraliza llamadas, finanzas, actividad, usuarios y permisos.',
-            impacts: ['Registros separados por empresa', 'Historial de llamadas centralizado', 'Trazabilidad financiera', 'Acceso según roles'],
+            functions: 'Centraliza clientes, contactos provenientes de redes sociales o atención presencial, tareas y registros operativos de las distintas empresas, con accesos definidos por rol.',
+            problem: 'Los Andes gestionaba cada empresa mediante planillas de Excel, sin roles ni separación de información; todos podían acceder a datos que no necesitaban y el seguimiento resultaba desorganizado.',
+            solution: 'Desarrollé un CRM multiempresa a medida que organiza la información y las tareas por empresa, centraliza cada interacción y limita el acceso según las responsabilidades.',
+            impacts: ['Gestión multiempresa centralizada', 'Información separada por roles', 'Mejor seguimiento de tareas y contactos', 'Flujo adaptado a Los Andes'],
             demo: { title: 'Sistema privado', description: 'El acceso público no está disponible porque la plataforma pertenece a la empresa y contiene información sensible de clientes, finanzas y operaciones.' }
         },
         'distribuidora-picar': {
+            location: { name: 'General Alvear, Mendoza, Argentina', flag: 'https://upload.wikimedia.org/wikipedia/commons/1/1a/Flag_of_Argentina.svg' },
             name: 'Sistema de Distribución de Herramientas PICAR',
-            category: 'Aplicación de escritorio / Distribución y venta de herramientas',
-            summary: 'Aplicación Java desarrollada para administrar inventario, ventas, compras, clientes, proveedores, cuentas, pagos y reportes de PICAR.',
+            category: 'Aplicación de escritorio / Inventario y venta de herramientas',
+            summary: 'Aplicación de escritorio desarrollada para administrar inventario, ventas, compras, clientes, proveedores, cuentas, pagos y reportes de PICAR.',
             functions: 'Gestiona herramientas, stock, cuentas de clientes y proveedores, compras, ventas, pagos, cheques y reportes desde una aplicación local.',
             problem: 'PICAR necesitaba reemplazar registros desconectados por un sistema confiable para controlar inventario y actividad comercial.',
-            solution: 'Desarrollé una aplicación Java a medida que centraliza productos, movimientos de stock, ventas, compras, saldos, pagos, alertas y reportes.',
+            solution: 'Desarrollé una aplicación de escritorio a medida que centraliza productos, movimientos de stock, ventas, compras, saldos, pagos, alertas y reportes.',
             impacts: ['Inventario centralizado', 'Facturación más rápida', 'Control de proveedores', 'Reportes de ventas']
         },
         'easy-forms': {
-            category: 'Landing page de servicios / Asistencia con formularios',
+            location: { name: 'Brownsville, Texas, Estados Unidos', flag: 'https://flagcdn.com/us.svg' },
+            category: 'Sitio web de servicios / Asistencia con formularios',
             summary: 'Sitio cálido y accesible que explica cómo Easy Form Solutions organiza y prepara documentación para trámites con formularios en Estados Unidos.',
             functions: 'Explica el proceso de revisión, organización, preparación y seguimiento, responde preguntas, muestra avisos y recibe solicitudes de asistencia.',
             problem: 'El negocio necesitaba explicar un servicio complejo de forma clara y confiable antes de que cada visitante contactara al equipo.',
-            solution: 'Diseñé una arquitectura responsive con cuatro etapas, preguntas frecuentes, avisos visibles y un formulario directo de consulta.',
+            solution: 'Diseñé una estructura clara y adaptada para computadoras, tablets y celulares, con cuatro etapas, preguntas frecuentes, avisos visibles y un formulario directo.',
             impacts: ['Proceso claro en cuatro etapas', 'Mayor confianza del cliente', 'Más conversiones de consultas', 'Información accesible']
         },
         'facebook-chats-ai-agent': {
@@ -442,20 +495,20 @@
             summary: 'Asistente bilingüe que responde preguntas concretas sobre mi experiencia, proyectos, tecnologías y formación mediante un contexto público controlado.',
             functions: 'Ofrece preguntas sugeridas, mantiene una conversación breve, responde en inglés o español y utiliza respuestas locales seguras si el servicio de IA no está disponible.',
             problem: 'El portfolio contiene mucha información y encontrar rápidamente un proyecto, una habilidad o una experiencia específica requiere recorrer varias secciones.',
-            solution: 'Diseñé un asistente compacto con una API en Python y Workers AI, una fuente de conocimiento JSON curada, alcance estricto y sin aprendizaje automático desde las conversaciones.',
-            impacts: ['Exploración más rápida', 'Respuestas bilingües', 'Contexto público controlado', 'Conversaciones no almacenadas'],
-            demo: { title: 'Asistente IA disponible', description: 'El asistente está disponible desde el botón de chat de este portfolio y responde mediante un Worker en Python conectado a Workers AI.' }
+            solution: 'Diseñé un asistente compacto con una API segura y Workers AI, una fuente de conocimiento controlada, alcance estricto y sin aprendizaje automático desde las conversaciones.',
+            impacts: ['Exploración más rápida', 'Respuestas bilingües', 'Contexto público controlado', 'Historial persistente de conversaciones']
         },
         'professional-portfolio': {
             name: 'Portfolio Profesional',
             category: 'Sitio personal / Perfil profesional',
-            summary: 'Portfolio bilingüe y responsive que reúne mis proyectos, experiencia, stack tecnológico, formación y canales de contacto.',
-            functions: 'Organiza proyectos por categorías, presenta casos de estudio, traduce el contenido y permite explorar mi perfil mediante un asistente de IA.',
-            problem: 'Necesitaba centralizar mi experiencia y mis proyectos en una presentación clara, visual y accesible desde cualquier dispositivo.',
-            solution: 'Desarrollé una experiencia responsive con navegación por secciones, proyectos interactivos, traducción y acceso directo a mis perfiles profesionales.',
-            impacts: ['Perfil profesional centralizado', 'Contenido bilingüe', 'Experiencia responsive', 'Proyectos organizados']
+            summary: 'Portfolio bilingüe y multiplataforma que reúne mis proyectos, experiencia, tecnologías, formación y canales de contacto.',
+            functions: 'Organiza proyectos por categorías, presenta casos de estudio, traduce el contenido y permite explorar el perfil profesional mediante un asistente de IA.',
+            problem: 'La experiencia profesional, el perfil técnico y los proyectos necesitaban una presentación clara, accesible y centralizada.',
+            solution: 'Desarrollé una experiencia adaptada para computadoras, tablets y celulares, con navegación por secciones, proyectos interactivos, traducción y acceso a mis perfiles.',
+            impacts: ['Perfil profesional centralizado', 'Contenido bilingüe', 'Acceso desde cualquier dispositivo', 'Proyectos organizados']
         },
         'ferreteria-mendez': {
+            location: { name: 'San Rafael, Mendoza, Argentina', flag: 'https://upload.wikimedia.org/wikipedia/commons/1/1a/Flag_of_Argentina.svg' },
             name: 'Ferretería Méndez',
             category: 'Punto de venta / Analítica empresarial',
             summary: 'Sistema web autenticado utilizado por una ferretería para administrar ventas, presupuestos, productos, inventario, facturación y analítica.',
@@ -466,44 +519,48 @@
             demo: { title: 'Sistema productivo privado', description: 'La plataforma está en uso y no puede ser pública porque contiene información confidencial de finanzas, productos, ventas y empleados.' }
         },
         'los-andes-website': {
-            category: 'Landing page corporativa / Servicios B2B',
+            location: { name: 'Brownsville, Texas, Estados Unidos', flag: 'https://flagcdn.com/us.svg' },
+            category: 'Sitio web corporativo / Servicios B2B',
             summary: 'Sitio corporativo que presenta servicios de desarrollo de software, BPO y marketing digital para empresas de Estados Unidos.',
             functions: 'Organiza servicios B2B, compara planes Standard, Premium y VIP, comunica entregables y dirige prospectos a un formulario de contacto.',
             problem: 'La empresa necesitaba un canal profesional que explicara su oferta y facilitara comparar precios y entregables.',
-            solution: 'Estructuré una experiencia responsive orientada a ventas con servicios claros, recursos visuales, precios interactivos y contacto directo.',
+            solution: 'Estructuré un sitio web multiplataforma orientado a ventas, con servicios claros, recursos visuales, precios interactivos y contacto directo.',
             impacts: ['Canal principal de adquisición B2B', 'Precios transparentes', 'Presencia institucional clara', 'Consultas directas']
         },
         'proyecto-prisma': {
-            category: 'Sitio empresarial / Demos interactivos',
-            summary: 'Sitio de mi emprendimiento de software donde presento servicios, soluciones empresariales, experiencia profesional y nueve demos interactivos.',
-            functions: 'Presenta servicios de software, landing pages, asesoría comercial, canales de contacto y nueve demos para distintas necesidades empresariales.',
-            problem: 'Los clientes necesitaban comprender los servicios y evaluar una solución digital antes de comprometerse con el desarrollo.',
-            solution: 'Construí un sitio responsive donde pueden explorar servicios, conocer mi enfoque y probar nueve demos antes de solicitar una solución a medida.',
-            impacts: ['9 demos interactivos', 'Servicios fáciles de explorar', 'Validación temprana', 'Contacto directo con clientes']
+            category: 'Emprendimiento propio / Demos interactivos',
+            summary: 'Sitio donde presento servicios, soluciones empresariales, experiencia profesional y nueve demos interactivos.',
+            functions: 'Presenta servicios de software, páginas web, asesoría comercial, canales de contacto y nueve demos para distintas necesidades empresariales.',
+            problem: 'Los clientes necesitaban encontrar y evaluar soluciones para su empresa de forma rápida, sin recorrer información técnica ni procesos innecesariamente complejos.',
+            solution: 'Diseñé un sitio claro y multiplataforma que presenta los servicios y nueve demos interactivos mediante una experiencia simple, pensada para que cualquier negocio identifique rápidamente una solución útil.',
+            impacts: ['9 demos interactivos', 'Evaluación rápida de soluciones', 'Experiencia simple para cualquier negocio', 'Contacto directo con clientes']
         },
         'ts-network-website': {
-            category: 'Landing page bilingüe / Internet y seguridad',
+            location: { name: 'Brownsville, Texas, Estados Unidos', flag: 'https://flagcdn.com/us.svg' },
+            category: 'Sitio web bilingüe / Internet y seguridad',
             summary: 'Sitio bilingüe orientado a conversión para promocionar internet de alta velocidad y cámaras de seguridad en Brownsville y el Valle de Texas.',
             functions: 'Presenta planes de internet y cámaras, consulta cobertura, capta prospectos, permite solicitar presupuestos y conecta con pagos y cuentas.',
             problem: 'TS Network necesitaba una presencia profesional en español e inglés que explicara sus servicios y convirtiera visitantes en prospectos.',
-            solution: 'Diseñé una experiencia responsive en dark mode con navegación bilingüe, planes interactivos, consultas de cobertura, contacto y portal de pagos.',
-            impacts: ['Acceso bilingüe', 'Generación constante de prospectos', 'Pagos online directos', 'Exploración mobile-first']
+            solution: 'Diseñé un sitio multiplataforma con diseño oscuro, navegación bilingüe, planes interactivos, consultas de cobertura, contacto y portal de pagos.',
+            impacts: ['Acceso bilingüe', 'Generación constante de prospectos', 'Pagos online directos', 'Navegación sencilla desde celulares']
         },
         'tsnetwork-crm': {
+            location: { name: 'Brownsville, Texas, Estados Unidos', flag: 'https://flagcdn.com/us.svg' },
             category: 'CRM / Servicio técnico y operaciones',
             summary: 'CRM multirol para coordinar visitas de repetidores y cámaras, llamadas, citas, pagos, inventario y trabajo técnico en campo.',
-            functions: 'Agenda llamadas y visitas, asigna tareas, controla cuotas mensuales y stock, y genera PDFs operativos para cuatro niveles de permisos.',
-            problem: 'Las llamadas, visitas, cobranzas, inventario y asignaciones técnicas eran difíciles de coordinar entre distintos roles y procesos.',
-            solution: 'Centralicé las operaciones en un sistema por roles con agenda, visitas, pagos, stock, tareas y reportes PDF.',
-            impacts: ['Operaciones técnicas centralizadas', 'Permisos claros por rol', 'Mejor seguimiento de pagos', 'Control de stock y tareas'],
+            functions: 'Centraliza clientes, llamadas, visitas técnicas, agenda, cuotas, inventario, tareas y reportes PDF, con accesos específicos para administradores, agentes, moderadores y técnicos.',
+            problem: 'La información estaba dispersa entre planillas, archivos en la nube y mensajes de WhatsApp, lo que dificultaba coordinar clientes, productos, visitas y tiempos de trabajo.',
+            solution: 'Desarrollé un sistema web centralizado y organizado por roles, donde cada equipo accede en tiempo real a la información que necesita para atender clientes y gestionar las operaciones.',
+            impacts: ['Información centralizada', 'Menos pérdidas y omisiones', 'Acceso según cada rol', 'Atención más ágil'],
             demo: { title: 'Sistema privado', description: 'El acceso público no está disponible porque pertenece a la empresa y contiene información sensible de clientes y operaciones.' }
         },
         'urbana-studios': {
+            location: { name: 'Brownsville, Texas, Estados Unidos', flag: 'https://flagcdn.com/us.svg' },
             category: 'Sistema de administración inmobiliaria',
             summary: 'Plataforma para administrar departamentos, disponibilidad, inquilinos, contratos, rentas, facturación, visitas y analítica de ocupación.',
             functions: 'Centraliza unidades, contratos, inquilinos, pagos, facturas, citas de prospectos y métricas de ingresos y ocupación.',
             problem: 'La empresa necesitaba gestionar propiedades, contratos, inquilinos, cobranzas y visitas desde un único sistema profesional.',
-            solution: 'Desarrollé una plataforma con React y Node.js, interfaz dark premium, calendario interactivo y panel administrativo para ventas y alquileres.',
+            solution: 'Desarrollé una plataforma con una interfaz oscura de estilo premium, calendario interactivo y panel administrativo para ventas y alquileres.',
             impacts: ['Administración inmobiliaria centralizada', 'Visitas agendadas online', 'Analítica de ingresos y ocupación', 'Mayor conversión de alquileres'],
             demo: { title: 'Sistema productivo privado', description: 'El acceso público no está disponible porque contiene información confidencial de inquilinos, contratos, pagos, facturación y propiedades.' }
         }
@@ -572,10 +629,7 @@
                 ['.work-company > span', 'type'],
                 ['.work-period', 'period'],
                 ['.work-role-row h4', 'role'],
-                ['.work-location', 'location', 'direct'],
-                ['.work-outcomes section:nth-child(1) p', 'responsibilities'],
-                ['.work-outcomes section:nth-child(2) p', 'problems'],
-                ['.work-outcomes section:nth-child(3) p', 'impact']
+                ['.work-location', 'location', 'direct']
             ];
             bindings.forEach(function(binding) {
                 var element = item.querySelector(binding[0]);
@@ -583,12 +637,15 @@
                 element.dataset.i18n = prefix + binding[1];
                 if (binding[2]) element.dataset.i18nMode = binding[2];
             });
-        });
 
-        document.querySelectorAll('.work-outcomes').forEach(function(outcomes) {
-            ['experience.responsibilities', 'experience.problems', 'experience.impact'].forEach(function(key, index) {
-                var heading = outcomes.querySelector('section:nth-child(' + (index + 1) + ') h5');
-                if (heading) heading.dataset.i18n = key;
+            var outcomeKeys = ['responsibilities', 'problems', 'impact'];
+            item.querySelectorAll('.work-outcomes > section').forEach(function(section, outcomeIndex) {
+                var outcomeKey = outcomeKeys[outcomeIndex];
+                if (!outcomeKey) return;
+                var heading = section.querySelector('h5');
+                var paragraph = section.querySelector('p');
+                if (heading) heading.dataset.i18n = 'experience.' + outcomeKey;
+                if (paragraph) paragraph.dataset.i18n = prefix + outcomeKey;
             });
         });
     }
@@ -658,6 +715,7 @@
 
         var attributeBindings = [
             ['.language-switcher', 'aria-label', 'access.languageSelector'],
+            ['.language-switcher-icon', 'aria-label', 'access.languageSelector'],
             ['.language-option[data-lang="en"]', 'aria-label', 'access.viewEnglish'],
             ['.language-option[data-lang="es"]', 'aria-label', 'access.viewSpanish'],
             ['.hero-location-button img', 'alt', 'access.argentinaFlag'],
@@ -735,11 +793,51 @@
 
     document.addEventListener('DOMContentLoaded', function() {
         prepareBindings();
+        var languageSwitcher = document.querySelector('.language-switcher');
+        var languageTrigger = document.querySelector('.language-switcher-icon');
+
+        function closeLanguageSwitcher() {
+            if (!languageSwitcher || !languageTrigger) return;
+            languageSwitcher.classList.remove('is-open');
+            languageTrigger.setAttribute('aria-expanded', 'false');
+        }
+
+        if (languageSwitcher && languageTrigger) {
+            languageTrigger.addEventListener('click', function(event) {
+                event.stopPropagation();
+                var willOpen = !languageSwitcher.classList.contains('is-open');
+                languageSwitcher.classList.toggle('is-open', willOpen);
+                languageTrigger.setAttribute('aria-expanded', willOpen ? 'true' : 'false');
+            });
+
+            languageSwitcher.addEventListener('mouseleave', function() {
+                if (window.matchMedia('(hover: hover)').matches) {
+                    closeLanguageSwitcher();
+                }
+            });
+
+            document.addEventListener('click', function(event) {
+                if (!languageSwitcher.contains(event.target)) {
+                    closeLanguageSwitcher();
+                }
+            });
+
+            languageSwitcher.addEventListener('keydown', function(event) {
+                if (event.key === 'Escape') {
+                    closeLanguageSwitcher();
+                    languageTrigger.focus();
+                }
+            });
+        }
+
         document.querySelectorAll('.language-option').forEach(function(button) {
             button.addEventListener('click', function() {
                 var language = button.dataset.lang;
-                if (language === document.documentElement.lang) return;
-                changeLanguage(language);
+                if (language !== document.documentElement.lang) {
+                    changeLanguage(language);
+                }
+                closeLanguageSwitcher();
+                button.blur();
             });
         });
         setLanguage(initialLanguage, false);
