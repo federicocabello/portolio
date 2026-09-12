@@ -117,7 +117,7 @@
             'experience.5.responsibilities': 'I developed REST APIs and small software products as my first independent commercial offering.',
             'experience.5.problems': 'I turned early client ideas into focused scopes, functional prototypes, and practical applications.',
             'experience.5.impact': 'I established my first service portfolio and strengthened client communication and software delivery.',
-            'education.higher': 'Higher Education',
+            'education.higher': 'University Education',
             'education.degree': 'Advanced Technical Training Course in Systems Analysis and Programming',
             'education.period': 'Feb 2018 - Dec 2021',
             'education.degreeType': 'University degree',
@@ -306,7 +306,7 @@
             'experience.5.responsibilities': 'Desarrollé APIs REST y pequeños productos de software como mi primera oferta comercial independiente.',
             'experience.5.problems': 'Convertí ideas iniciales de clientes en alcances concretos, prototipos funcionales y aplicaciones prácticas.',
             'experience.5.impact': 'Construí mi primer portfolio de servicios y fortalecí la comunicación con clientes y la entrega de software.',
-            'education.higher': 'Educación superior',
+            'education.higher': 'Educación universitaria',
             'education.degree': 'Tecnicatura Superior en Análisis y Programación de Sistemas',
             'education.period': 'Feb 2018 - Dic 2021',
             'education.degreeType': 'Título universitario',
@@ -314,7 +314,7 @@
             'education.english': 'Inglés',
             'education.training': 'Capacitación en idiomas',
             'education.level': 'Nivel B2',
-            'education.institute': 'Instituto Privado de Enseñanza I.C.A.A.',
+            'education.institute': 'I.C.A.A. Instituto Privado de Lengua Extranjera Inglés.',
             'education.course': 'Curso Intensivo de Inglés Comunicacional - Nivel B2',
             'education.graduated': 'Graduado en 2022',
             'education.communicational': 'Inglés comunicacional',
@@ -744,6 +744,11 @@
 
         var cvAction = document.querySelector('#moving-contact-actions .contact-action:first-child');
         if (cvAction) cvAction.setAttribute('aria-label', t('actions.viewCv'));
+
+        var currentLanguage = document.documentElement.lang === 'es' ? 'es' : 'en';
+        document.querySelectorAll('[data-cv-en][data-cv-es]').forEach(function(link) {
+            link.href = currentLanguage === 'es' ? link.dataset.cvEs : link.dataset.cvEn;
+        });
 
         var year = document.getElementById('current-year');
         if (year) year.textContent = new Date().getFullYear();

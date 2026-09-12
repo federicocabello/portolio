@@ -876,7 +876,7 @@ jQuery(document).ready(function($) {
                 return Promise.resolve(window.portfolioI18n ? window.portfolioI18n.localizeProject(cached, folder) : cached);
             }
 
-            return fetch('img/projects/' + folder + '/project.json?v=20260909-ai-analytics')
+            return fetch('img/projects/' + folder + '/project.json?v=20260912-tsnetwork-typescript')
                 .then(function(response) {
                     if (!response.ok) {
                         throw new Error('Project configuration not found');

@@ -8,7 +8,7 @@
   "problem": "Information was scattered across spreadsheets, cloud files, and WhatsApp messages, making it difficult to coordinate customers, products, visits, and working time.",
   "solution": "I developed a centralized, role-based web system where each team can access the information it needs in real time to support customers and manage operations.",
   "impacts": ["Centralized information", "Fewer losses and omissions", "Role-based access", "Faster customer service"],
-  "technologies": ["React", "Python", "Node.js", "Tailwind CSS", "Next.js", "Express.js", "SQL", "AWS"],
+  "technologies": ["React", "Python", "Node.js", "Tailwind CSS", "Next.js", "Express.js", "TypeScript", "SQL", "AWS"],
   "links": { "repository": "https://github.com/federicocabello/crm_tsnetwork", "website": null },
   "media": { "type": "gallery" },
   "demo": { "status": "private", "title": "Private system", "description": "Public access is unavailable because the platform belongs to the company and contains sensitive customer and operational data." }
